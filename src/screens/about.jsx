@@ -573,7 +573,7 @@ const About = () => {
         </div>
       </section>
 
-      <div id="vision-about">
+      <div id="vision-about mb-5">
         <div className="tree-wrapper">
           <img src={images.tree} className="tree" alt="tree" />
         </div>

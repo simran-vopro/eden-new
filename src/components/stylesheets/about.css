@@ -343,8 +343,6 @@
     color: #fff !important;
 }
 
-
-
 #video-section {
     height: 54vw;
     width: 54vw;
@@ -359,7 +357,6 @@
     align-items: center;
     z-index: 2;
 }
-
 
 .circle-overlay {
     position: absolute;

@@ -469,7 +469,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="box-btn-2">
+            <div className="box-btn-2 mb-5">
               <Btn rightIcon>Learn More</Btn>
             </div>
           </div>
@@ -511,7 +511,7 @@ const LandingPage = () => {
           />
         </div>
 
-        <div className="box-row">
+        {/* <div className="box-row">
           {data.map((item, index) => (
             <React.Fragment key={index}>
               <ExpandableServicesBox
@@ -531,7 +531,7 @@ const LandingPage = () => {
               />
             </React.Fragment>
           ))}
-        </div>
+        </div> */}
 
         <div className="box-row">
           {data.map((item, index) => (

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Lato-Regular";
-  src: url("./assets/fonts/Lato-Regular.ttf");
+  src: url("./assets/fonts/Lato-Thin.ttf");
 }
 
 @font-face {
@@ -45,6 +45,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   margin: 0;
+  font-family: "Lato-Regular" !important;
 }
 
 body {
@@ -964,7 +965,7 @@ a {
 }
 
 .overlay-video {
-  background: linear-gradient(to right, #fafafa, #fafafa, #fff0);
+  background: linear-gradient(to right, #fff, #fafafa, #fff0);
   position: absolute;
   height: 100%;
   width: 85%;
@@ -1453,7 +1454,10 @@ img.dotted {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
+.box-content-2 .long-content {
+  margin: 50px 0;
 }
 
 .box-title-2 {
