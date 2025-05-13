@@ -1,0 +1,10 @@
+/* Mobile: 1 box per row */
+@media (min-width: 320px) and (max-width: 600px) {
+    
+  }
+  
+  /* Tablet: 2 boxes per row */
+  @media (min-width: 601px) and (max-width: 768px) {
+   
+  }
+  

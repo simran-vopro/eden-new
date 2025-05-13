@@ -1,0 +1,473 @@
+:root {
+  --primary: #2f98d0;
+  --primary2: #47ade3;
+  --secondary: #8dc74b;
+  --success: #4caf50;
+  --danger: #f44336;
+  --warning: #ffc107;
+  --info: #00bcd4;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #6c757d;
+  --background: #f5f5f5;
+  --textColor: #828282;
+  --titleColor: #354158;
+
+
+
+
+  --h1-font-size: 58px;
+  --h2-font-size: 46px;
+  --h3-font-size: 32px;
+  --h4-font-size: 28px;
+  --h5-font-size: 24px;
+  --h6-font-size: 22px;
+  --p-font-size: 20px;
+  --menu-font-size: 14px;
+  --btn-font-size: 18px;
+  --copyright-font-size: 16px;
+
+  --border-radius-large: 100px;
+  --border-radius-medium: 20px;
+  --border-radius-small: 10px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+.main-work #hero-blog {
+  background-image: none;
+}
+
+.main-work #hero-blog .top-curve svg {
+  color: var(--primary);
+}
+
+.how-it-works {
+  background-color: var(--background);
+  padding: 80px 20px;
+  text-align: center;
+  margin-top: 12vh;
+  height: 100vh;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--titleColor);
+  margin-bottom: 40px;
+  border-left: 5px solid var(--primary);
+  border-bottom: 5px solid var(--primary);
+  padding-left: 16px;
+  display: inline-block;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: var(--white);
+  border-left: 6px solid var(--secondary);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.step-desc {
+  color: var(--textColor);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+
+/*---------------------------------------
+  HERO        
+-----------------------------------------*/
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 35px;
+  padding-bottom: 150px;
+}
+
+.hero-section .input-group {
+  background-color: var(--white);
+  border-radius: var(--border-radius-large);
+  padding: 10px 15px;
+}
+
+.hero-section .input-group-text {
+  background-color: transparent;
+  border: 0;
+}
+
+.hero-section input[type="search"] {
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.hero-section button[type="submit"] {
+  background-color: var(--primary);
+  border: 0;
+  border-radius: var(--border-radius-large) !important;
+  color: var(--white);
+  max-width: 150px;
+}
+
+
+
+/*---------------------------------------
+  TIMELINE              
+-----------------------------------------*/
+
+.section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.timeline-section {
+  background-image: url('../../assets/csr/colleagues-working-cozy-office-medium-shot.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.timeline-container .vertical-scrollable-timeline {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0;
+}
+
+.timeline-container .vertical-scrollable-timeline .list-progress {
+  width: 8px;
+  height: 87%;
+  background-color: var(--primary);
+  position: absolute;
+  left: 52px;
+  top: 0;
+  overflow: hidden;
+}
+
+.timeline-container .vertical-scrollable-timeline .list-progress .inner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: var(--secondary);
+  width: 100%;
+}
+
+.timeline-container .vertical-scrollable-timeline li {
+  position: relative;
+  padding: 20px 0px 65px 145px;
+}
+
+.timeline-container .vertical-scrollable-timeline .inner-list {
+  padding: 0 !important;
+  color: var(--white);
+}
+
+
+
+.timeline-container .vertical-scrollable-timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-container .vertical-scrollable-timeline li p {
+  line-height: 25px;
+}
+
+.timeline-container .vertical-scrollable-timeline li p:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-container .vertical-scrollable-timeline li .icon-holder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 104px;
+  height: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  z-index: 1;
+  transition: 0.4s all;
+}
+
+.timeline-container .vertical-scrollable-timeline li .icon-holder::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border: 4px solid #fff;
+  position: absolute;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  z-index: -1;
+  transition: 0.4s all;
+}
+
+.timeline-container .vertical-scrollable-timeline li .icon-holder i {
+  font-size: 25px;
+  color: var(--white);
+}
+
+.timeline-container .vertical-scrollable-timeline li::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 8px;
+  background-color: transparent;
+  left: 52px;
+  z-index: 0;
+}
+
+.timeline-container .vertical-scrollable-timeline li.active .icon-holder {
+  background-color: var(--primary);
+}
+
+.timeline-container .vertical-scrollable-timeline li.active .icon-holder::before {
+  background-color: var(--primary);
+}
+
+
+/*---------------------------------------
+  SECTION               
+-----------------------------------------*/
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-overlay {
+  background-image: linear-gradient(15deg, var(--primary) 0%, var(--secondary) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+.section-overlay+.container {
+  position: relative;
+}
+
+.tab-content {
+  background-color: var(--white);
+  border-radius: var(--border-radius-medium);
+}
+
+
+/*---------------------------------------
+  TOPICS              
+-----------------------------------------*/
+.featured-section {
+
+  border-radius: 0 0 100px 100px;
+  padding-bottom: 100px;
+}
+
+.featured-section .row {
+  position: relative;
+  bottom: 100px;
+  margin-bottom: -100px;
+}
+
+.custom-block {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.custom-block:hover {
+  background-color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.custom-block>a {
+  width: 100%;
+}
+
+.custom-block-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-top: 35px;
+}
+
+.custom-block .rounded-pill {
+  border-radius: 5px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+}
+
+.custom-block-overlay {
+  height: 100%;
+  min-height: 200px;
+  padding: 0;
+}
+
+.custom-block-overlay>a {
+  height: 100%;
+}
+
+.custom-block-overlay .custom-block-image {
+  border-radius: var(--border-radius-medium);
+  display: block;
+  height: 100%;
+  margin-top: 0;
+}
+
+.custom-block-overlay-text {
+  /* position: absolute; */
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 30px;
+}
+
+.social-share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  padding: 20px 35px;
+}
+
+.social-share .bi-bookmark {
+  color: var(--white);
+  font-size: var(--h5-font-size);
+}
+
+.social-share .bi-bookmark:hover {
+  color: var(--secondary);
+}
+
+.bg-design {
+  background-color: #00B0FF;
+}
+
+.bg-graphic {
+  background-color: #00BFA6;
+}
+
+.bg-advertising {
+  background-color: #F50057;
+}
+
+.bg-finance {
+  background-color: #536DFE;
+}
+
+.bg-music {
+  background-color: #F9A826;
+}
+
+.bg-education {
+  background-color: #00BFA6;
+}
+
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .custom-block-overlay {
+    min-height: 320px;
+  }
+
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 90px;
+    padding-bottom: 120px;
+  }
+
+  #how-it-works .long-content {
+    font-size: 16px;
+  }
+
+  .section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  .vision-card {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .person {
+    position: absolute;
+    width: 100%;
+    top: -51.6vw;
+    left: 0;
+    display: none;
+  }
+
+  .outer-box {
+    width: 95%;
+    height: 550px;
+  }
+
+  .inner-box {
+    width: 96%;
+    height: 98%;
+  }
+
+  .timeline-container .vertical-scrollable-timeline li {
+    padding: 20px 0px 65px 100px;
+  }
+
+  .vertical-scrollable-timeline li .icon-holder::before {
+    width: 60px;
+    height: 60px;
+  }
+
+  .timeline-container .vertical-scrollable-timeline li .icon-holder {
+    width: 90px;
+    height: 90px;
+  }
+
+  .featured-section {
+    padding-bottom: 40px;
+  }
+
+}

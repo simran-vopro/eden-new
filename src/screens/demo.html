@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image with Stripes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0fafd;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .image-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #2a83c8;
+      background-color: white;
+      flex-shrink: 0;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stripes {
+      position: absolute;
+      bottom: 0;
+      left: 100px; /* overlap under image */
+      right: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 10px;
+      height: 180px;
+      padding-left: 120px; /* push lines past image */
+    }
+
+    .stripe {
+      height: 14px;
+      border-radius: 7px;
+    }
+
+    .stripe:nth-child(1) { background: #6ec1d9; }
+    .stripe:nth-child(2) { background: #c3e6f2; }
+    .stripe:nth-child(3) { background: #b2e0ea; }
+    .stripe:nth-child(4) { background: #e4f5f9; }
+    .stripe:nth-child(5) { background: #c6f5a3; }
+    .stripe:nth-child(6) { background: #b2e0ea; }
+    .stripe:nth-child(7) { background: #6ec1d9; }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stripes {
+        position: relative;
+        padding-left: 0;
+        left: 0;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .image-wrapper {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="image-wrapper">
+      <img src="https://via.placeholder.com/300x300.png?text=Profile" alt="Profile" />
+    </div>
+    <div class="stripes">
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+    </div>
+  </div>
+
+</body>
+</html>

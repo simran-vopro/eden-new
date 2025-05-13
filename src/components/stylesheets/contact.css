@@ -1,0 +1,550 @@
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../../assets/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url("../../assets/fonts/Lato-Bold.ttf");
+}
+
+:root {
+  --primary: #2f98d0;
+  /* Blue */
+  --primary2: #47ade3;
+  --secondary: #8dc74b;
+  /* Green */
+  --success: #4caf50;
+  /* Green */
+  --danger: #f44336;
+  /* Red */
+  --warning: #ffc107;
+  /* Amber */
+  --info: #00bcd4;
+  /* Cyan */
+  --light: #f8f9fa;
+  /* Light gray */
+  --dark: #343a40;
+  /* Dark gray */
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #6c757d;
+  --background: #f5f5f5;
+  --textColor: #828282;
+  --titleColor: #354158;
+}
+
+.btn-back {
+  height: 40px;
+  width: 40px;
+  box-shadow: none;
+  border-radius: 50%;
+  background-color: var(--primary2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  top: 25px;
+  position: absolute;
+}
+
+.contact-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-blur {
+  background-color: rgb(234 234 234 / 81%);
+  backdrop-filter: blur(13px) !important;
+  padding: 10px;
+}
+
+.model-header-title-width {
+  width: 60%;
+}
+
+.image-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.image-checkbox-label input {
+  display: none;
+  /* hide the native checkbox */
+}
+
+.checkbox-image {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  background-color: white;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+
+.checkbox-image.checked {
+  background-image: url("../../assets/insights/check.png");
+  background-color: #fff0;
+  border-color: #fff0;
+}
+
+.form-height-modal {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.text-vertical-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  width: 0;
+}
+
+.text-vertical-box img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.vertical-text {
+  white-space: nowrap;
+  margin-top: 1rem;
+}
+
+.contact-backdrop .form-height-modal .connect .box-title {
+  margin-bottom: 0 !important;
+}
+
+.contact-backdrop .form-height-modal .connect .long-content {
+  font-size: 0.8vw;
+  color: var(--titleColor);
+}
+
+.contact-time-text {
+  color: var(--textColor);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Removes outer border and makes it full width */
+.custom-datepicker {
+  border: none !important;
+  width: 100% !important;
+  height: 90%;
+  background-color: transparent !important;
+}
+
+.custom-datepicker .react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 2.5vw !important;
+  height: 2.5vw;
+  line-height: 2.7vw !important;
+}
+
+.custom-datepicker .react-datepicker__navigation--previous {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  left: 0 !important;
+}
+
+
+.custom-datepicker .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+  right: 0 !important;
+}
+
+.custom-datepicker .react-datepicker__navigation--next {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.custom-datepicker .react-datepicker__navigation-icon {
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* Optional: remove box-shadow */
+.custom-datepicker .react-datepicker {
+  box-shadow: none;
+}
+
+/* Remove background from calendar header */
+.custom-datepicker .react-datepicker__header {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* Optional: adjust padding or font if needed */
+.custom-datepicker .react-datepicker__current-month,
+.custom-datepicker .react-datepicker-time__header {
+  font-weight: 600;
+  color: #000;
+  padding-bottom: 10px;
+}
+
+/* Style each time slot */
+.custom-datepicker .react-datepicker__time-list-item {
+  border: 1px solid #0d6efd;
+  /* Bootstrap primary blue */
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: #0d6efd;
+  margin-bottom: 4px;
+  transition: background-color 0.2s ease;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  width: 130px !important;
+  margin-bottom: 5px !important;
+  height: 30px !important;
+}
+
+/* Highlight selected time slot */
+.custom-datepicker .react-datepicker__time-list-item--selected {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+/* Optional: on hover */
+.custom-datepicker .react-datepicker__time-list-item:hover {
+  background-color: #f0f8ff;
+}
+
+.custom-datepicker .react-datepicker__time-container {
+  border: none !important;
+  width: 40% !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+
+.custom-datepicker .react-datepicker__month-container {
+  height: 100%;
+  width: 60%;
+}
+
+.custom-datepicker .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide all time slots outside of the 10:00 AM - 4:00 PM range */
+
+.custom-datepicker .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+  height: 45px !important;
+  padding: 5px 21px;
+  width: 90% !important;
+  margin-bottom: 10px !important;
+}
+
+.custom-datepicker .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {
+  display: none !important;
+}
+
+.custom-datepicker .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+  height: 100% !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-datepicker .react-datepicker__time-container .react-datepicker__time {
+  background-color: transparent !important;
+  height: 90%;
+  width: 100%;
+}
+
+#contact-selected-slot-details .contact-time-text {
+  font-weight: 500;
+  color: #000;
+}
+
+#contact-selected-slot-details .long-content {
+  font-size: 0.7rem;
+}
+
+.clockIcon,
+.calendarIcon,
+.globalIcon,
+.videoIcon {
+  font-size: 1vw;
+}
+
+.form-check-input {
+  accent-color: #0d6efd;
+  /* Bootstrap primary blue */
+}
+
+textarea.form-control {
+  resize: vertical;
+  border-radius: 8px;
+}
+
+.success-messege {
+  width: 60%;
+}
+
+.newsletter {
+  width: 40%;
+
+  border: 1px solid var(--primary);
+  border-radius: 30px;
+}
+
+.newsletter input {
+  border: none;
+  background-color: transparent;
+}
+
+.newsletterIcon {
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  cursor: pointer;
+  position: absolute;
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  #contact-selected-slot-details .contact-time-text {
+    font-size: 0.8rem;
+  }
+
+  .contact-backdrop .form-label,
+  .contact-backdrop .form-control,
+  .contact-backdrop .form-check-label {
+    font-size: 0.8rem;
+  }
+
+  .input-box {
+    margin-top: 10px !important;
+  }
+
+  .image-checkbox-label {
+    gap: 10px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .checkbox-image {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #555;
+  }
+
+
+  .modal-body {
+    padding: 0 !important;
+  }
+
+  .custom-datepicker .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+  .custom-datepicker .react-datepicker__month-container {
+    width: 67% !important;
+  }
+
+  .custom-datepicker .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    width: 2.5vw !important;
+    line-height: 3vw !important;
+  }
+
+  .contact-time-text {
+    font-size: 1vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .modal-dialog.modal-dialog-centered.modal-fullscreen {
+    width: 100% !important;
+  }
+
+  .contact-backdrop .form-height-modal .connect .long-content {
+    font-size: 1.3vw !important;
+  }
+
+  .contact-backdrop .form-height-modal .connect .box-title {
+    font-size: 2vw;
+  }
+
+  .contact-backdrop .modal-fullscreen .modal-body {
+    padding: 0;
+  }
+
+  .contact-backdrop label.form-label.text-dark {
+    font-size: 1.2vw;
+  }
+
+  .contact-backdrop .form-control {
+    font-size: 0.7rem;
+  }
+
+  .contact-backdrop span.form-check-label {
+    font-size: 0.7rem;
+  }
+
+  .clockIcon,
+  .calendarIcon,
+  .globalIcon,
+  .videoIcon {
+    /* width: 1vw; */
+    /* height: 1vw; */
+    font-size: 2vw;
+  }
+
+  .custom-datepicker .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+    right: 3vw !important;
+  }
+
+  .custom-datepicker .react-datepicker__navigation--previous {
+    left: 3vw !important;
+  }
+
+  .custom-datepicker .react-datepicker__month-container {
+    width: 100% !important;
+  }
+
+  .custom-datepicker .react-datepicker__time-container {
+    width: 100% !important;
+  }
+
+  .contact-time-text {
+    font-size: 1.1vw;
+  }
+
+  .calendarIcon {
+    font-size: 25px;
+  }
+
+  .text-vertical-box {
+    justify-content: start;
+  }
+
+  .image-checkbox-label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .form-height-modal {
+    padding-bottom: 10px;
+  }
+
+  .contact-backdrop .modal-fullscreen {
+    width: 100% !important;
+    padding: 10px;
+  }
+
+  .contact-backdrop .modal-fullscreen .top-title {
+    font-size: 6vw;
+    margin: 0;
+  }
+
+  .model-header-title-width {
+    width: 100%;
+  }
+
+  .contact-backdrop .modal-fullscreen .modal-body {
+    padding: 0;
+  }
+
+  .image-checkbox-label {
+    font-size: 0.8rem;
+    padding: 0.7rem 0rem;
+  }
+
+  .checkbox-image {
+    width: 20px;
+    height: 20px;
+  }
+
+  .text-vertical-box {
+    transform: rotate(0deg);
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .text-vertical-box img {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+  }
+
+  .vertical-text {
+    margin: 0;
+  }
+
+  .clockIcon,
+  .globalIcon,
+  .videoIcon {
+    width: 5vw;
+    height: 6vw;
+  }
+
+  .calendarIcon {
+    width: 5vw;
+    height: 6vw;
+  }
+
+  .contact-backdrop .form-height-modal .connect .long-content {
+    font-size: 3.8vw;
+  }
+
+  .custom-datepicker .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    width: 9vw !important;
+    line-height: 7.7vw !important;
+  }
+
+  .custom-datepicker .react-datepicker__month-container {
+    width: 100% !important;
+  }
+
+  .custom-datepicker .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+    right: 3vw !important;
+  }
+
+  .custom-datepicker .react-datepicker__time-container {
+    border: none !important;
+    width: 100% !important;
+  }
+
+  .success-messege {
+    width: 100%;
+    margin-bottom: 4vw;
+  }
+
+  svg.videoIcon2 {
+    font-size: 6vw;
+  }
+
+  .contact-time-text {
+    font-size: 3vw;
+  }
+}

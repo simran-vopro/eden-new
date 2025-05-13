@@ -1,0 +1,200 @@
+     <section id="services" ref={slider} className="block--spc">
+
+        <div className="container">
+          <div className="row justify-content-between align-items-center">
+
+            <div className="col-md-4">
+              <div id="services-header">
+                <p className="text-muted text-start">
+                  Smart Energy Solutions for Businesses
+                </p>
+
+                <h1 className="text-start">
+                  We’re transforming the way businesses engage with energy. Our <b>Energy Management</b> and <b>Net Zero service</b> are supporting businesses to save time, money, and carbon.
+                </h1>
+              </div>
+            </div>
+            <div className="col-md-8">
+              <Accordion defaultActiveKey="0" flush>
+                {data.map((service, index) => (
+                  <Accordion.Item eventKey={index.toString()} key={service.id}>
+                    <Accordion.Header>{service.title}</Accordion.Header>
+                    <Accordion.Body>{service.content}</Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+
+
+
+      {/* 
+      <section id="hero-blog" className="img-fluid">
+        <div className="top-curve">
+          <svg
+            viewBox="0 0 1440 1200"
+            xmlns="http://www.w3.org/2000/svg"
+            className="top-curve-svg"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill="white"
+              d="M0, 50 C500, 1000 1000, 300 1440, 1200 L1440, 0 L0, 0 Z"
+            />
+          </svg>
+
+          <div className="px-md-5 d-flex flex-column justify-content-center align-items-end h-70vh m-5">
+            <div id="edenText" className="text-center text-md-end p-0">
+              <h1 className="edenText-title">
+                <span className="w-wrapper">
+                  <span className="w-letter">W</span>e{" "}
+                  <span className="a-wrapper">
+                    <span className="a-letter">a</span>re
+                  </span>
+                  <span className="eden-highlight">
+                    <span className="d-wrapper">
+                      {" "}
+                      E<span className="d-letter">d</span>en.
+                    </span>
+                  </span>
+                </span>
+              </h1>
+              <p className="edenText-subtext me-4">
+                LOWER COST - MORE EFFICIENT - BETTER INFORMED
+              </p>
+            </div>
+            <div className="me-4 mt-3 btn-hero">
+              <Btn onClick={openContactModal} rightIcon>Talk to an Expert</Btn>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-insight">
+          <div id="about-title">
+            EXPLORE THE<br></br>
+            EXPERT INSIGHTS
+          </div>
+          <p className="long-content mb-4 mb-md-3">PROTECTING FUTURE..</p>
+
+          <img className="img-fluid tree-insight" src={images.tree_insight} />
+          <div id="swiper-insights">
+            <Swiper
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              pagination={{ clickable: true }}
+              modules={[Pagination, Autoplay]}
+              className="mySwiper"
+            >
+              {blogPosts?.map((item) => {
+                return (
+                  <SwiperSlide
+                    className="hero-insights-content p-4 p-md-2"
+                    key={item.id}
+                  >
+                    <div className="box-content">
+                      <h3 className={"box-title"}>{item.title}</h3>
+                      <p className="long-content">{item.content}</p>
+                      <Link to="" className="read-more-link">
+                        Read More...
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </div>
+      </section> */}
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className="container-fluid px-3 px-sm-4 px-md-5 py-4 py-md-5">
+        <div className="row g-4">
+          {/* Left Side Image */}
+          <div className="col-md-4 mb-3 mb-md-0">
+            <img
+              src={images.blog_single}
+              alt="Take Action"
+              className="img-fluid rounded w-100"
+            />
+          </div>
+
+          {/* Right Side Content */}
+          <div className="col-md-8 px-2 px-lg-5 px-sm-3 py-2 py-sm-3 px-md-2 d-flex flex-column justify-content-between right-side-content">
+            <div>
+              {/* Main Title */}
+              <h1 className="fw-bold text-uppercase mb-4 mb-lg-5 mb-md-3 fs-1 fs-md-2 fs-lg-1">
+                TAKE ACTION FOR A SUSTAINABLE TOMORROW
+              </h1>
+
+              {/* Grid of 4 Points */}
+              <div className="row g-md-4 g-lg-5 g-md-3">
+                {/* Point 1 */}
+                <div className="col-sm-12 col-md-6">
+                  <h5 className="fw-bold text-secondary">Pollution of Soil</h5>
+                  <p className="text-muted small">
+                    Waste can leak hazardous chemicals into the soil and from
+                    there into our food.
+                  </p>
+                </div>
+
+                {/* Point 2 */}
+                <div className="col-sm-12 col-md-6">
+                  <h5 className="fw-bold text-secondary">
+                    Water Contamination
+                  </h5>
+                  <p className="text-muted small">
+                    Dumped waste materials often seep into water bodies, harming
+                    marine life and ecosystems.
+                  </p>
+                </div>
+
+                {/* Point 3 */}
+                <div className="col-sm-12 col-md-6">
+                  <h5 className="fw-bold text-secondary">
+                    Air Quality Degradation
+                  </h5>
+                  <p className="text-muted small">
+                    Burning of waste releases harmful pollutants that degrade
+                    air quality and public health.
+                  </p>
+                </div>
+
+                {/* Point 4 */}
+                <div className="col-sm-12 col-md-6">
+                  <h5 className="fw-bold text-secondary">Wildlife Threats</h5>
+                  <p className="text-muted small">
+                    Improper waste management disrupts wildlife habitats,
+                    leading to biodiversity loss.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Button */}
+            <div className="mt-4 d-flex flex-wrap align-items-center gap-2">
+              <Btn rightIcon onClick={openContactModal}>
+                Talk to an Expert
+              </Btn>
+            </div>
+          </div>
+        </div>
+      </div>

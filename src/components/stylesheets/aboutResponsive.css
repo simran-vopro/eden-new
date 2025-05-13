@@ -1,0 +1,328 @@
+/* Small Mobile (up to iPhone SE) */
+@media (max-width: 480px) {
+
+  .title-breadcrump {
+    text-transform: none;
+    font-size: 3rem;
+  }
+
+  .hero-overlay {
+    height: 65vh;
+  }
+
+  .written-img img {
+    width: 100%;
+  }
+
+  .lines-img {
+    position: absolute !important;
+    top: 0;
+    opacity: 0.2;
+  }
+
+  .lines-img img {
+    position: absolute;
+    right: 0;
+    height: 65vh;
+  }
+
+  /* about */
+
+  #about-page-content .title {
+    font-size: 25px;
+  }
+
+  #about-page-content .founder {
+    width: 100%;
+    height: auto;
+  }
+
+  #about-page-content .person-info .name,
+  .person-info-round .name {
+    font-size: 5vw;
+  }
+}
+
+/* Mobile Landscape / Larger Phones */
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+  .hero-overlay {
+    height: 65vh;
+  }
+
+  .written-img img {
+    width: 90%;
+  }
+
+  .lines-img {
+    position: absolute !important;
+    top: 0;
+    opacity: 0.2;
+  }
+
+  .lines-img img {
+    position: absolute;
+    right: 0;
+    height: 65vh;
+  }
+}
+
+/* Small Tablets / Large Phones (Portrait) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+  .lines-img img {
+    height: 60vh;
+  }
+
+  .hero-overlay {
+    height: 60vh;
+  }
+
+  .written-img img {
+    width: 100%;
+  }
+}
+
+/* Large Tablets (Landscape) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* new about css */
+
+  #hero-about {
+    padding: 0 0 0 0rem;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #partnership,
+  #csr {
+    height: 550px;
+  }
+
+  #partnership .circle {
+    width: 59%;
+    height: 700px;
+  }
+
+  .fs-4 {
+    font-size: 1.1rem !important;
+  }
+
+  .fs-1 {
+    font-size: 1.7rem !important;
+  }
+
+  .fs-3 {
+    font-size: 1.4rem !important;
+  }
+
+  .image-wrapper {
+    width: 150px;
+    height: 190px;
+  }
+
+  .stripes {
+    position: absolute;
+    top: -10px;
+  }
+
+  .stripe {
+    height: 12px;
+  }
+
+  #csr .circle {
+    width: 55.5%;
+    height: 700px;
+  }
+
+
+  #csr .content-width {
+    width: 47%;
+    margin-left: 1vw;
+  }
+
+
+  .services {
+    gap: 10px;
+  }
+
+  .service-item p {
+    font-size: 9px;
+  }
+
+  #partnership .content-width {
+    width: 50%;
+  }
+
+  .service-img {
+    height: 80px;
+    width: 80px;
+  }
+
+
+  #why-us {
+    padding: 5rem 0rem 5rem;
+  }
+}
+
+/* Small Desktop */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  /* new about css */
+
+  #hero-about {
+    padding: 0 0 0 0rem;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #partnership,
+  #csr {
+    height: 600px;
+  }
+
+  #partnership .circle {
+    width: 55%;
+    height: 800px;
+  }
+
+  .fs-4 {
+    font-size: 1.1rem !important;
+  }
+
+  .fs-1 {
+    font-size: 1.7rem !important;
+  }
+
+  .fs-3 {
+    font-size: 1.4rem !important;
+  }
+
+  .image-wrapper {
+    width: 150px;
+    height: 190px;
+  }
+
+  .stripes {
+    position: absolute;
+    top: -10px;
+  }
+
+  .stripe {
+    height: 12px;
+  }
+
+  #csr .circle {
+    width: 59.5%;
+    height: 770px;
+  }
+
+
+  #csr .content-width {
+    width: 47%;
+    margin-left: 1vw;
+
+  }
+
+
+  .services {
+    gap: 10px;
+  }
+
+  .service-item p {
+    font-size: 9px;
+  }
+
+  .service-img {
+    height: 80px;
+    width: 80px;
+  }
+
+
+  #why-us {
+    padding: 5rem 0rem 5rem;
+  }
+}
+
+/* Standard Desktop */
+@media (min-width: 1441px) and (max-width: 1600px) {
+
+  #hero-about {
+    padding: 0 0 0 0rem;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #partnership,
+  #csr {
+    height: 600px;
+  }
+
+  #partnership .circle {
+    width: 55%;
+    height: 800px;
+  }
+
+  .fs-4 {
+    font-size: 1.1rem !important;
+  }
+
+  .fs-1 {
+    font-size: 1.7rem !important;
+  }
+
+  .fs-3 {
+    font-size: 1.4rem !important;
+  }
+
+  .image-wrapper {
+    width: 150px;
+    height: 190px;
+  }
+
+  .stripes {
+    position: absolute;
+    top: -10px;
+  }
+
+  .stripe {
+    height: 12px;
+  }
+
+  #csr .circle {
+    width: 59.5%;
+    height: 800px;
+  }
+
+
+  #csr .content-width {
+    width: 47%;
+    margin-left: 1vw;
+
+  }
+
+
+  .services {
+    gap: 10px;
+  }
+
+  .service-item p {
+    font-size: 9px;
+  }
+
+  .service-img {
+    height: 80px;
+    width: 80px;
+  }
+
+
+  #why-us {
+    padding: 5rem 0rem 5rem;
+  }
+}
