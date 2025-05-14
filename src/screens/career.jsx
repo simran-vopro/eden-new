@@ -81,10 +81,12 @@ const Career = () => {
 
       <div className="header-bottom-space"></div>
 
-      <div className="mt-2 mt-md-5">
+      <div className="mt-2 mt-md-5 d-flex flex-column justify-content-center align-items-center">
         <p className="green-text fs-5 text-center">WORKS FOR US</p>
         <h1 className="fw-bold text-center text-normal mb-4 title-breadcrump">Join a Team That’s<br></br>
           Built to Make a<br></br> Difference</h1>
+
+        <img src={images.bottom_line} alt="bottom_line" className="img-fluid bottom-line" />
       </div>
 
 

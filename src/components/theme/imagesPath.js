@@ -117,9 +117,11 @@ import career1 from "../../assets/career/1.png";
 import career2 from "../../assets/career/5.png";
 import star1 from "../../assets/career/8.png";
 import star2 from "../../assets/career/7.png";
+import bottom_line from "../../assets/career/line.png";
 
 
 const images = {
+  bottom_line,
   career1,
   career2,
   star1,
