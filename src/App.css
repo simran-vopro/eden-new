@@ -777,6 +777,7 @@ a {
   top: -15px;
   left: -2rem;
   z-index: -1;
+  width: 25px;
 }
 
 .viewBottom {
@@ -784,6 +785,7 @@ a {
   bottom: 0;
   right: 0;
   z-index: -1;
+  width: 25px;
 }
 
 #infinity-logo-transparent-about {
