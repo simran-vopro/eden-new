@@ -41,16 +41,19 @@
 
 
 #insights-header {
-  /* position: absolute;
-  right: 0;
-  top: 0; */
   padding: 1rem 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: fixed;
+  z-index: 1025;
+  width: 100%;
+  background: #ffffff;
+  top: 0;
 }
-#insights .container-fluid{
+
+#insights .container-fluid {
   padding: 3rem 5rem !important;
 }
 
@@ -74,7 +77,8 @@
 }
 
 .tag-date-style {
-  font-size: 1rem; /* Optional: make small */
+  font-size: 1rem;
+  /* Optional: make small */
   font-weight: 500;
 }
 
@@ -230,11 +234,9 @@
 }
 
 #swiper-insights {
-  background: linear-gradient(
-    86.2deg,
-    var(--primary) 8.59%,
-    var(--primary2) 89.8%
-  );
+  background: linear-gradient(86.2deg,
+      var(--primary) 8.59%,
+      var(--primary2) 89.8%);
   border-radius: 20px;
   position: relative;
   z-index: 1;
@@ -899,9 +901,8 @@
 .contact-button-section .webBtn {
   height: 50px;
 }
+
 .contact-button-section .webBtn:hover {
   background-color: #fff !important;
   box-shadow: none;
 }
-
-

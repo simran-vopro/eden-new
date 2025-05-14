@@ -774,16 +774,16 @@ a {
 
 .view {
   position: absolute;
-  top: -15px;
-  left: -2rem;
+  top: -8px;
+  left: -31px;
   z-index: -1;
   width: 25px;
 }
 
 .viewBottom {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 7px;
+  right: 3px;
   z-index: -1;
   width: 25px;
 }
@@ -1504,3 +1504,6 @@ img.dotted {
   width: 35%;
 }
 
+.header-bottom-space {
+  height: 10vh;
+}

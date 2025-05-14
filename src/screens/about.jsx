@@ -96,6 +96,8 @@ const About = () => {
       </div>
       <div className="hero-overlay"></div>
 
+      <div className="header-bottom-space"></div>
+
       <section id="hero-about" className="container-fluid">
         <div className="row hero-about-text">
           <div className="col-md-5 pe-md-0">

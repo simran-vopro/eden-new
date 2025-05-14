@@ -78,6 +78,9 @@ const Career = () => {
         <Header navItemStyle={{ color: "#000" }} />
       </div>
 
+
+      <div className="header-bottom-space"></div>
+
       <div className="mt-2 mt-md-5">
         <p className="green-text fs-5 text-center">WORKS FOR US</p>
         <h1 className="fw-bold text-center text-normal mb-4 title-breadcrump">Join a Team That’s<br></br>

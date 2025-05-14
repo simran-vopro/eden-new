@@ -426,6 +426,8 @@ const InsightsDetails = () => {
         <Header navItemStyle={{ color: "#000" }} />
       </div>
 
+      <div className="header-bottom-space"></div>
+
       <div className="container-fluid p-md-5">
         <div className="row py-2 py-md-5">
           {/* Left Side - Single Blog Detail */}

@@ -28,6 +28,8 @@ const HowItWorks = () => {
                 <Header navItemStyle={{ color: "#000" }} />
             </div>
 
+
+            <div className="header-bottom-space"></div>
             <section className="hero-section d-flex justify-content-center align-items-center" id="section_1">
                 <div class="container">
                     <div class="row">

@@ -12,7 +12,6 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import LandingPage from "./screens/landing";
 import Insights from "./screens/insights";
 import { ModalProvider, useModal } from "./components/pages/ModalContext";
 import ContactModal from "./screens/ContactModal";
@@ -22,7 +21,6 @@ import InsightsDetails from "./screens/insights-details";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import LandingPage2 from "./screens/landing-2";
 import Career from "./screens/career";
-import About2 from "./screens/about2";
 
 
 // const ScrollManager = ({ children }) => {
@@ -162,13 +160,13 @@ const App = () => {
           <RouteTransition />
           <Routes>
             <Route path="/" element={<LandingPage2 />} />
+
+            
             <Route path="/insights" element={<Insights />} />
             <Route path="/about" element={<About />} />
-            <Route path="/about-new" element={<About2 />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/work-for-us" element={<Career />} />
             <Route path="/insight-details" element={<InsightsDetails />} />
-            <Route path="/landing-2" element={<LandingPage2 />} />
           </Routes>
         </Router>
 

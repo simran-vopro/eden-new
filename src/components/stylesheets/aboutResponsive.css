@@ -88,10 +88,10 @@
 /* Large Tablets (Landscape) */
 @media (min-width: 992px) and (max-width: 1200px) {
   /* new about css */
-
+/* 
   #hero-about {
     padding: 0 0 0 0rem;
-  }
+  } */
 
   p {
     font-size: 12px;
@@ -137,12 +137,12 @@
     width: 55.5%;
     height: 700px;
   }
-
+/* 
 
   #csr .content-width {
     width: 47%;
     margin-left: 1vw;
-  }
+  } */
 
 
   .services {
@@ -162,10 +162,14 @@
     width: 80px;
   }
 
+  .clients-height {
+    bottom: -12vw;
+  }
 
+/* 
   #why-us {
     padding: 5rem 0rem 5rem;
-  }
+  } */
 }
 
 /* Small Desktop */
@@ -253,9 +257,9 @@
 /* Standard Desktop */
 @media (min-width: 1441px) and (max-width: 1600px) {
 
-  #hero-about {
+  /* #hero-about {
     padding: 0 0 0 0rem;
-  }
+  } */
 
   p {
     font-size: 12px;
@@ -303,12 +307,12 @@
   }
 
 
-  #csr .content-width {
+  /* #csr .content-width {
     width: 47%;
     margin-left: 1vw;
 
   }
-
+ */
 
   .services {
     gap: 10px;
@@ -324,7 +328,7 @@
   }
 
 
-  #why-us {
+  /* #why-us {
     padding: 5rem 0rem 5rem;
-  }
+  } */
 }

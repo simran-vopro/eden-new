@@ -595,20 +595,19 @@
     width: 70vw;
     height: 50px;
   }
-
+/* 
   #header .navItem {
     font-size: 1.2vw;
     width: 9vw;
-  }
+  } */
 
-  #header .desktop-only .active {
+  /* #header .desktop-only .active {
     width: 8.5vw;
-  }
+  } */
 
   .webBtn {
     font-size: 1.2vw;
     letter-spacing: 1px;
-    padding: 0px 1vw !important;
     height: 35px;
   }
 
