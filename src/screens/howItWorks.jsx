@@ -31,13 +31,9 @@ const HowItWorks = () => {
             <section className="hero-section d-flex justify-content-center align-items-center" id="section_1">
                 <div class="container">
                     <div class="row">
-
                         <div class="col-lg-8 col-12 mx-auto">
                             <h1 class="title text-center">How Eden Works</h1>
-
                             <h6 class="text-center">A Smarter, Simpler Journey to Utility Clarity and Control Built for Scale and Complexity </h6>
-
-
                         </div>
 
                     </div>
@@ -189,7 +185,7 @@ const HowItWorks = () => {
                 </div>
             </div>
 
-            
+
 
             <Footer />
 

@@ -88,100 +88,6 @@ const About = () => {
   const { openContactModal } = useModal();
   const navigate = useNavigate();
 
-  const featuresData = [
-    {
-      feature: "Expert-led, People-first",
-      description:
-        "We’ve curated a team of experienced professionals who genuinely know their field from energy consultants to operational support, delivering clarity, care, and consistency",
-    },
-    {
-      feature: "Sustainability at the Core",
-      description:
-        "Our approach is built around helping businesses operate more responsibly, reduce waste, and embrace long-term, practical sustainability, not just box-ticking.",
-    },
-    {
-      feature: "Smarter Energy Strategies",
-      description:
-        "We provide tailored solutions for procurement, risk management, and cost control, helping organisations stay ahead in a complex, fast-moving market.",
-    },
-    {
-      feature: "Independent and Transparent",
-      description:
-        "We act in your best interests, not the suppliers’. Our advice is unbiased, our reporting is clear, and our audits are rigorous.",
-    },
-    {
-      feature: "Carbon-Aware and Future-Ready",
-      description:
-        "Whether you’re just starting your carbon journey or working towards net zero, we help map, measure, and manage your environmental impact with purpose and accuracy.",
-    },
-    {
-      feature: "Flexible Support That Fits You",
-      description:
-        "From multi-site corporates to growing organisations, we scale our services to suit your needs. We are offering the right level of insight, support, and strategy at every stage.",
-    },
-  ];
-
-  // 1. Refs to each portrait box
-  const boxRefs = useRef([]);
-  // 2. Timelines per box
-  const timelines = useRef([]);
-
-  useEffect(() => {
-    boxRefs.current.forEach((box, i) => {
-      // start every box hidden + shifted down
-      gsap.set(box, { opacity: 0, y: 20, pointerEvents: "none" });
-      // build the show-then-hide timeline
-      timelines.current[i] = gsap.timeline({ paused: true }).to(box, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        ease: "power3.out",
-        pointerEvents: "auto",
-      });
-    });
-    // cleanup if unmount
-    return () => timelines.current.forEach((tl) => tl.kill());
-  }, []);
-
-  const handleHoverIn = (i) => {
-    timelines.current[i].play();
-  };
-
-  const handleHoverOut = (i) => {
-    timelines.current[i].reverse();
-  };
-
-  const animateSlideUpOnScroll = (triggerElement) => {
-    const elements = triggerElement.querySelectorAll(".slide-up-text");
-
-    elements.forEach((el, i) => {
-      gsap.fromTo(
-        el,
-        { y: "100%", opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          delay: i * 0.2,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            toggleActions: "play none none reverse", // optional reverse
-          },
-        }
-      );
-    });
-  };
-
-  useGSAP(() => {
-    const sections = document.querySelectorAll(".section-with-animations");
-
-    sections.forEach((section) => {
-      animateSlideUpOnScroll(section);
-    });
-  }, []);
-
   return (
     <div id="aboutPage">
       <div id="insights-header">
@@ -191,7 +97,7 @@ const About = () => {
       <div className="hero-overlay"></div>
 
       <section id="hero-about" className="container-fluid">
-        <div className="row hero-about-text ps-2 ps-md-5">
+        <div className="row hero-about-text">
           <div className="col-md-5 pe-md-0">
             <div className="mt-2 mt-md-5">
               <h1 className="fw-bold text-capitalize mb-4 title-breadcrump">About us...</h1>
@@ -218,8 +124,8 @@ const About = () => {
                   <div>
                     <div className="d-flex align-items-center">
                       <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 5.5V17.5M14 9C14 7.62 12.657 6.5 11 6.5C9.343 6.5 8 7.62 8 9C8 10.38 9.343 11.5 11 11.5C12.657 11.5 14 12.62 14 14C14 15.38 12.657 16.5 11 16.5C9.343 16.5 8 15.38 8 14" stroke="#2F98D0" strokeWidth="1.5" stroke-linecap="round" />
-                        <path d="M6 2.40491C7.51945 1.48167 9.24448 0.996975 11 1.00001C16.523 1.00001 21 5.70086 21 11.5C21 17.2992 16.523 22 11 22C5.477 22 1 17.2992 1 11.5C1 9.58796 1.487 7.79351 2.338 6.25001" stroke="#2F98D0" strokeWidth="1.5" stroke-linecap="round" />
+                        <path d="M11 5.5V17.5M14 9C14 7.62 12.657 6.5 11 6.5C9.343 6.5 8 7.62 8 9C8 10.38 9.343 11.5 11 11.5C12.657 11.5 14 12.62 14 14C14 15.38 12.657 16.5 11 16.5C9.343 16.5 8 15.38 8 14" stroke="#2F98D0" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M6 2.40491C7.51945 1.48167 9.24448 0.996975 11 1.00001C16.523 1.00001 21 5.70086 21 11.5C21 17.2992 16.523 22 11 22C5.477 22 1 17.2992 1 11.5C1 9.58796 1.487 7.79351 2.338 6.25001" stroke="#2F98D0" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                       <p className="green-text fs-4 mb-0 ps-2">Get the best deal</p>
                     </div>
@@ -234,7 +140,7 @@ const About = () => {
                   <div>
                     <div className="d-flex align-items-center">
                       <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.417 13.7132C22.368 8.70316 21.301 3.73516 18.463 1.99416C15.781 0.34916 13.44 1.01216 12.034 2.06816L11 2.84216M18.417 13.7132C17.469 14.9162 16.232 16.1202 14.66 17.2832C13.115 18.4282 12.342 19.0002 11 19.0002C9.65798 19.0002 8.88598 18.4282 7.33998 17.2832C-0.778019 11.2752 0.0179811 4.15316 3.53698 1.99416C6.21898 0.34916 8.55998 1.01216 9.96598 2.06816L11 2.84216M18.417 13.7132L12.892 7.44516C12.7823 7.32114 12.6322 7.24002 12.4683 7.21622C12.3044 7.19242 12.1374 7.22748 11.997 7.31516L9.81098 8.68116C9.38229 8.95236 8.86534 9.04728 8.36827 8.94604C7.87121 8.8448 7.43255 8.55526 7.14408 8.138C6.85562 7.72074 6.73969 7.20808 6.82056 6.7073C6.90143 6.20652 7.17283 5.75641 7.57798 5.45116L11 2.84216" stroke="#2F98D0" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M18.417 13.7132C22.368 8.70316 21.301 3.73516 18.463 1.99416C15.781 0.34916 13.44 1.01216 12.034 2.06816L11 2.84216M18.417 13.7132C17.469 14.9162 16.232 16.1202 14.66 17.2832C13.115 18.4282 12.342 19.0002 11 19.0002C9.65798 19.0002 8.88598 18.4282 7.33998 17.2832C-0.778019 11.2752 0.0179811 4.15316 3.53698 1.99416C6.21898 0.34916 8.55998 1.01216 9.96598 2.06816L11 2.84216M18.417 13.7132L12.892 7.44516C12.7823 7.32114 12.6322 7.24002 12.4683 7.21622C12.3044 7.19242 12.1374 7.22748 11.997 7.31516L9.81098 8.68116C9.38229 8.95236 8.86534 9.04728 8.36827 8.94604C7.87121 8.8448 7.43255 8.55526 7.14408 8.138C6.85562 7.72074 6.73969 7.20808 6.82056 6.7073C6.90143 6.20652 7.17283 5.75641 7.57798 5.45116L11 2.84216" stroke="#2F98D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                       <p className="green-text fs-4 mb-0 ps-2">Get the best service</p>
                     </div>
@@ -257,32 +163,33 @@ const About = () => {
                 </div>
                 <div className="col-md-4">
                   <div className="team-outer-wrapper">
-                    <div class="image-wrapper circle-img-green">
-                      <img src={images.profile2} alt="Profile" />
+                    <div className="image-wrapper circle-img-green">
+                      <img src={images.profile1} alt="Profile" />
                     </div>
-                    <p className="name">Emma</p>
-                    <p className="designation">CMO</p>
+                    <p className="name">Mike</p>
+                    <p className="designation">SENIOR ANALYTICS</p>
                   </div>
                 </div>
 
                 <div className="col-md-7 about-line-wrapper p-0">
-                  <div class="wrapper">
+                  <div className="wrapper">
                     <div className="team-outer-wrapper">
-                      <div class="image-wrapper">
+                      <div className="image-wrapper">
                         <img src={images.profile2} alt="Profile" />
                       </div>
-                      <p className="name">Mike</p>
-                      <p className="designation">SENIOR ANALYTICS</p>
+                      <p className="name">Emma</p>
+                      <p className="designation">CMO</p>
+
                     </div>
 
-                    <div class="stripes">
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
+                    <div className="stripes">
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
                     </div>
                   </div>
                 </div>
@@ -295,32 +202,32 @@ const About = () => {
                 </div>
                 <div className="col-md-4">
                   <div className="team-outer-wrapper">
-                    <div class="image-wrapper">
-                      <img src={images.profile2} alt="Profile" />
+                    <div className="image-wrapper">
+                      <img src={images.profile3} alt="Profile" />
                     </div>
-                    <p className="name">Emma</p>
-                    <p className="designation">CMO</p>
+                    <p className="name">Taniya</p>
+                    <p className="designation">CS HEAD</p>
                   </div>
                 </div>
 
                 <div className="col-md-5 about-line-wrapper p-0">
-                  <div class="wrapper">
+                  <div className="wrapper">
 
                     <div className="team-outer-wrapper">
-                      <div class="image-wrapper circle-img-green">
-                        <img src={images.profile2} alt="Profile" />
+                      <div className="image-wrapper circle-img-green">
+                        <img src={images.profile4} alt="Profile" />
                       </div>
-                      <p className="name">Mike</p>
-                      <p className="designation">SENIOR ANALYTICS</p>
+                      <p className="name">Andrew</p>
+                      <p className="designation">SENIOR CRM</p>
                     </div>
-                    <div class="stripes">
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
-                      <div class="stripe"></div>
+                    <div className="stripes">
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
+                      <div className="stripe"></div>
                     </div>
                   </div>
 
@@ -337,8 +244,8 @@ const About = () => {
       </section>
 
       <section id="why-us" className="container-fluid">
-        <div className="row hero-about-text px-2 px-md-5">
-          <div className="col-md-6 pe-md-5">
+        <div className="row hero-about-text">
+          <div className="col-md-6 ps-0 pe-md-5">
             <img src={images.civil} className="img-fluid rounded" alt="civil" />
           </div>
           <div className="col-md-6 ps-5">
@@ -370,39 +277,43 @@ const About = () => {
           <div className="about-services">
 
             <div className="services d-flex align-items-center justify-content-between mt-3">
-              <div className="service-item">
-
+              <div onClick={() => openContactModal({ service: "Eden Optimisation", step: 1 })} className="service-item">
                 <div className="service-img">
                   <img src={images.s1} alt="" className="img-fluid" />
                 </div>
-
                 <p>Eden optimisation</p>
               </div>
-              <div className="service-item">
+
+
+              <div onClick={() => openContactModal({ service: "Eden Strategy", step: 1 })} className="service-item">
                 <div className="service-img">
                   <img src={images.s2} alt="" className="img-fluid" />
                 </div>
                 <p>Eden Strategy</p>
               </div>
-              <div className="service-item">
+
+              <div onClick={() => openContactModal({ service: "Eden Procurement", step: 1 })} className="service-item">
                 <div className="service-img">
                   <img src={images.s3} alt="" className="img-fluid" />
                 </div>
                 <p>Eden Procurement</p>
               </div>
-              <div className="service-item">
+
+              <div onClick={() => openContactModal({ service: "Eden Water", step: 1 })} className="service-item">
                 <div className="service-img">
                   <img src={images.s4} alt="" className="img-fluid" />
                 </div>
                 <p>Eden Water</p>
               </div>
-              <div className="service-item">
+
+              <div onClick={() => openContactModal({ service: "Eden Analytics", step: 1 })} className="service-item">
                 <div className="service-img">
                   <img src={images.s5} alt="" className="img-fluid" />
                 </div>
                 <p>Eden Analytics</p>
               </div>
-              <div className="service-item">
+
+              <div onClick={() => openContactModal({ service: "Eden Auditing", step: 1 })} className="service-item">
                 <div className="service-img">
                   <img src={images.s6} alt="" className="img-fluid" />
                 </div>
@@ -441,7 +352,13 @@ const About = () => {
         id="csr"
         className="container-fluid p-0 pt-5 section-with-animations position-relative">
 
-        <div className="clients">
+
+        <div className="clients-title clients-height">
+          <p className="green-text fs-5 mb-2 text-center">Our Clients</p>
+          <p className="dark-text title-big-medium text-lineheight text-center">Those Who Trust Us</p>
+        </div>
+
+        <div className="clients clients-height">
           <Swiper
             slidesPerView="auto"
             loop={true}
@@ -460,7 +377,7 @@ const About = () => {
               768: { slidesPerView: 3 },
               1024: { slidesPerView: 5 },
             }}
-            className="posts-swiper"
+
           >
             {brands.map((logo, index) => (
               <SwiperSlide key={index}>
@@ -472,14 +389,6 @@ const About = () => {
                     className="brand-logo"
                   />
                 </>
-                {/* <div className="post-card p-3 bg-white h-100">
-                <img src={post.image} alt={post.title} className="w-100 mb-3" />
-                <h6 className="my-3">{post.title}</h6>
-                <p className="post-description">{post.description}</p>
-                <div className="text-end">
-
-                </div>
-              </div> */}
               </SwiperSlide>
             ))}
           </Swiper>
@@ -493,7 +402,7 @@ const About = () => {
             </div>
 
             <p className="long-content text-start mb-4">
-              Eden Infinity transforms the way businesses operate by combining cutting-edge technology with streamlined efficiency. Designed to adapt to organizations of all sizes, it enhances performance, optimizes resources, and supports sustainable growth. More than just a platform, Eden Infinity empowers innovation and drives lasting impact.
+              Eden Infinity transforms the way businesses operate by combining cutting-edge technology with streamlined efficiency. Designed to adapt to organisations of all sizes, it enhances performance, optimizes resources, and supports sustainable growth. More than just a platform, Eden Infinity empowers innovation and drives lasting impact.
             </p>
 
             <div className="d-flex flex-column g-3 csr-features">
@@ -533,10 +442,7 @@ const About = () => {
         </div>
 
         <div className="circle">
-          <div className="position-absolute" style={{ zIndex: 999,bottom:"6vw",width:"80%" }}>
-            <p className="green-text fs-5 mb-2 text-center">Our Clients</p>
-            <p className="dark-text title-big-medium text-lineheight text-center">Those Who Trust Us</p>
-          </div>
+
           <svg
             stroke="#2f98d0"
             strokeWidth="20"

@@ -143,7 +143,7 @@ const Header = ({ headerStyle, navItemStyle }) => {
       </div>
 
       <div className="navBtn desktop-only">
-        <Btn padding="0 3rem" onClick={openContactModal}>Contact Us</Btn>
+        <Btn padding="10px 1.25rem" height={"auto"} onClick={openContactModal}>Contact Us</Btn>
       </div>
 
       {/* Mobile Menu Icon */}

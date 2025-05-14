@@ -471,3 +471,41 @@
   }
 
 }
+
+
+.section-bottom {
+  background-color: var(--primary);
+  border-radius: 3rem;
+  padding: 1.5rem 3rem;
+  color: #fff;
+  margin: 5rem auto;
+}
+
+
+.fs-custom-xl {
+  font-size: 8vw;
+  margin: 0;
+}
+
+
+.star {
+  width: 100px;
+  height: 100px;
+}
+
+.star1-outer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.star2-outer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.chat-section .webBtn{
+  padding:0 3rem;
+  margin-top: 2rem;
+}

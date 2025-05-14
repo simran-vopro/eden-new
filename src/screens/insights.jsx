@@ -101,7 +101,7 @@ const SideblogPostsHighlights = [
     id: 3,
     title: "Eden Utilities Empowers Businesses to Turn Waste into Electricity",
     content:
-      "Through its Eden Infinity initiative, Eden Utilities is helping organizations convert waste into electricity, thereby reducing environmental impact and promoting sustainability. Source: Eleven Sports Media.",
+      "Through its Eden Infinity initiative, Eden Utilities is helping organisations convert waste into electricity, thereby reducing environmental impact and promoting sustainability. Source: Eleven Sports Media.",
     image: images.h3,
     tag: "Sustainability",
     date: "May 2024",

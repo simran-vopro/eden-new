@@ -55,6 +55,9 @@
   justify-content: center;
   align-items: center;
 }
+.contact-backdrop .webBtn {
+ padding-right: 1rem;
+}
 
 .modal-blur {
   background-color: rgb(234 234 234 / 81%);

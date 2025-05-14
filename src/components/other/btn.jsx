@@ -13,7 +13,8 @@ const Btn = ({
   rightIconChildren,
   onMouseEnter,
   onMouseLeave,
-  disabled
+  disabled,
+  height
 }) => {
   return (
     <button
@@ -27,7 +28,8 @@ const Btn = ({
         padding: padding,
         background: background || "linear-gradient(86.2deg, #2F98D0 8.59%, #47ADE3 89.8%)",
         border: "none",
-        cursor: "pointer"
+        cursor: "pointer",
+        height: height
       }}
     >
       {children}

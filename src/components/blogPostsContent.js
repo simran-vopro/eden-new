@@ -278,7 +278,7 @@ export const blogPosts = [
 </p>
 
 <p className="card-text">
-  Eden assists businesses in aligning with these commitments by offering strategic energy procurement, infrastructure planning, sustainability integration, and risk management services. Our expertise ensures that your organization can navigate the complexities of decarbonization while maintaining operational efficiency and resilience.
+  Eden assists businesses in aligning with these commitments by offering strategic energy procurement, infrastructure planning, sustainability integration, and risk management services. Our expertise ensures that your organisation can navigate the complexities of decarbonization while maintaining operational efficiency and resilience.
 </p>
 
 <h5 className="mt-4 fw-bold">Get Ahead of the Curve — Before Demand Gets Ahead of You</h5>
@@ -411,7 +411,7 @@ export const blogPosts = [
   The UK's energy sector is subject to a complex regulatory framework, with recent updates including modifications to the Regulatory Financial Performance Reporting (RFPR) template and Regulatory Instructions and Guidance (RIGs) effective from June 28, 2024. Additionally, the Energy Savings Opportunity Scheme (ESOS) Phase 3 compliance deadline was June 5, 2024, requiring businesses to report on energy efficiency measures.
 </p>
 <p className="card-text mb-3">
-  Eden assists businesses in navigating these regulatory requirements by providing strategic energy procurement, infrastructure planning, sustainability integration, and risk management services. Our expertise ensures that your organization remains compliant with evolving regulations while optimizing energy performance and achieving sustainability goals.
+  Eden assists businesses in navigating these regulatory requirements by providing strategic energy procurement, infrastructure planning, sustainability integration, and risk management services. Our expertise ensures that your organisation remains compliant with evolving regulations while optimizing energy performance and achieving sustainability goals.
 </p>`,
     image: images.post7,
     author: "Eden Insights",

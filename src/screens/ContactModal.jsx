@@ -15,18 +15,26 @@ import { setHours, setMinutes } from "date-fns";
 import Btn from "../components/other/btn";
 
 
-const ContactModal = ({ isOpen, onClose }) => {
+const ContactModal = ({ isOpen, onClose, service, goToStep }) => {
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedService, setSelectedService] = useState("");
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    if (goToStep !== undefined && goToStep !== null && goToStep !== "") {
+      setStep(goToStep);
+    }
+    if (service !== undefined && service !== null && service !== "") {
+      setSelectedService(service);
+    }
+  }, [goToStep, service]);
+
   const [errorMsz, setErrorMsz] = useState("");
   const [loading, setLoading] = useState(false);
-
-
   const [selectedTime, setSelectedTime] = useState(false);
 
   useEffect(() => {
-    console.log("selectedDate ==> ", selectedDate);
-    console.log("selectedTime ==> ", selectedTime);
     if (selectedDate) {
       setSelectedTime(true);
     }
@@ -36,7 +44,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     if (errorMsz) {
       setTimeout(() => {
         setErrorMsz("");
-      }, 3000); // 3 seconds might be better UX
+      }, 3000);
     }
   }, [errorMsz]);
 
@@ -65,7 +73,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     "Other..",
   ];
 
-  const [step, setStep] = useState(0);
+
 
   if (!isOpen) return null;
 
@@ -115,6 +123,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
     const templateParams = {
       name: formData.name,
+      company: formData.company,
       email: formData.email,
       phone: formData.phone,
       service: selectedService,
@@ -185,7 +194,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <p className="long-content-medium text-muted">
                 We'll listen to your challenges and goals, show you the content
                 and features you might need, and see if Eden is the right
-                solution for your organization!
+                solution for your organisation!
               </p>
             </div>
 

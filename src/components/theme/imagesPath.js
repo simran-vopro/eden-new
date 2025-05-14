@@ -62,7 +62,14 @@ import post6 from "../../assets/insights/16.png";
 import post7 from "../../assets/insights/17.png";
 import tree_insight from "../../assets/insights/tree.png";
 import profile from "../../assets/insights/profile.webp";
+
+
+import profile1 from "../../assets/insights/profile1.jpg";
 import profile2 from "../../assets/insights/profile2.jpg";
+import profile3 from "../../assets/insights/profile3.jpg";
+import profile4 from "../../assets/insights/profile4.jpg";
+
+
 import blog_single from "../../assets/insights/5.png";
 import grass from "../../assets/insights/6.png";
 
@@ -105,7 +112,18 @@ import s4 from "../../assets/about/services/s4.svg";
 import s5 from "../../assets/about/services/s5.svg";
 import s6 from "../../assets/about/services/s6.svg";
 
+
+import career1 from "../../assets/career/1.png";
+import career2 from "../../assets/career/5.png";
+import star1 from "../../assets/career/8.png";
+import star2 from "../../assets/career/7.png";
+
+
 const images = {
+  career1,
+  career2,
+  star1,
+  star2,
   s1,
   s2,
   s3, s4, s5, s6,
@@ -167,7 +185,10 @@ const images = {
   tree_insight,
   profile,
   blog_single,
+  profile1,
   profile2,
+  profile3,
+  profile4,
   grass,
   checked,
   writtenImg,

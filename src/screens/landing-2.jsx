@@ -12,6 +12,7 @@ import Brands from "../components/pages/brands";
 import { useModal } from "../components/pages/ModalContext";
 import SearchBar from "./searchBar";
 import ExpandableServicesBox from "../components/pages/expandableBox";
+import useFitText from "../hooks/useFit";
 
 gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 ScrollTrigger.config({
@@ -285,6 +286,33 @@ const LandingPage = () => {
 
   const { openContactModal } = useModal();
 
+
+
+  const contentSectionRef = useRef();
+
+  // useEffect(() => {
+  //   const resizeText = () => {
+  //     const el = topTitleRef.current;
+  //     const container = contentSectionRef.current;
+  //     if (!el || !container) return;
+
+  //     let fontSize = 100; // start big
+  //     el.style.fontSize = fontSize + "px";
+
+  //     // Shrink until it fits
+  //     while (el.scrollWidth > container.clientWidth && fontSize > 1) {
+  //       fontSize -= 1;
+  //       el.style.fontSize = fontSize + "px";
+  //     }
+  //   };
+
+  //   resizeText();
+  //   window.addEventListener("resize", resizeText);
+  //   return () => window.removeEventListener("resize", resizeText);
+  // }, []);
+
+  useFitText(topTitleRef, topTitleRef, 100, 10, 0.1, 15);
+
   return (
     <>
       <div id="header-outer">
@@ -299,38 +327,29 @@ const LandingPage = () => {
           ref={infinityLogoRef}
         />
 
-        <div id="contentSection">
-          <div className="slide-up">
-            <img
-              src={images.logo}
-              alt="logo"
-              className="logo slide-up-text-hero"
-            />
-          </div>
-          <div className="slide-up">
-            <h1 className="top-title slide-up-text-hero" ref={topTitleRef}>
-              Your sustainable <span>utility partner</span>
-            </h1>
-          </div>
+        <div id="contentSection" ref={contentSectionRef}>
+          <img
+            src={images.logo}
+            alt="logo"
+            className="logo"
+          />
+          <h1 className="top-title" ref={topTitleRef}>
+            Your sustainable <span>utility partner</span>
+          </h1>
+          <p className="long-content" ref={longContentRef}>
+            Driving smarter, greener utility strategies through expert
+            procurement, data-led insight, and flexible support tailored to
+            your operational and sustainability goals. Turning waste into power, turning responsibility into action.
+          </p>
 
-          <div className="slide-up">
-            <p className="long-content slide-up-text-hero" ref={longContentRef}>
-              Driving smarter, greener utility strategies through expert
-              procurement, data-led insight, and flexible support tailored to
-              your operational and sustainability goals.
-            </p>
-          </div>
+          <Btn
+            className="webBtn"
+            onClick={openContactModal}
+            rightIcon
+          >
+            Talk to an Expert
+          </Btn>
 
-          <div className="slide-up">
-            <Btn
-              className="webBtn slide-up-text-hero"
-              onClick={openContactModal}
-              rightIcon
-            >
-              Talk to an Expert
-            </Btn>
-          </div>
-          {/* <img className="flowers" src={images.flowers} ref={flowersRef} /> */}
         </div>
       </section>
 

@@ -5,10 +5,14 @@ import images from "../components/theme/imagesPath";
 import { useModal } from "../components/pages/ModalContext";
 import Header from "../components/other/header";
 import gsap from "gsap";
+import { blogPosts } from "../components/blogPostsContent";
+import { useNavigate } from "react-router-dom";
 
 const Career = () => {
   const { openContactModal } = useModal();
   const cardRefs = useRef([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     cardRefs.current.forEach((card) => {
@@ -21,14 +25,14 @@ const Career = () => {
         gsap.to(title, { autoAlpha: 0, duration: 0.3 });
         gsap.to(desc, {
           autoAlpha: 1,
-          y: 0,
+          y: -20,
           duration: 0.5,
           ease: "power2.out",
         });
       });
 
       card.addEventListener("mouseleave", () => {
-        gsap.to(title, { autoAlpha: 1, duration: 0.3 });
+        gsap.to(title, { autoAlpha: 1, duration: 0.3, transform: "translateY(20px)" });
         gsap.to(desc, {
           autoAlpha: 0,
           y: 20,
@@ -74,61 +78,55 @@ const Career = () => {
         <Header navItemStyle={{ color: "#000" }} />
       </div>
 
-      <section className="hero-section d-flex justify-content-center align-items-center" id="section_1">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 col-12 mx-auto">
-              <h1 className="title text-center">Works for us</h1>
-              <h6 className="text-center">
-                Join a Team That’s Built to Make a Difference
-              </h6>
+      <div className="mt-2 mt-md-5">
+        <p className="green-text fs-5 text-center">WORKS FOR US</p>
+        <h1 className="fw-bold text-center text-normal mb-4 title-breadcrump">Join a Team That’s<br></br>
+          Built to Make a<br></br> Difference</h1>
+      </div>
+
+
+      <section id="why-us" className="container p-0 pt-5 mt-5">
+        <div className="row hero-about-text">
+          <div className="col-md-6 px-5 d-flex flex-column justify-content-between">
+            <div>
+              <p className="fw-bold text-normal mb-4 title-breadcrump mb-5">At <div className="eden-highlight green-text">eden.</div>
+
+                {/* <br></br>We Build More Than <br></br>a Team */}</p>
+
+              <p className="long-content fs-5 pt-5 pe-5">We don’t just hire people, we curate a
+                team. From the beginning, our founder
+                Mark set out to bring together the most
+                knowledgeable, committed professionals
+                in the industry. People who care about
+                getting it right, who stay informed, and
+                who want their work to have real impact
+                for clients, the environment, and the
+                wider community.</p>
             </div>
+          </div>
+          <div className="col-md-6 ps-0 pe-md-5">
+            <img src={images.career1} className="img-fluid rounded" alt="civil" />
           </div>
         </div>
       </section>
 
-      <section className="featured-section pb-4">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-12 col-12">
-              <div className="custom-block custom-block-overlay" style={{background: "#2f98d0"}}>
-                <div className="d-flex flex-column h-100">
-                  <div className="custom-block-overlay-text d-flex">
-                    <div>
-                      <h5 className="text-white mb-2">We are eden</h5>
-                      <p className="text-white long-content">
-                        At Eden, we don’t just hire people we curate a team.
-                        From the beginning, our founder Mark set out to bring
-                        together the most knowledgeable, committed professionals
-                        in the industry. People who care about getting it right,
-                        who stay informed, and who want their work to have real
-                        impact for clients, the environment, and the wider
-                        community.
-                      </p>
-                    </div>
-                  </div>
-                  {/* <div className="section-overlay"></div> */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="section-bottom container">
+        <p className="long-content fs-5 text-white text-center">
+          We're growing, and that growth is only possible with the right
+          people. As our client base expands, we’re looking for
+          specialists who can help us maintain the high standards our
+          clients <br></br>expect and deserve.
+        </p>
+      </div>
+
 
       <section className="career-content-section">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-12">
-              <p className="long-content mb-4">
-                We're growing, and that growth is only possible with the right
-                people. As our client base expands, we’re looking for
-                specialists who can help us maintain the high standards our
-                clients expect and deserve.
-              </p>
-              <p className="fs-5 fw-semibold mb-2">
-                We’re particularly keen to hear from:
-              </p>
 
+              <p className="dark-text text-center title-big title text-lineheight pb-5"> We’re particularly keen to hear from
+              </p>
               <div className="row text-center gy-4 my-3">
                 <div className="col-12 col-md-4">
                   <div
@@ -138,7 +136,7 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title">Energy Consultants</h5>
+                      <h5 className="card-title fs-2">Energy<br></br>Consultants</h5>
                       <p className="card-description">
                         Energy consultants with experience supporting large-scale
                         energy users and complex portfolios
@@ -155,7 +153,7 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title">Operations Professionals</h5>
+                      <h5 className="card-title fs-2">Operations<br></br>Professionals</h5>
                       <p className="card-description">
                         Operations professionals who thrive behind the scenes,
                         ensuring smooth service delivery
@@ -172,7 +170,7 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title">Customer Support Experts</h5>
+                      <h5 className="card-title fs-2">Customer<br></br>Support Experts</h5>
                       <p className="card-description">
                         Customer support experts who bring precision, empathy, and
                         reliability to every interaction
@@ -181,63 +179,181 @@ const Career = () => {
                   </div>
                 </div>
               </div>
-
-              <p className="long-content mt-5">
-                At Eden, you’ll be part of a team that shares values, not just
-                skills. We support each other, challenge assumptions, and
-                constantly evolve all while working towards a smarter, more
-                sustainable future for utilities.
-              </p>
-              <p className="fs-5">
-                If this sounds like you, don’t just send a CV — reach out,
-                introduce yourself, and let’s have a chat. We’re always open to
-                speaking with the right people.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="contact-us-section container-fluid px-3 px-sm-4 px-xxl-5 py-5 mt-5">
-        <div className="row align-items-center container justify-content-between">
-          <div className="contact-text-section col-12 col-md-8">
-            <h1 className="contact-heading mb-0 fs-4 lh-base lh-md-1.2 lh-lg-1.5">
-              Speak with our team to see how Eden’s expertise can streamline
-              your energy strategy, reduce waste, and support your wider
-              sustainability goals.
-            </h1>
-          </div>
 
-          <div className="contact-button-section col-12 col-md-4 d-flex justify-content-center mt-4 mt-md-0">
-            <Btn
-              rightIcon
-              background={"#fff"}
-              iconbackground={"#2f98d0"}
-              color={"#555"}
-              className="no-hover"
-              style={{
-                padding: "1rem 2rem",
-                borderRadius: "2rem",
-                fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
-                minWidth: "12rem",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              }}
-              rightIconChildren={
-                <img
-                  className="img-fluid"
-                  style={{ width: "1.25rem", height: "1.25rem" }}
-                  src={images.icon_top_white}
-                  alt="contact icon"
-                />
-              }
-              onClick={openContactModal}
-            >
-              <span className="text-nowrap">Contact Us</span>
-            </Btn>
+
+      <section id="why-us" className="container p-0 pt-5 mt-5">
+        <div className="row hero-about-text">
+          <div className="col-md-6 px-5 d-flex flex-column justify-content-between">
+            <div>
+              <p className="fw-bold text-normal mb-4 title-breadcrump mb-5">At <div className="eden-highlight green-blue">eden.</div></p>
+              <p className="long-content fs-5 pt-5 pe-5">
+                You’ll be part of a team that shares
+                values, not just skills. We support
+                each other, challenge assumptions,
+                and constantly evolve all while
+                working towards a smarter, more
+                sustainable future for utilities.
+              </p>
+            </div>
+
+            <p className="fs-custom-xl green-text">IF THIS</p>
+          </div>
+          <div className="col-md-6 ps-0 pe-md-5">
+            <img src={images.career2} className="img-fluid rounded" alt="civil" />
           </div>
         </div>
       </section>
 
+      <div className="container position-relative d-flex justify-content-center mt-3">
+        <div className="star1-outer">
+          <img src={images.star1} className="img-fluid star" alt="star1" />
+        </div>
+        <p className="fs-custom-xl text-center text-black">SOUNDS</p>
+        <div className="star2-outer">
+          <img src={images.star2} className="img-fluid star" alt="star1" />
+        </div>
+      </div>
+
+      <div className="container">
+        <p className="fs-custom-xl text-end blue-text">LIKE YOU</p>
+      </div>
+
+
+
+      <div className="container py-5 chat-section">
+        <p className="dark-text title text-start title-big-medium mb-0">Don’t just send a CV</p>
+        <p className="long-content">Reach out, introduce yourself, and let’s have a chat.<br></br>
+          We’re always open to speaking with the right people</p>
+
+        <Btn>Reach Out</Btn>
+
+      </div>
+
+
+
+
+      <div className="latest-news">
+        <p className="dark-text text-center title-big title text-lineheight pb-5">Latest news & updates
+        </p>
+
+        <div className="news container">
+          {/* top blogs posts */}
+          <div className="row g-4 mb-5">
+            {/* First Row: One large, two small */}
+            <div className="col-lg-7">
+              <div
+                className="position-relative text-white blog-grid-item-lg"
+                style={{ height: "100%" }}
+              >
+                <img
+                  src={blogPosts[0].image}
+                  alt=""
+                  className="img-fluid w-100 h-100 object-fit-cover"
+                  style={{ filter: "brightness(0.4)" }}
+                />
+                <div className="position-absolute top-0 start-0 p-4">
+                  <small className="badge text-white tag-date-style p-0">
+                    {blogPosts[0].tag} <span className="dot">•</span>
+                    {blogPosts[0].date}
+                  </small>
+                </div>
+                <div className="position-absolute bottom-0 p-4">
+                  <h4 className="blog-grid-title">{blogPosts[0].title}</h4>
+                  <p>{blogPosts[0].content}</p>
+                  <div
+                    onClick={() => {
+                      navigate("/insight-details", {
+                        state: { post: blogPosts[0] },
+                      });
+                    }}
+                    className="text-link"
+                  >
+                    {blogPosts[0].title}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <div className="row g-4">
+                {[blogPosts[1], blogPosts[2]].map((post) => (
+                  <div className="col-12" key={post.id}>
+                    <div
+                      className="position-relative text-white blog-grid-item"
+                      style={{ height: "100%" }}
+                    >
+                      <img
+                        src={post.image}
+                        alt=""
+                        className="img-fluid w-100 h-100 object-fit-cover"
+                        style={{ filter: "brightness(0.4)" }}
+                      />
+                      <div className="position-absolute top-0 start-0 p-3">
+                        <small className="badge text-white tag-date-style p-0">
+                          {post.tag} <span className="dot">•</span>
+                          {post.date}
+                        </small>
+                      </div>
+                      <div className="position-absolute bottom-0 p-3">
+                        <h4 className="blog-grid-title">{post.title}</h4>
+                        <div
+                          onClick={() => {
+                            navigate("/insight-details", {
+                              state: { post },
+                            });
+                          }}
+                          className="text-link"
+                        >
+                          {post.title}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Second Row: Three equally spaced */}
+            {[blogPosts[3], blogPosts[4], blogPosts[5]].map((post) => (
+              <div className="col-12 col-md-6 col-lg-4" key={post.id}>
+                <div
+                  className="position-relative text-white blog-grid-item"
+                  style={{ height: "100%" }}
+                >
+                  <img
+                    src={post.image}
+                    alt=""
+                    className="img-fluid w-100 h-100 object-fit-cover"
+                    style={{ filter: "brightness(0.4)" }}
+                  />
+                  <div className="position-absolute top-0 start-0 p-3">
+                    <small className="badge text-white tag-date-style p-0">
+                      {post.tag} <span className="dot">•</span>
+                      {post.date}
+                    </small>
+                  </div>
+                  <div className="position-absolute bottom-0 p-3">
+                    <h4 className="blog-grid-title">{post.title}</h4>
+                    <div
+                      onClick={() => {
+                        navigate("/insight-details", {
+                          state: { post },
+                        });
+                      }}
+                      className="text-link">
+                      {post.title}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

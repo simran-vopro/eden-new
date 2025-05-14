@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
-import Lenis from "lenis";
+// import Lenis from "lenis";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./App.css";
@@ -10,7 +10,6 @@ import {
   Routes,
   Route,
   useLocation,
-
 } from "react-router-dom";
 
 import LandingPage from "./screens/landing";
@@ -26,44 +25,48 @@ import Career from "./screens/career";
 import About2 from "./screens/about2";
 
 
-const ScrollManager = ({ children }) => {
-  const lenisRef = useRef(null);
-  const location = useLocation();
+// const ScrollManager = ({ children }) => {
+//   const lenisRef = useRef(null);
+//   const location = useLocation();
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.1,
-      smooth: true,
-      direction: "vertical",
-    });
+//   useEffect(() => {
+//     const lenis = new Lenis({
+//       lerp: 0.1,
+//       smooth: true,
+//       direction: "vertical",
+//     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+//     function raf(time) {
+//       lenis.raf(time);
+//       requestAnimationFrame(raf);
+//     }
 
-    requestAnimationFrame(raf);
+//     requestAnimationFrame(raf);
 
-    lenisRef.current = lenis;
+//     lenisRef.current = lenis;
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+//     return () => {
+//       lenis.destroy();
+//     };
+//   }, []);
 
-  useEffect(() => {
-    // After route change, scroll to top
-    lenisRef.current?.scrollTo(0, { immediate: true });
-  }, [location.pathname]);
+//   useEffect(() => {
+//     // After route change, scroll to top
+//     lenisRef.current?.scrollTo(0, { immediate: true });
+//   }, [location.pathname]);
 
-  return <>{children}</>;
-};
+//   return <>{children}</>;
+// };
 
 // Separate wrapper to access context inside modal
+
+
 const ContactModalWrapper = () => {
-  const { closeContactModal, isContactModalOpen } = useModal();
+  const { closeContactModal, isContactModalOpen, service, goToStep } = useModal();
+  // const { isContactModalOpen, closeContactModal, service, goToStep } = useModal();
+
   return (
-    <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
+    <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} service={service} goToStep={goToStep} />
   );
 };
 
@@ -157,19 +160,16 @@ const App = () => {
         <Router forceRefresh={true}>
           {/* 👇 Route animation trigger */}
           <RouteTransition />
-
-          <ScrollManager>
-            <Routes>
-              <Route path="/" element={<LandingPage2 />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/about-new" element={<About2 />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/work-for-us" element={<Career />} />
-              <Route path="/insight-details" element={<InsightsDetails />} />
-              <Route path="/landing-2" element={<LandingPage2 />} />
-            </Routes>
-          </ScrollManager>
+          <Routes>
+            <Route path="/" element={<LandingPage2 />} />
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about-new" element={<About2 />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/work-for-us" element={<Career />} />
+            <Route path="/insight-details" element={<InsightsDetails />} />
+            <Route path="/landing-2" element={<LandingPage2 />} />
+          </Routes>
         </Router>
 
         {/* Render once globally */}

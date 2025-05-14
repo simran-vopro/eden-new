@@ -172,9 +172,9 @@
 @media (min-width: 1201px) and (max-width: 1440px) {
   /* new about css */
 
-  #hero-about {
+  /* #hero-about {
     padding: 0 0 0 0rem;
-  }
+  } */
 
   p {
     font-size: 12px;
@@ -222,12 +222,14 @@
   }
 
 
-  #csr .content-width {
+  /* #csr .content-width {
     width: 47%;
     margin-left: 1vw;
 
+  } */
+  .clients-height {
+    bottom: -12vw;
   }
-
 
   .services {
     gap: 10px;
@@ -243,9 +245,9 @@
   }
 
 
-  #why-us {
+  /* #why-us {
     padding: 5rem 0rem 5rem;
-  }
+  } */
 }
 
 /* Standard Desktop */
