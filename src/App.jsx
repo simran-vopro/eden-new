@@ -59,6 +59,8 @@ import Career from "./screens/career";
 // Separate wrapper to access context inside modal
 
 
+
+
 const ContactModalWrapper = () => {
   const { closeContactModal, isContactModalOpen, service, goToStep } = useModal();
   // const { isContactModalOpen, closeContactModal, service, goToStep } = useModal();
@@ -73,7 +75,6 @@ const RouteTransition = () => {
 
 
   useLayoutEffect(() => {
-
     const revealToSpan = () => {
       console.log("location.pathname  revealToSpan==> ", location.pathname)
       document.querySelectorAll(".reveal").forEach((ele) => {
@@ -133,6 +134,17 @@ const RouteTransition = () => {
       });
   }, [location.key]); //👈 Triggers on every route change
 
+  return null;
+};
+
+
+
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   return null;
 };
@@ -156,12 +168,14 @@ const App = () => {
       </div>
       <ModalProvider>
         <Router forceRefresh={true}>
+
+           <ScrollToTop />
           {/* 👇 Route animation trigger */}
           <RouteTransition />
           <Routes>
             <Route path="/" element={<LandingPage2 />} />
 
-            
+
             <Route path="/insights" element={<Insights />} />
             <Route path="/about" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
