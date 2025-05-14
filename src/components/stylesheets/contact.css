@@ -366,15 +366,18 @@ textarea.form-control {
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
-  .custom-datepicker .react-datepicker__month-container {
+  /* .custom-datepicker .react-datepicker__month-container {
     width: 67% !important;
+  } */
+
+  .contact-backdrop .modal-fullscreen{
+        width: 70% !important;
   }
 
   .custom-datepicker .react-datepicker__day-name,
   .react-datepicker__day,
   .react-datepicker__time-name {
-    width: 2.5vw !important;
-    line-height: 3vw !important;
+    width: 2vw !important;
   }
 
   .contact-time-text {
