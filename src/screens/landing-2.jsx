@@ -13,6 +13,7 @@ import { useModal } from "../components/pages/ModalContext";
 import SearchBar from "./searchBar";
 import ExpandableServicesBox from "../components/pages/expandableBox";
 import useFitText from "../hooks/useFit";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 ScrollTrigger.config({
@@ -313,6 +314,8 @@ const LandingPage = () => {
 
   useFitText(topTitleRef, topTitleRef, 100, 10, 0.1, 15);
 
+  const navigate = useNavigate();
+
   return (
     <>
       <div id="header-outer">
@@ -489,7 +492,9 @@ const LandingPage = () => {
             </div>
 
             <div className="box-btn-2 mb-5">
-              <Btn rightIcon>Learn More</Btn>
+              <Btn rightIcon onClick={() => {
+                navigate("/eden-infinity")
+              }}>Learn More</Btn>
             </div>
           </div>
 

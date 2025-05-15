@@ -275,15 +275,6 @@
   text-align: left;
 }
 
-/* Swiper pagination colors */
-#insights .swiper-pagination-bullet {
-  background: white;
-  opacity: 1;
-}
-
-#insights .swiper-pagination-bullet-active {
-  background: var(--black);
-}
 
 .read-more-link {
   display: inline-block;

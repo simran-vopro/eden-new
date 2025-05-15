@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Btn from "../other/btn";
 import images from "../theme/imagesPath";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from "react-router-dom";
 
 const ExpandableServicesBox = ({
   index,
@@ -79,7 +80,7 @@ const ExpandableServicesBox = ({
       //   opacity: backgroundImageOpacity,
       //   duration: 0.25,
       // });
-    } else if (shouldHide  && !isMobile) {
+    } else if (shouldHide && !isMobile) {
       // right side boxes
       tl.to(badgeRef.current, { opacity: 0, duration: 0.1 })
         .to(contentRef.current, { opacity: 0, x: -20, duration: 0.2 }) // fade out left
@@ -171,24 +172,26 @@ const ExpandableServicesBox = ({
       //   duration: 0.25,
       // });
     }
-  }, [isActive,shouldHide, activeIndex, index, isMobile]);
+  }, [isActive, shouldHide, activeIndex, index, isMobile]);
 
   const backgroundStyle =
     isActive && backgroundImage
       ? {
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "100% 100%",
-          backgroundPosition: "center",
-          position: "relative",
-          color: "#fff",
-        }
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "100% 100%",
+        backgroundPosition: "center",
+        position: "relative",
+        color: "#fff",
+      }
       : {
-          backgroundColor: boxBgColors[index % boxBgColors.length],
-          color:
-            boxBgColors[index % boxBgColors.length] === "#fafafa"
-              ? "#000"
-              : "#fff",
-        };
+        backgroundColor: boxBgColors[index % boxBgColors.length],
+        color:
+          boxBgColors[index % boxBgColors.length] === "#fafafa"
+            ? "#000"
+            : "#fff",
+      };
+
+  const navigate = useNavigate();
 
   return (
     <div
@@ -250,8 +253,8 @@ const ExpandableServicesBox = ({
             color: backgroundImage
               ? "#fff"
               : boxBgColors[index % boxBgColors.length] === "#fafafa"
-              ? "#828282"
-              : "#fff",
+                ? "#828282"
+                : "#fff",
           }}
         >
           {content}
@@ -259,6 +262,7 @@ const ExpandableServicesBox = ({
 
         <div className="box-btn">
           <Btn
+            onClick={() => navigate("/services")}
             rightIconChildren={
               boxBgColors[index % boxBgColors.length] === "#fafafa" ? (
                 <img src={images.icon_top} className="icon-top" alt="icon" />
@@ -274,15 +278,15 @@ const ExpandableServicesBox = ({
               boxBgColors[index % boxBgColors.length] === "#8DC74B"
                 ? "#8DC74B"
                 : boxBgColors[index % boxBgColors.length] === "#2F98D0"
-                ? "#2F98D0"
-                : "#fff"
+                  ? "#2F98D0"
+                  : "#fff"
             }
             color={
               boxBgColors[index % boxBgColors.length] === "#8DC74B"
                 ? "#8DC74B"
                 : boxBgColors[index % boxBgColors.length] === "#2F98D0"
-                ? "#2F98D0"
-                : "#fff"
+                  ? "#2F98D0"
+                  : "#fff"
             }
             background={
               boxBgColors[index % boxBgColors.length] === "#fafafa"

@@ -231,7 +231,7 @@ const Career = () => {
 
 
       <div className="container py-5 chat-section">
-        <p className="dark-text title text-start title-big-medium mb-0">Don’t just send a CV</p>
+        <p className="dark-text title text-start text-normal title-big-medium mb-0">Don’t just send a CV</p>
         <p className="long-content">Reach out, introduce yourself, and let’s have a chat.<br></br>
           We’re always open to speaking with the right people</p>
 

@@ -564,7 +564,7 @@
     height: 625px;
   } */
 
- 
+
   .box-content-2 {
     width: 42%;
   }
@@ -596,7 +596,8 @@
     width: 70vw;
     height: 50px;
   }
-/* 
+
+  /* 
   #header .navItem {
     font-size: 1.2vw;
     width: 9vw;
@@ -957,12 +958,25 @@
     flex: 1 1 17vw;
     min-width: 17vw;
   }
+
+  .infinity-logo-circular {
+    opacity: 0.2;
+    width: 330px;
+  }
+  .slider-review-item {
+    padding: 1rem;
+  }
 }
 
 /* Extra large desktops (1441px to 1920px) */
 @media (min-width: 1441px) and (max-width: 1700px) {
   .view {
     top: -0.5rem;
+  }
+
+  .infinity-logo-circular {
+    opacity: 0.2;
+    width: 350px;
   }
 
   /* #contentSection {

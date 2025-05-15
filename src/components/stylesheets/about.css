@@ -742,7 +742,7 @@
 }
 
 .text-lineheight {
-    line-height: 1.2;
+    line-height: 1;
 }
 
 
@@ -875,3 +875,4 @@
         margin-bottom: 20px;
     }
 }
+

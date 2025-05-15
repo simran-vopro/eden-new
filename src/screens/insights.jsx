@@ -147,8 +147,7 @@ const Insights = () => {
         <img src={images.logo} alt="logo" className="logo" />
         <Header navItemStyle={{ color: "#000" }} />
       </div>
-
-
+      
       <div className="header-bottom-space"></div>
 
       <div className="container-fluid p-md-5 mb-5">

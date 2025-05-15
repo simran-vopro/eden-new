@@ -120,7 +120,55 @@ import star2 from "../../assets/career/7.png";
 import bottom_line from "../../assets/career/line.png";
 
 
+//eden infinity pitures
+import clouds from "../../assets/infinity/clouds.png";
+import cloud from "../../assets/infinity/cloud.png";
+import delete_icon from "../../assets/infinity/9.png";
+import bus_icon from "../../assets/infinity/10.png";
+import files_icon from "../../assets/infinity/11.png";
+
+import heart from "../../assets/infinity/heart.png";
+import time from "../../assets/infinity/time.png";
+import check from "../../assets/infinity/check.png";
+import money from "../../assets/infinity/money.png";
+import about from "../../assets/infinity/16.png";
+
+
+import icon1 from "../../assets/infinity/12.png";
+import icon2 from "../../assets/infinity/13.png";
+import icon3 from "../../assets/infinity/14.png";
+import icon4 from "../../assets/infinity/15.png";
+
+import icon5 from "../../assets/infinity/18.png";
+import icon6 from "../../assets/infinity/19.png";
+import icon7 from "../../assets/infinity/20.png";
+import icon8 from "../../assets/infinity/21.png";
+import icon9 from "../../assets/infinity/22.png";
+import icon10 from "../../assets/infinity/23.png";
+import icon11 from "../../assets/infinity/17.png";
+
 const images = {
+  icon1,
+  icon2,
+  icon3,
+  icon4,
+  icon5,
+  icon6,
+  icon7,
+  icon8,
+  icon9,
+  icon10,
+  icon11,
+  about,
+  heart,
+  check,
+  time,
+  money,
+  delete_icon,
+  bus_icon,
+  files_icon,
+  clouds,
+  cloud,
   bottom_line,
   career1,
   career2,

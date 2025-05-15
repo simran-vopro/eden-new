@@ -11,7 +11,7 @@ import "swiper/css"; // ✅ Add this if not already included
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Brands = ({ btn, style }) => {
+const Brands = ({ btn, style, hideTitle }) => {
   const brands = [
     images.brand1,
     images.brand2,
@@ -24,29 +24,29 @@ const Brands = ({ btn, style }) => {
     images.brand1,
     images.brand2,
   ];
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#brands",
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
-    });
+  // useGSAP(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "#brands",
+  //       start: "top 80%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //   });
 
-    tl.from("#brands .child-brand-title > span", {
-      x: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
-  }, []);
+  //   tl.from("#brands .child-brand-title > span", {
+  //     x: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     stagger: 0.2,
+  //     ease: "power3.out",
+  //   });
+  // }, []);
 
   const navigate = useNavigate();
 
   return (
     <section id="brands" style={style}>
-      <h1 className="title text-uppercase">
+      {hideTitle ? "" : <h1 className="title text-uppercase">
         {["Brands ", "who ", "trust ", "eden"].map((word, i) => (
           <span className="parent" key={i}>
             <span
@@ -57,7 +57,8 @@ const Brands = ({ btn, style }) => {
             </span>
           </span>
         ))}
-      </h1>
+      </h1>}
+
 
 
 
