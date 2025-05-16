@@ -161,10 +161,10 @@ const App = () => {
             <h5 className="reveal">You Don’t Choose Eden for the Logo  </h5>
             <h5 className="reveal">&copy; You Choose It for the People</h5>
           </div> */}
-          <h1 className="reveal">
+          <h2 className="reveal">
 
-            <span>Common</span> <span>Sense</span> <span>in</span> <br></br><span>a</span> <span>Complex</span> <span>Market</span>
-          </h1>
+            <span>Common</span> <span>Sense</span> <span>in</span> <span>a</span> <span>Complex</span> <span>Market</span>
+          </h2>
         </div>
 
         <div id="bg-layer"></div>
