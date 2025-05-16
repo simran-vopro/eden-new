@@ -416,9 +416,7 @@ const About = () => {
                   <p className="green-text fs-4 mb-0 ps-2">Advanced Analytics</p>
                 </div>
 
-                <p className="long-content fst-italic">Gain real-time insights to make smarter decisions.
-
-                </p>
+                <p className="long-content fst-italic">Gain real-time insights to make smarter decisions.</p>
               </div>
               <div>
                 <div className="d-flex align-items-center">

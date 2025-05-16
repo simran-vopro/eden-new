@@ -750,10 +750,11 @@
   }
 
   .d-letter::after {
-    width: 14vw;
+    /* width: 14vw;
     height: 4vw;
     left: -2.5vw;
-    top: -4vw;
+    top: -4vw; */
+    left: 1.2vw;
   }
 
   #contact .solution-text {

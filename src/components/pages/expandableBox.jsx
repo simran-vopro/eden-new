@@ -14,7 +14,7 @@ const ExpandableServicesBox = ({
   activeIndex,
   onClick,
   backgroundImage,
-  shouldShrink,
+  service,
 }) => {
   const boxRef = useRef();
   const contentRef = useRef();
@@ -262,7 +262,12 @@ const ExpandableServicesBox = ({
 
         <div className="box-btn">
           <Btn
-            onClick={() => navigate("/services")}
+            onClick={() =>
+
+              navigate("/services", {
+                state: { serviceContent: service },
+              })
+            }
             rightIconChildren={
               boxBgColors[index % boxBgColors.length] === "#fafafa" ? (
                 <img src={images.icon_top} className="icon-top" alt="icon" />

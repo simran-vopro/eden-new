@@ -287,7 +287,7 @@ const SearchBar = () => {
                   e<span className="n-letter-wrapper">n
                     <div ref={wrapperRef} className="line-wrapper">
                       <div className="line" ref={lineRef} />
-                    </div></span>.
+                    </div></span>
                 </span>
               </span>
             </span>

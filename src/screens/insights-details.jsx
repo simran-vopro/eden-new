@@ -11,8 +11,7 @@ import Btn from "../components/other/btn";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import TestimonialsSection from "./testimonialsSection";
+import {  useLocation, useNavigate } from "react-router-dom";
 import { useModal } from "../components/pages/ModalContext";
 
 const SideblogPostsHighlights = [
@@ -415,9 +414,6 @@ const InsightsDetails = () => {
   const { openContactModal } = useModal();
   const location = useLocation();
   const { post } = location.state || {};
-  const navigate = useNavigate();
-
-  console.log("single post ==> ", post);
 
   return (
     <div id="insights">

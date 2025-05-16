@@ -162,7 +162,8 @@ const App = () => {
             <h5 className="reveal">&copy; You Choose It for the People</h5>
           </div> */}
           <h1 className="reveal">
-            <span>We</span> <span>Are</span> <span>Eden</span>
+
+            <span>Common</span> <span>Sense</span> <span>in</span> <br></br><span>a</span> <span>Complex</span> <span>Market</span>
           </h1>
         </div>
 

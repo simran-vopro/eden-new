@@ -5,8 +5,8 @@ import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import images from '../theme/imagesPath';
 
-const Features = ({ style, backgroundColor, titleColor, textColor, borderRadius, gap, height,alignItems }) => {
-    const featuresData = [
+const Features = ({ style, backgroundColor, titleColor, textColor, borderRadius, gap, height, alignItems, data }) => {
+    const featuresData = data ? data : [
         { title: 84, content: "Suppliers Engaged", img: images.feature1 },
         { title: 67, content: "Fixed Products", img: images.feature2 },
         { title: 97, content: "Retention", img: images.feature3 },
@@ -36,7 +36,7 @@ const Features = ({ style, backgroundColor, titleColor, textColor, borderRadius,
                     <SwiperSlide key={index} style={{ width: 'auto' }}>
                         <div
                             className="supplier-card"
-                            style={{ backgroundImage: backgroundColor ? null : `url(${feature.img})`, backgroundColor: backgroundColor, borderRadius: borderRadius, gap: gap, height: height,alignItems: alignItems }}
+                            style={{ backgroundImage: backgroundColor ? null : `url(${feature.img})`, backgroundColor: backgroundColor, borderRadius: borderRadius, gap: gap, height: height, alignItems: alignItems }}
                         >
                             {!backgroundColor && <div className="overlay"></div>}
 
