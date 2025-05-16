@@ -235,12 +235,8 @@ const Career = () => {
         <p className="long-content">Reach out, introduce yourself, and let’s have a chat.<br></br>
           We’re always open to speaking with the right people</p>
 
-        <Btn>Reach Out</Btn>
-
+        <Btn onClick={() => window.location.href = "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,"}>Reach Out</Btn>
       </div>
-
-
-
 
       <div className="latest-news">
         <p className="dark-text text-center title-big title text-lineheight pb-5">Latest news & updates

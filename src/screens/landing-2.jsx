@@ -32,7 +32,7 @@ const LandingPage = () => {
 
   const topTitleRef = useRef(null);
   const longContentRef = useRef(null);
- 
+
 
   const slider = useRef();
 
@@ -296,7 +296,7 @@ const LandingPage = () => {
                   <span><img className="view" src={images.view} /></span>
                   With over 30 years in the utilities industry, I believe in
                   honest, expert advice delivered with a personable approach,
-                  focused on long-term value and sustainable solutions<span><img className="viewBottom" src={images.viewBottom} /></span>
+                  focused on long-term value and sustainable solutions...<span><img className="viewBottom" src={images.viewBottom} /></span>
                 </p>
               </div>
 

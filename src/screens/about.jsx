@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import "../components/stylesheets/about.css";
 import "../components/stylesheets/aboutResponsive.css";
 import images from "../components/theme/imagesPath";
@@ -88,6 +88,135 @@ const About = () => {
   const { openContactModal } = useModal();
   const navigate = useNavigate();
 
+
+  function drawLines() {
+    const svg = document.getElementById('connection-lines');
+    if (!svg) return;
+
+    const svgRect = svg.getBoundingClientRect();
+
+    const clearSVG = () => {
+      while (svg.firstChild) {
+        svg.removeChild(svg.firstChild);
+      }
+    };
+
+    const getCenter = (el) => {
+      const rect = el.getBoundingClientRect();
+      return {
+        x: rect.left + rect.width / 2 - svgRect.left,
+        y: rect.top + rect.height / 2 - svgRect.top,
+      };
+    };
+
+    const drawLine = (fromId, toId) => {
+      const fromEl = document.getElementById(fromId);
+      const toEl = document.getElementById(toId);
+      if (!fromEl || !toEl) return;
+
+      const from = getCenter(fromEl);
+      const to = getCenter(toEl);
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", from.x);
+      line.setAttribute("y1", from.y);
+      line.setAttribute("x2", to.x);
+      line.setAttribute("y2", to.y);
+      line.setAttribute("stroke", "#8dc74b");
+      line.setAttribute("stroke-width", "3");
+      line.setAttribute("stroke-dasharray", "10,10");
+      svg.appendChild(line);
+    };
+
+    clearSVG();
+
+    drawLine("member1", "member2");
+    drawLine("member2", "member4");
+    drawLine("member4", "member3");
+    drawLine("member3", "member1");
+  }
+
+
+
+  function drawCurvedLines() {
+    const svg = document.getElementById('connection-lines');
+    if (!svg) return;
+
+    const svgRect = svg.getBoundingClientRect();
+
+    // Clear existing SVG children
+    while (svg.firstChild) {
+      svg.removeChild(svg.firstChild);
+    }
+
+    const getCenter = (el) => {
+      const rect = el.getBoundingClientRect();
+      return {
+        x: rect.left + rect.width / 2 - svgRect.left,
+        y: rect.top + rect.height / 2 - svgRect.top,
+      };
+    };
+
+    // Draw curve with custom control point offset
+    const drawCurve = (fromId, toId, controlOffsetX, controlOffsetY) => {
+      const fromEl = document.getElementById(fromId);
+      const toEl = document.getElementById(toId);
+      if (!fromEl || !toEl) return;
+
+      const from = getCenter(fromEl);
+      const to = getCenter(toEl);
+
+      // Control point relative to midpoint between from and to
+      const controlX = (from.x + to.x) / 2 + controlOffsetX;
+      const controlY = (from.y + to.y) / 2 + controlOffsetY;
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const d = `M ${from.x} ${from.y} Q ${controlX} ${controlY} ${to.x} ${to.y}`;
+      path.setAttribute("d", d);
+      path.setAttribute("stroke", "#8dc74b");
+      path.setAttribute("stroke-width", "3");
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke-dasharray", "10,10");
+
+      svg.appendChild(path);
+    };
+
+    // Draw each curve with custom control point offsets to create varied leaf-like shapes
+    drawCurve("member1", "member2", 0, -60);
+    drawCurve("member2", "member4", -300, -500);
+    drawCurve("member4", "member3", -50, 50);
+    drawCurve("member3", "member1", -40, -30);
+  }
+
+
+
+  useLayoutEffect(() => {
+    const svg = document.getElementById('connection-lines');
+    if (!svg) return;
+
+    const { width, height } = svg.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    drawCurvedLines();
+
+    let timeout;
+    const debouncedDraw = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(drawCurvedLines, 100);
+    };
+
+    window.addEventListener("resize", debouncedDraw);
+    window.addEventListener("scroll", debouncedDraw);
+
+    return () => {
+      window.removeEventListener("resize", debouncedDraw);
+      window.removeEventListener("scroll", debouncedDraw);
+      clearTimeout(timeout);
+    };
+  }, []);
+
+
+
   return (
     <div id="aboutPage">
       <div id="insights-header">
@@ -158,13 +287,15 @@ const About = () => {
             </div>
           </div>
           <div className="col-md-7 p-0">
-            <div className="w-100 h-100 p-0 d-flex flex-column justify-content-end">
+            <div className="w-100 h-100 p-0 d-flex flex-column justify-content-end position-relative">
               <div className="row w-100 mb-5 justify-content-center position-relative m-0">
+
+
                 <div className="col-md-1">
 
                 </div>
                 <div className="col-md-4">
-                  <div className="team-outer-wrapper">
+                  <div className="team-outer-wrapper" id="member1">
                     <div className="image-wrapper circle-img-green">
                       <img src={images.profile1} alt="Profile" />
                     </div>
@@ -175,7 +306,7 @@ const About = () => {
 
                 <div className="col-md-7 about-line-wrapper p-0">
                   <div className="wrapper">
-                    <div className="team-outer-wrapper">
+                    <div className="team-outer-wrapper" id="member2">
                       <div className="image-wrapper">
                         <img src={images.profile2} alt="Profile" />
                       </div>
@@ -195,7 +326,6 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-
               </div>
 
               <div className="row w-100 m-0 justify-content-end position-relative">
@@ -203,7 +333,7 @@ const About = () => {
 
                 </div>
                 <div className="col-md-4">
-                  <div className="team-outer-wrapper">
+                  <div className="team-outer-wrapper" id="member3">
                     <div className="image-wrapper">
                       <img src={images.profile3} alt="Profile" />
                     </div>
@@ -214,8 +344,7 @@ const About = () => {
 
                 <div className="col-md-5 about-line-wrapper p-0">
                   <div className="wrapper">
-
-                    <div className="team-outer-wrapper">
+                    <div className="team-outer-wrapper" id="member4">
                       <div className="image-wrapper circle-img-green">
                         <img src={images.profile4} alt="Profile" />
                       </div>
@@ -236,9 +365,22 @@ const About = () => {
                 </div>
               </div>
 
-              {/* <div className="dotted-outer">
+              <svg
+                id="connection-lines"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  zIndex: 0,
+                  pointerEvents: 'none',
+                }}
 
-              </div> */}
+                preserveAspectRatio="none"
+              >
+              </svg>
+
             </div>
           </div>
         </div>
