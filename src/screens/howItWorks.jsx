@@ -51,7 +51,7 @@ const HowItWorks = () => {
                                 <div class="d-flex flex-column h-100">
                                     <div class="custom-block-overlay-text d-flex">
                                         <div>
-                                            <h5 class="text-white mb-2">We are eden</h5>
+                                            {/* <h5 class="text-white mb-2">We are eden</h5> */}
 
                                             <p class="text-white long-content">At Eden, we specialise in helping medium to large organisations manage complex, high-stakes energy and utility challenges. Whether you’re juggling multi-site operations, navigating volatile energy markets, or working toward sustainability targets, we bring clarity, structure, and confidence to the process  backed by a team of experts who know what they’re doing. </p>
 
