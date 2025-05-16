@@ -2017,3 +2017,8 @@ img.dotted {
   width: 25px !important;
   height: 25px !important;
 }
+
+.accordion-button:not(.collapsed) {
+    background-color: #cfe2ff00 !important;
+    box-shadow:none !important;
+}

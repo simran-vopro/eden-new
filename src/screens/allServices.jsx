@@ -8,7 +8,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { BiChevronLeftCircle, BiChevronRightCircle } from 'react-icons/bi';
+import { BiChevronLeftCircle, BiChevronRightCircle, BiSolidChevronRightCircle } from 'react-icons/bi';
 import Brands from '../components/pages/brands';
 import { blogPosts } from '../components/blogPostsContent';
 import SectorGrid from '../components/pages/sectorGrid';
@@ -21,6 +21,7 @@ import Features from '../components/pages/features';
 import { useModal } from '../components/pages/ModalContext';
 import { Accordion } from 'react-bootstrap';
 import { data } from '../components/servicesContent';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 
 export const AllServices = () => {
@@ -217,11 +218,7 @@ export const AllServices = () => {
                                 ))}
                             </Swiper>
                         </div>
-
-
-
                     </div>
-
                 </div>
 
 
@@ -235,7 +232,6 @@ export const AllServices = () => {
                 </div>
             </div>
 
-
             <div className="reviews">
                 <div className="container">
                     <TestimonialsSection />
@@ -243,16 +239,14 @@ export const AllServices = () => {
                 </div>
             </div>
 
-
-
             <section id="services2" className="block--spc">
                 <div className="container">
-                    <div className="row justify-content-between align-items-center">
+                    <div className="row justify-content-between">
 
                         <div className="col-md-4">
-                            <div id="services-header">
-                                <p className="text-muted text-start">
-                                    Smart Energy Solutions for Businesses
+                            <div id="services-header p-0">
+                                <p className="green-text fs-5 mb-5 text-start">
+                                    Our other services
                                 </p>
 
                                 <h4 className="text-start">
@@ -272,8 +266,9 @@ export const AllServices = () => {
                                         <Accordion.Header ><h5 className='title text-start fs-4'>{service.title}</h5></Accordion.Header>
                                         <Accordion.Body>{service.content}
 
-                                            <div className="mt-3" onClick={() => handleUpdateContent(service)}>
-                                                <h5 style={{ letterSpacing: "0.5px" }} className='text-black text-link'>{service.link}</h5>
+                                            <div className="mt-3 d-flex align-items-center" onClick={() => handleUpdateContent(service)}>
+                                                <h5 style={{ letterSpacing: "0.5px" }} className='text-black text-link p-0 m-0'>{service.link}</h5>
+                                                <BiSolidChevronRightCircle className='blue-text' style={{ fontSize: 25, paddingLeft: 5 }} />
                                             </div>
                                         </Accordion.Body>
 
@@ -287,9 +282,6 @@ export const AllServices = () => {
 
 
             </section>
-
-
-
 
             <section id="why-us" className="container px-0">
                 <div className="row hero-about-text">
