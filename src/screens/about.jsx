@@ -637,7 +637,7 @@ const About = () => {
               <div>
                 <div className="d-flex align-items-center">
                   <BsFillCheckCircleFill className="blue-text fs-md-5" />
-                  <p className="green-text fs-4 mb-0 ps-2">
+                  <p className="green-text fs-md-4 mb-0 ps-2">
                     Advanced Analytics
                   </p>
                 </div>
@@ -649,7 +649,7 @@ const About = () => {
               <div>
                 <div className="d-flex align-items-center">
                   <BsFillCheckCircleFill className="blue-text fs-md-5" />
-                  <p className="green-text fs-4 mb-0 ps-2">
+                  <p className="green-text fs-md-4 mb-0 ps-2">
                     Sustainable Design
                   </p>
                 </div>
@@ -662,7 +662,7 @@ const About = () => {
               <div>
                 <div className="d-flex align-items-center">
                   <BsFillCheckCircleFill className="blue-text fs-md-5" />
-                  <p className="green-text fs-4 mb-0 ps-2">
+                  <p className="green-text fs-md-4 mb-0 ps-2">
                     Scalable Solutions
                   </p>
                 </div>
@@ -770,7 +770,7 @@ const About = () => {
       </div>
 
       <div className="latest-news">
-        <p className="dark-text text-center title-big title text-lineheight pb-5">
+        <p className="dark-text text-center title-big title text-lineheight pb-md-5">
           Latest news & updates
         </p>
 

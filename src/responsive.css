@@ -19,8 +19,16 @@
   }
 
   .service-image {
-    width: 100%;
+    width: 92%;
     height: auto !important;
+    margin: 6%;
+  }
+
+
+
+  .services-slider {
+    height: 43vh;
+    padding: 0 1rem !important;
   }
 
   .box-row {
@@ -225,7 +233,7 @@
   }
 
   .long-content {
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 0;
     width: 100%;
     margin-bottom: 7vw;
@@ -396,8 +404,8 @@
     padding: 9rem 5rem 2rem;
   }
 
-  .slider-icon {
-    display: none !important;
+  .slider-icon{
+    margin-bottom: 0;
   }
 
   .card-top {
@@ -612,6 +620,7 @@
 
   #features {
     padding: 2rem 0;
+    padding-bottom: 0;
   }
 
   .footer-container {

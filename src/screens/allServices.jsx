@@ -190,13 +190,13 @@ export const AllServices = () => {
 
             <div className="col-md-6">
               <div className="row align-items-center justify-content-center mt-5">
-                <div className="col-md-2">
+                <div className="col-2">
                   <div className="swiper-button-prev slider-icon">
                     <BiChevronLeftCircle />
                   </div>
                 </div>
 
-                <div className="col-md-2">
+                <div className="col-2">
                   <div className="swiper-button-next slider-icon">
                     <BiChevronRightCircle />
                   </div>
@@ -374,7 +374,7 @@ export const AllServices = () => {
 
       <section id="why-us" className="container px-md-0">
         <div className="row hero-about-text flex-wrap-reverse flex-md-nowrap">
-          <div className="col-md-6 pe-5">
+          <div className="col-md-6 pe-md-5">
             <p className="green-text fs-md-5">People-Powered Excellence</p>
             <p className="dark-text title text-start title-big text-lineheight">
               The Expertise Behind Eden
@@ -399,8 +399,8 @@ export const AllServices = () => {
         </div>
       </section>
 
-      <div className="latest-news mt-5 pt-5">
-        <p className="dark-text text-center title-big title text-lineheight pb-5">
+      <div className="latest-news mt-5 pt-md-5">
+        <p className="dark-text text-center title-big title text-lineheight pb-md-5">
           Latest news & updates
         </p>
 

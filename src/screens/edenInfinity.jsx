@@ -296,7 +296,7 @@ const EdenInfinity = () => {
             <div className="col-md-10 p-0 position-relative">
               <div className="sector-swiper-outer row align-items-center">
                 <div className="col-md-2">
-                  <div className="swiper-button-prev slider-icon">
+                  <div className="swiper-button-prev slider-icon d-none d-md-block">
                     <BiChevronLeftCircle />
                   </div>
                 </div>
@@ -347,7 +347,7 @@ const EdenInfinity = () => {
                 </div>
 
                 <div className="col-md-2">
-                  <div className="swiper-button-next slider-icon">
+                  <div className="swiper-button-next slider-icon d-none d-md-block">
                     <BiChevronRightCircle />
                   </div>
                 </div>
