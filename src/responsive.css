@@ -103,6 +103,10 @@
     width: 100%;
   }
 
+  #header-outer #header {
+    width: 90%;
+  }
+
   #header {
     background-color: rgb(255 255 255 / 0%);
     justify-content: space-between;
@@ -177,14 +181,15 @@
   #hero {
     flex-direction: column;
     align-items: center;
-    background-size: cover;
+    background-size: contain;
     background-position: top;
-    height: 850px;
+    height: fit-content;
   }
 
+  /* 
   #search {
     margin-top: -18rem;
-  }
+  } */
 
   #edenText {
     padding: 28px 1.25rem 0 1.25rem;
@@ -203,7 +208,7 @@
   #contentSection {
     width: 90%;
     margin-bottom: 0;
-    margin-top: 100px;
+    margin-top: 45vw;
   }
 
   .reviews {
@@ -212,6 +217,10 @@
 
   .grass {
     margin-top: 0;
+  }
+
+  .box-content-service p {
+    font-size: 14px;
   }
 
   .child-brand-title span {
@@ -229,7 +238,6 @@
 
   .top-title span {
     font-family: "Lato-bold";
-    color: #fff;
   }
 
   .long-content {
@@ -239,9 +247,9 @@
     margin-bottom: 7vw;
   }
 
-  #hero .long-content {
+  /* #hero .long-content {
     color: #fff;
-  }
+  } */
 
   .box-content .long-content {
     font-size: 13px;
@@ -268,8 +276,7 @@
   .search-container.expanded {
     width: 90%;
     height: 58px;
-    margin: 30px 0;
-    margin-top: -70px;
+    margin-top: 10vw;
   }
 
   .ghost-text {
@@ -332,7 +339,7 @@
   }
 
   .leaf img {
-    width: 200px;
+    width: 100px;
     padding: 0 0 30px 0;
   }
 
@@ -404,7 +411,7 @@
     padding: 9rem 5rem 2rem;
   }
 
-  .slider-icon{
+  .slider-icon {
     margin-bottom: 0;
   }
 
@@ -673,6 +680,13 @@
     font-size: 2.8vw;
   }
 
+  .index-badge-service {
+    width: 35px;
+    height: 35px;
+  }
+
+
+
   .person-info .person-image {
     width: 20vw;
     height: 25vw;
@@ -700,12 +714,24 @@
     height: 625px;
   } */
 
+  .box-title-service {
+    font-size: 20px;
+  }
+
+  .leaf img {
+    width: 30vw;
+  }
+
   .box-content-2 {
-    width: 42%;
+    width: 45%;
   }
 
   p.edenText-subtext {
-    font-size: 0.9rem;
+    font-size: 1vw;
+  }
+
+  .line {
+    width: 3px;
   }
 
   .person-info .person-image {
@@ -766,8 +792,13 @@
   }
 
   #contentSection {
-    margin-bottom: 6vw;
+    margin-bottom: 0;
     gap: 2px;
+  }
+
+
+  .long-content {
+    font-size: calc(40vw / 32);
   }
 
   /* .top-title {
@@ -797,14 +828,33 @@
 
   .line-wrapper {
     position: absolute;
-    height: 80vh;
+    height: 55vh;
     top: 65%;
+  }
+
+  .block--spc {
+    padding: 0 2rem 2rem;
+  }
+
+  .posts-swiper {
+    padding-bottom: 20px;
   }
 
   #infinity-logo-transparent {
     bottom: -4vw;
     right: 13vw;
+    width: 16vw;
+  }
+
+  .person-about-business {
+    position: absolute;
     width: 22vw;
+    bottom: 2vw;
+    right: 35vw;
+  }
+
+  #about {
+    padding: 0;
   }
 
   #brands {

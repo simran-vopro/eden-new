@@ -220,7 +220,7 @@ const LandingPage = () => {
 
   return (
     <>
-    <div id="header-outer" className={scrolled ? "scrolled" : ""}>
+      <div id="header-outer" className={scrolled ? "scrolled" : ""}>
         <Header />
       </div>
 
@@ -234,7 +234,10 @@ const LandingPage = () => {
 
         <div id="contentSection" ref={contentSectionRef}>
           <img src={images.logo} alt="logo" className="logo" />
-          <h1 className="top-title" ref={topTitleRef}>
+          <h1 className="top-title d-none d-md-block" ref={topTitleRef}>
+            Your sustainable <span>utility partner</span>
+          </h1>
+          <h1 className="top-title d-block d-md-none" style={{ whiteSpace: "wrap" }}>
             Your sustainable <span>utility partner</span>
           </h1>
           <p className="long-content" ref={longContentRef}>
@@ -253,9 +256,9 @@ const LandingPage = () => {
       <SearchBar />
 
       <div className="leaf" ref={leafRef}>
-        <img alt="leaf" src={images.leaf} />
+        {/* <img alt="leaf" src={images.leaf} />
         <div className="glowing-circle" ref={circleRef}></div>{" "}
-        {/* Glowing circle element */}
+        */}
       </div>
 
       <section id="about" ref={aboutRef} className="section-with-animations">
@@ -545,13 +548,16 @@ const LandingPage = () => {
         </h1>
 
         <div className="solution-text">
-          <Btn onClick={openContactModal} rightIcon padding="0 2rem">
+          <Btn className="d-none d-md-flex webBtn" onClick={openContactModal} rightIcon padding="0 2rem">
             Talk to An expert
           </Btn>
           <h1 className="edenText-title">solutions for</h1>
         </div>
 
         <h1 className="edenText-title">Sustainable Growth.</h1>
+        <Btn className="d-flex d-md-none mt-4 webBtn" onClick={openContactModal} rightIcon padding="0 2rem">
+          Talk to An expert
+        </Btn>
         <img alt="dotted-image" className="dotted" src={images.dotted} />
         <img
           alt="side-leaves"

@@ -4,7 +4,7 @@ export const data = [
     {
         id: 6,
         link: "Energy Risk Management",
-        title: "Eden Water",
+        title: "Water",
         icon: images.s4,
         img: images.post1,
         longContent: `
@@ -24,7 +24,7 @@ export const data = [
         link: "Energy Risk Management",
         img: images.post2,
         icon: images.s2,
-        title: "Eden Strategy",
+        title: "Strategy",
         content:
             "In an unpredictable energy market, manage risk intelligently with expert insight, real-time updates, and strategies built around your business, not just the market.",
         longContent: `
@@ -42,7 +42,7 @@ export const data = [
         link: "Energy Risk Management",
         icon: images.s6,
         img: images.post3,
-        title: "Eden Auditing",
+        title: "Auditing",
         content:
             "Expertly auditing your utility bills line by line identifying errors, recovering lost credit, and giving you clear insight to plan ahead with confidence and control.",
         longContent: `<p><strong>Utility bills are often affected by complex tariffs and ever-changing regulations and errors can easily go unnoticed.</strong> At Eden, we carry out independent audits to uncover undue charges and recover any credit owed.</p>
@@ -58,7 +58,7 @@ export const data = [
         img: images.post4,
         link: "Energy Risk Management",
         icon: images.s3,
-        title: "Eden Procurement",
+        title: "Procurement",
         longContent: `
       <p><strong>Energy suppliers across the UK offer a range of purchasing options each with different terms, restrictions, and levels of flexibility. Navigating them isn’t always straightforward.</strong></p>
       <p>At Eden, we:</p>
@@ -76,7 +76,7 @@ export const data = [
         icon: images.s5,
         link: "Energy Risk Management",
         img: images.post5,
-        title: "Eden Analytics",
+        title: "Analytics",
         content:
             "Delivering bespoke tailored energy reporting from daily forecasts to detailed KPI tracking giving you clear, timely insights to plan, control, and optimise your energy strategy.",
         longContent: `
@@ -94,7 +94,7 @@ export const data = [
         img: images.post6,
         link: "Energy Risk Management",
         icon: images.s1,
-        title: "Eden Optimisation",
+        title: "Optimisation",
         logo: images.infinity_logo,
         content:
             "Helping your business turn waste into clean energy cutting emissions, reducing landfill, and showing the world you take sustainability seriously. Go further. Do better.",

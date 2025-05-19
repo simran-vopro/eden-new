@@ -17,6 +17,7 @@ const ExpandableServicesBox = ({
   service,
 }) => {
   const boxRef = useRef();
+  const overlayRef = useRef();
   const contentRef = useRef();
   const titleRef = useRef();
   const boxBgColors = ["#fafafa", "#8DC74B", "#2F98D0"];
@@ -41,6 +42,45 @@ const ExpandableServicesBox = ({
 
     const backgroundImageOpacity = isActive && backgroundImage ? 1 : 0;
 
+    if (isMobile) {
+      gsap.set(boxRef.current, {
+        flexBasis: "100%",
+        padding: "20px",
+        opacity: 1,
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+        backgroundSize: "cover",      // optional, adjust as needed
+        backgroundPosition: "center",
+        position: "relative"
+      });
+
+      gsap.set(overlayRef.current, {
+        opacity: 1,
+        display: "block",
+      });
+
+      gsap.set(titleRef.current, {
+        rotate: 0,
+        x: 0,
+        y: 0,
+        top: "1rem",
+        left: "1.5rem",
+        width: "fit-content",
+        position: "absolute",
+        color: "#fff"
+      });
+      gsap.set(contentRef.current, {
+        opacity: 1,
+        x: 0,
+        color: "#fff"
+      });
+      gsap.set(badgeRef.current, {
+        display: "flex",
+        opacity: 1,
+        rotate: "0deg",
+      });
+      return; // Exit early – skip all other animations
+    }
+
     if (isActive) {
       // active box
       tl.to(badgeRef.current, { opacity: 0, duration: 0.1 })
@@ -49,6 +89,7 @@ const ExpandableServicesBox = ({
           padding: "20px",
           duration: 0.25,
         })
+
         .to(
           titleRef.current,
           {
@@ -59,15 +100,15 @@ const ExpandableServicesBox = ({
             left: "1.5rem",
             width: "fit-content",
             position: "absolute",
-            duration: 0.25, // title animation synchronized with box expansion
+            duration: 0.25,
           },
-          "<" // start this at the same time as the box expansion
+          "<"
         )
         .fromTo(
           contentRef.current,
           { opacity: 0, x: -20 },
           { opacity: 1, x: 0, duration: 0.3 },
-          "+=0.3" // slight delay after box expands
+          "+=0.3"
         )
         .to(badgeRef.current, {
           display: "flex",
@@ -75,11 +116,7 @@ const ExpandableServicesBox = ({
           rotate: "180deg",
           duration: 0.2,
         });
-      // .to(document.querySelector(".expandable-box-2"), {
-      //   backgroundColor: "transparent",
-      //   opacity: backgroundImageOpacity,
-      //   duration: 0.25,
-      // });
+
     } else if (shouldHide && !isMobile) {
       // right side boxes
       tl.to(badgeRef.current, { opacity: 0, duration: 0.1 })
@@ -215,6 +252,21 @@ const ExpandableServicesBox = ({
           }}
         />
       )}
+
+      <div
+        ref={overlayRef}
+        className="overlay"
+        style={{
+          opacity:0,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.5)", // Add an overlay for darkening the background image
+        }}
+      />
+
       <div style={{ zIndex: 1 }}>
         <h3 ref={titleRef} className="box-title-service">
           {title}

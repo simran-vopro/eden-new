@@ -297,7 +297,8 @@ const SearchBar = () => {
 
           <div className="edenText-subtext-wrapper">
             <p className="edenText-subtext">
-              LOWER COST - MORE EFFICIENT - BETTER INFORMED
+              COMMON SENSE IN A COMPLEX MARKET
+              {/* LOWER COST - MORE EFFICIENT - BETTER INFORMED */}
             </p>
           </div>
         </div>

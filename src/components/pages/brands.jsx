@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css"; // ✅ Add this if not already included
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,6 +41,80 @@ const Brands = ({ btn, style, hideTitle }) => {
   //     ease: "power3.out",
   //   });
   // }, []);
+
+  const btnLineLeft = useRef();
+  const btnLineRight = useRef();
+  const btnRightBorderLine = useRef();
+  const btnLeftBorderLine = useRef();
+
+  useGSAP(() => {
+    // Initial state
+    gsap.set(btnLineLeft.current, { transformOrigin: "left center", scaleX: 0 });
+    gsap.set(btnLineRight.current, { transformOrigin: "right center", scaleX: 0 });
+    gsap.set(btnRightBorderLine.current, { clipPath: "inset(100% 100% 100% 100%)", opacity: 1 });
+    gsap.set(btnLeftBorderLine.current, { clipPath: "inset(100% 100% 100% 100%)", opacity: 1 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#btn-highlighted-section",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    // 1. Lines expand outward
+    tl.to([btnLineLeft.current, btnLineRight.current], {
+      scaleX: 1,
+      duration: 1,
+      ease: "power2.out"
+    });
+
+    // 2. Borders animate in after lines complete
+
+    // Left border (left to top)
+    tl.to(btnLeftBorderLine.current, {
+      clipPath: "inset(0% 10% 60% 0%)", // left + top visible
+      duration: 0.6,
+      ease: "power2.out"
+    }, ">"); // Start after previous ends
+
+    // Right border (right to bottom)
+    tl.to(btnRightBorderLine.current, {
+      clipPath: "inset(60% 0% 0% 10%)", // right + bottom visible
+      duration: 0.6,
+      ease: "power2.out"
+    }, "<"); // Sync with left border animation
+
+    // ✳️ Animate borders retracting back (instead of fading)
+    // tl.to(btnLeftBorderLine.current, {
+    //   clipPath: "inset(100% 100% 100% 100%)",
+    //   duration: 0.4,
+    //   ease: "power1.in",
+    //   delay: 0.2
+    // });
+
+    // tl.to(btnRightBorderLine.current, {
+    //   clipPath: "inset(100% 100% 100% 100%)",
+    //   duration: 0.4,
+    //   ease: "power1.in"
+    // }, "<"); // Sync both at same time
+
+    // 3. Switch transform origins to prepare for shrink
+    tl.set(btnLineLeft.current, { transformOrigin: "right center" });
+    tl.set(btnLineRight.current, { transformOrigin: "left center" });
+
+    // 4. Lines shrink inward
+    tl.to([btnLineLeft.current, btnLineRight.current], {
+      scaleX: 0,
+      duration: 1,
+      ease: "power2.in"
+    });
+
+  }, []);
+
+
+
+
 
   const navigate = useNavigate();
 
@@ -91,24 +167,81 @@ const Brands = ({ btn, style, hideTitle }) => {
                   className="brand-logo"
                 />
               </>
-              {/* <div className="post-card p-3 bg-white h-100">
-                <img src={post.image} alt={post.title} className="w-100 mb-3" />
-                <h6 className="my-3">{post.title}</h6>
-                <p className="post-description">{post.description}</p>
-                <div className="text-end">
 
-                </div>
-              </div> */}
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
 
-      {btn && <Btn onClick={() => {
-        navigate("/how-it-works")
-      }} rightIcon>See how eden Works</Btn>}
-    </section>
+
+
+      {btn &&
+        <div id="btn-highlighted-section" className="d-flex align-items-center w-100">
+          <div
+            ref={btnLineLeft}
+            style={{
+              flex: 1,
+              height: 3,
+              backgroundColor: "#2f98d0",
+              transformOrigin: "left center"
+            }}
+          ></div>
+
+          <div style={{ position: "relative", display: "inline-block" }}>
+
+            {/* Animated left to top border overlay */}
+            <div
+              ref={btnLeftBorderLine}
+              style={{
+                border: "3px solid rgb(117, 207, 255)", // left-top border color
+                borderRadius: "3rem",
+                clipPath: "inset(100% 100% 100% 100%)",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                pointerEvents: "none",
+                zIndex: 1
+              }}
+            />
+
+            {/* Animated right to bottom border overlay */}
+            <div
+              ref={btnRightBorderLine}
+              style={{
+                border: "3px solid rgb(24, 98, 138)", // right-bottom border color
+                borderRadius: "3rem",
+                clipPath: "inset(100% 100% 100% 100%)",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                pointerEvents: "none",
+                zIndex: 1
+              }}
+            />
+            {/* Actual button */}
+            <Btn onClick={() => navigate("/how-it-works")} rightIcon>
+              See how Eden Works
+            </Btn>
+          </div>
+
+
+          <div
+            ref={btnLineRight}
+            style={{
+              flex: 1,
+              height: 3,
+              backgroundColor: "#2f98d0",
+              transformOrigin: "right center"
+            }}
+          ></div>
+        </div>
+      }
+    </section >
   );
 };
 
