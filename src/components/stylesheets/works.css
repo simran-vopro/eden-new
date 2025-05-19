@@ -405,10 +405,6 @@
   background-color: #00BFA6;
 }
 
-
-
-
-
 .section-bottom {
   background-color: var(--primary);
   border-radius: 3rem;
@@ -452,7 +448,7 @@
 }
 
 
-@media (min-width: 320px) and (max-width: 991px) {
+@media (max-width: 767px) {
 
   .hero-section {
     position: relative;

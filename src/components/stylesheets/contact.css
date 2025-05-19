@@ -477,7 +477,7 @@ textarea.form-control {
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (max-width: 767px) {
   .form-height-modal {
     padding-bottom: 10px;
   }

@@ -245,7 +245,7 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title fs-2">
+                      <h5 className="card-title fs-md-2">
                         Energy<br></br>Consultants
                       </h5>
                       <p className="card-description">
@@ -264,7 +264,7 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title fs-2">
+                      <h5 className="card-title fs-md-2">
                         Operations<br></br>Professionals
                       </h5>
                       <p className="card-description">
@@ -283,7 +283,7 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title fs-2">
+                      <h5 className="card-title fs-md-2">
                         Customer<br></br>Support Experts
                       </h5>
                       <p className="card-description">

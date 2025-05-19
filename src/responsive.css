@@ -9,9 +9,13 @@
 }
 
 /* Small tablets and large phones (426px to 600px) */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   #insights-header {
     padding: 1rem !important;
+  }
+
+  #fs-loader h2{
+    font-size: 5vw;
   }
 
   .box-row {
@@ -676,8 +680,8 @@
 
 }
 
-/* Medium laptops (1025px to 1280px) */
-@media (min-width: 601px) and (max-width: 1280px) {
+/* Medium laptops (768px to 1280px) */
+@media (min-width: 768px) and (max-width: 1280px) {
   /* #hero {
     height: 625px;
   } */
