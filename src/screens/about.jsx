@@ -446,7 +446,7 @@ const About = () => {
         <div className="content-width">
           <div className="slide-up">
             <img src={images.infinity_logo} alt="" className="img-fluid w-50" />
-            <p className="blue-text fs-5 mb-2">
+            <p className="blue-text fs-md-5 mb-2">
               Discover Eden – The Future of Utility & Infinity Solutions
             </p>
             <p className="dark-text title-big-medium text-lineheight">
@@ -636,7 +636,7 @@ const About = () => {
 
               <div>
                 <div className="d-flex align-items-center">
-                  <BsFillCheckCircleFill className="blue-text fs-5" />
+                  <BsFillCheckCircleFill className="blue-text fs-md-5" />
                   <p className="green-text fs-4 mb-0 ps-2">
                     Advanced Analytics
                   </p>
@@ -648,7 +648,7 @@ const About = () => {
               </div>
               <div>
                 <div className="d-flex align-items-center">
-                  <BsFillCheckCircleFill className="blue-text fs-5" />
+                  <BsFillCheckCircleFill className="blue-text fs-md-5" />
                   <p className="green-text fs-4 mb-0 ps-2">
                     Sustainable Design
                   </p>
@@ -661,7 +661,7 @@ const About = () => {
               </div>
               <div>
                 <div className="d-flex align-items-center">
-                  <BsFillCheckCircleFill className="blue-text fs-5" />
+                  <BsFillCheckCircleFill className="blue-text fs-md-5" />
                   <p className="green-text fs-4 mb-0 ps-2">
                     Scalable Solutions
                   </p>
@@ -755,9 +755,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className="full-img-container rounded mx-5">
-        <div className="col-md-5 p-5 d-flex flex-column justify-content-center h-100">
-          <p className="text-white fs-5 mb-2">
+      <div className="full-img-container rounded mx-2 mx-md-5">
+        <div className="col-md-5 p-3 p-md-5 d-flex flex-column justify-content-center h-100">
+          <p className="text-white fs-md-5 mb-2">
             Ready to Tranform Your Utilities?
           </p>
           <p className="text-white dark-text text-start title-big text-lineheight">

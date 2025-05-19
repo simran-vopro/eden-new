@@ -84,17 +84,17 @@ export const AllServices = () => {
               alt="civil"
             />
           </div>
-          <div className="col-md-6 ps-5">
+          <div className="col-md-6 p-4 ps-md-5 py-md-0">
             <p className="dark-text title text-start title-big text-lineheight">
               {service?.title}
             </p>
 
-            <p className="green-text fs-5 mb-0">
+            <p className="green-text fs-md-5 mb-0">
               No assumptions. No missed details. Just clarity and value
             </p>
 
             <div
-              className="long-content py-4"
+              className="long-content pt-3  py-md-4"
               dangerouslySetInnerHTML={{ __html: service?.longContent }}
             />
 
@@ -105,7 +105,7 @@ export const AllServices = () => {
         </div>
       </section>
 
-      <div className="eden-brands" style={{ marginTop: "5rem" }}>
+      <div className="eden-brands service-page-brands" style={{ marginTop: "5rem" }}>
         <Brands hideTitle />
       </div>
 
@@ -115,7 +115,7 @@ export const AllServices = () => {
             className="container d-flex flex-column align-items-center justify-content-center"
             style={{ zIndex: "999" }}
           >
-            <p className="text-white fs-5 mb-2">What we do</p>
+            <p className="text-white fs-md-5 mb-2">What we do</p>
             <p className="long-content text-center text-white m-0 w-md-50">
               Driving smarter, greener utility strategies through expert
               procurement, data-led insight, and flexible support tailored to
@@ -134,7 +134,7 @@ export const AllServices = () => {
           <div className="overlay"></div>
         </div>
 
-    
+
         {showVideoModal && (
           <div
             className="modal fade show d-block"
@@ -180,7 +180,7 @@ export const AllServices = () => {
         <div className="container chat-section">
           <div className="row p-0 align-items-center">
             <div className="col-md-6">
-              <p className="green-text fs-5 mb-2">Other Services</p>
+              <p className="green-text fs-md-5 mb-2">Other Services</p>
               <p className="dark-text  text-start text-normal fs-2 mb-0">
                 At Eden, we offer a range of services that<br></br>
                 will support and improve your business’s<br></br>
@@ -209,51 +209,97 @@ export const AllServices = () => {
         <div className="container top-sectors services-slider position-relative">
           <div className="sector-swiper-outer row align-items-center">
             <div className="col-md-12 p-0">
-              <Swiper
-                modules={[Navigation, Pagination]}
-                navigation={{
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }}
-                pagination={{ clickable: true }}
-                spaceBetween={25}
-                slidesPerView={4}
-                slidesPerGroup={4}
-                loop={false}
-                className="sectors-slider"
-              >
-                {data.map((slide, index) => (
-                  <SwiperSlide key={index} className="slider-sector p-2">
-                    <div className="sector-card service-card p-4 rounded align-items-start">
-                      <div className="icon-box mb-3">
-                        <img
-                          src={slide.icon}
-                          alt="icon"
-                          className="img-fluid"
-                        />
-                      </div>
-                      <h5 className="mb-2 text-start">{slide.title}</h5>
-                      <p className="long-content-medium small mb-0">
-                        {slide.content}
-                      </p>
-                      <div
-                        className="btn-bottom half-bg-hover"
-                        onClick={() => handleUpdateContent(slide)}
-                      >
-                        <div className="d-flex align-items-center justify-content-center p-2">
-                          <p className="long-content-medium text-black small mb-0 p-0">
-                            Find out more
-                          </p>
-                          <CgArrowRight
-                            className="blue-text"
-                            style={{ fontSize: 20, paddingLeft: 5 }}
+
+              <div className="desktop-other-services-view">
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation={{
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  }}
+                  pagination={{ clickable: true }}
+                  spaceBetween={25}
+                  slidesPerView={4}
+                  slidesPerGroup={4}
+                  loop={false}
+                  className="sectors-slider"
+                >
+                  {data.map((slide, index) => (
+                    <SwiperSlide key={index} className="slider-sector p-2">
+                      <div className="sector-card service-card p-4 rounded align-items-start">
+                        <div className="icon-box mb-3">
+                          <img
+                            src={slide.icon}
+                            alt="icon"
+                            className="img-fluid"
                           />
                         </div>
+                        <h5 className="mb-2 text-start">{slide.title}</h5>
+                        <p className="long-content-medium small mb-0">
+                          {slide.content}
+                        </p>
+                        <div
+                          className="btn-bottom half-bg-hover"
+                          onClick={() => handleUpdateContent(slide)}
+                        >
+                          <div className="d-flex align-items-center justify-content-center p-2">
+                            <p className="long-content-medium text-black small mb-0 p-0">
+                              Find out more
+                            </p>
+                            <CgArrowRight
+                              className="blue-text"
+                              style={{ fontSize: 20, paddingLeft: 5 }}
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+
+              <div className="mobile-other-services-view">
+                <Swiper
+                  modules={[Pagination]}
+                  pagination={{ clickable: true }}
+                  slidesPerView={1}
+                  // slidesPerGroup={1}
+                  loop={true}
+                  className="sectors-slider"
+                >
+                  {data.map((slide, index) => (
+                    <SwiperSlide key={index} className="slider-sector p-2">
+                      <div className="sector-card service-card p-4 rounded align-items-start">
+                        <div className="icon-box mb-3">
+                          <img
+                            src={slide.icon}
+                            alt="icon"
+                            className="img-fluid"
+                          />
+                        </div>
+                        <h5 className="mb-2 text-start">{slide.title}</h5>
+                        <p className="long-content-medium small mb-0">
+                          {slide.content}
+                        </p>
+                        <div
+                          className="btn-bottom half-bg-hover"
+                          onClick={() => handleUpdateContent(slide)}
+                        >
+                          <div className="d-flex align-items-center justify-content-center p-2">
+                            <p className="long-content-medium text-black small mb-0 p-0">
+                              Find out more
+                            </p>
+                            <CgArrowRight
+                              className="blue-text"
+                              style={{ fontSize: 20, paddingLeft: 5 }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           </div>
         </div>
@@ -281,7 +327,7 @@ export const AllServices = () => {
           <div className="row justify-content-between">
             <div className="col-md-4">
               <div id="services-header p-0">
-                <p className="green-text fs-5 mb-5 text-start">
+                <p className="green-text fs-md-5 mb-md-5 text-start">
                   Our other services
                 </p>
 
@@ -297,7 +343,7 @@ export const AllServices = () => {
                 {data.map((service, index) => (
                   <Accordion.Item eventKey={index.toString()} key={service.id}>
                     <Accordion.Header>
-                      <h5 className="title text-start fs-4">{service.title}</h5>
+                      <h5 className="title text-start fs-6 fs-md-4">{service.title}</h5>
                     </Accordion.Header>
                     <Accordion.Body>
                       {service.content}
@@ -326,10 +372,10 @@ export const AllServices = () => {
         </div>
       </section>
 
-      <section id="why-us" className="container px-0">
-        <div className="row hero-about-text">
+      <section id="why-us" className="container px-md-0">
+        <div className="row hero-about-text flex-wrap-reverse flex-md-nowrap">
           <div className="col-md-6 pe-5">
-            <p className="green-text fs-5">People-Powered Excellence</p>
+            <p className="green-text fs-md-5">People-Powered Excellence</p>
             <p className="dark-text title text-start title-big text-lineheight">
               The Expertise Behind Eden
             </p>
@@ -419,13 +465,13 @@ export const AllServices = () => {
                         className="img-fluid w-100 h-100 object-fit-cover"
                         style={{ filter: "brightness(0.4)" }}
                       />
-                      <div className="position-absolute top-0 start-0 p-3">
+                      <div className="position-absolute top-0 start-0 p-2 p-md-3">
                         <small className="badge text-white tag-date-style p-0">
                           {post.tag} <span className="dot">•</span>
                           {post.date}
                         </small>
                       </div>
-                      <div className="position-absolute bottom-0 p-3">
+                      <div className="position-absolute bottom-0 p-2 p-md-3">
                         <h4 className="blog-grid-title">{post.title}</h4>
                         <div
                           onClick={() => {
@@ -462,13 +508,13 @@ export const AllServices = () => {
                     className="img-fluid w-100 h-100 object-fit-cover"
                     style={{ filter: "brightness(0.4)" }}
                   />
-                  <div className="position-absolute top-0 start-0 p-3">
+                  <div className="position-absolute top-0 start-0 p-2 p-md-3">
                     <small className="badge text-white tag-date-style p-0">
                       {post.tag} <span className="dot">•</span>
                       {post.date}
                     </small>
                   </div>
-                  <div className="position-absolute bottom-0 p-3">
+                  <div className="position-absolute bottom-0 p-2 p-md-3">
                     <h4 className="blog-grid-title">{post.title}</h4>
                     <div
                       onClick={() => {
@@ -498,7 +544,7 @@ export const AllServices = () => {
             </h1>
           </div>
 
-          <div className="contact-button-section col-12 col-md-4 d-flex justify-content-end">
+          <div className="contact-button-section col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
             <Btn
               rightIcon
               background={"#fff"}

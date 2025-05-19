@@ -406,70 +406,7 @@
 }
 
 
-@media (min-width: 320px) and (max-width: 991px) {
-  .custom-block-overlay {
-    min-height: 320px;
-  }
 
-  .hero-section {
-    position: relative;
-    overflow: hidden;
-    padding-top: 90px;
-    padding-bottom: 120px;
-  }
-
-  #how-it-works .long-content {
-    font-size: 16px;
-  }
-
-  .section-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-
-  .vision-card {
-    max-width: 100%;
-    margin-left: 0;
-  }
-
-  .person {
-    position: absolute;
-    width: 100%;
-    top: -51.6vw;
-    left: 0;
-    display: none;
-  }
-
-  .outer-box {
-    width: 95%;
-    height: 550px;
-  }
-
-  .inner-box {
-    width: 96%;
-    height: 98%;
-  }
-
-  .timeline-container .vertical-scrollable-timeline li {
-    padding: 20px 0px 65px 100px;
-  }
-
-  .vertical-scrollable-timeline li .icon-holder::before {
-    width: 60px;
-    height: 60px;
-  }
-
-  .timeline-container .vertical-scrollable-timeline li .icon-holder {
-    width: 90px;
-    height: 90px;
-  }
-
-  .featured-section {
-    padding-bottom: 40px;
-  }
-
-}
 
 
 .section-bottom {
@@ -504,12 +441,94 @@
   align-items: flex-start;
 }
 
-.chat-section .webBtn{
-  padding:0 3rem;
+.chat-section .webBtn {
+  padding: 0 3rem;
   margin-top: 2rem;
 }
 
 
 .bottom-line {
   width: 400px;
+}
+
+
+@media (min-width: 320px) and (max-width: 991px) {
+
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 90px;
+    padding-bottom: 120px;
+  }
+
+  #how-it-works .long-content {
+    font-size: 16px;
+  }
+
+  .section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  .vision-card {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .person {
+    position: absolute;
+    width: 100%;
+    top: -51.6vw;
+    left: 0;
+    display: none;
+  }
+
+
+  .star {
+    width: 40px;
+    height: 40px;
+  }
+
+  .outer-box {
+    width: 95%;
+    height: 100%;
+  }
+
+  #vision-about {
+    margin-bottom: 2rem;
+  }
+
+  .full-img-container {
+    height: 200px;
+    margin-bottom: 2rem;
+  }
+
+  .tree {
+    width: 40vw;
+  }
+
+  .inner-box {
+    width: 96%;
+    height: 70%;
+  }
+
+  .timeline-container .vertical-scrollable-timeline li {
+    padding: 20px 0px 65px 100px;
+  }
+
+  .vertical-scrollable-timeline li .icon-holder::before {
+    width: 60px;
+    height: 60px;
+  }
+
+  .timeline-container .vertical-scrollable-timeline li .icon-holder {
+    width: 90px;
+    height: 90px;
+  }
+
+  .featured-section {
+    padding-bottom: 40px;
+  }
+
 }

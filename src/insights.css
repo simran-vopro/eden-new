@@ -117,7 +117,8 @@
   font-family: "lato-bold";
   position: relative;
   text-decoration: underline !important;
-  text-decoration-color: #b8510d !important;
+  /* text-decoration-color: #b8510d !important; */
+  text-decoration-color: var(--primary) !important;
   text-underline-offset: 5px;
   padding-right: 2.1875rem;
   letter-spacing: 2px;
@@ -154,6 +155,16 @@
   line-height: 1.5;
   color: #fff;
 }
+
+.contact-heading {
+  font-size: 1.2rem !important;
+  text-align: center;
+}
+
+.contact-us-section {
+  height: 280px;
+}
+
 
 #hero-blog {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
@@ -603,7 +614,8 @@
     top: 2vw;
     right: 22vw;
   }
-/* 
+
+  /* 
   .testimonial4 {
     top: 31vh;
     right: -38vh;
@@ -758,6 +770,10 @@
     display: none;
   }
 
+  #insights .container-fluid {
+    padding: 1rem 1rem !important;
+  }
+
   #insights .edenText-subtext {
     color: #fff;
     margin-right: 0 !important;
@@ -843,16 +859,7 @@
     width: 100%;
   }
 
-  .testimonial1,
-  .testimonial2,
-  .testimonial3,
-  .testimonial4 {
-    top: 0;
-    right: 0;
-    position: relative !important;
-    max-width: 100%;
-    flex-shrink: 0;
-  }
+
 
   #circular {
     position: relative;
@@ -863,6 +870,72 @@
 
   #circular #infinity-logo-transparent {
     display: none;
+  }
+
+  .testimonial-card {
+    height: 430px !important;
+    overflow-x: scroll;
+    justify-content: unset !important;
+  }
+
+  .testimonial1,
+  .testimonial2,
+  .testimonial3 {
+    position: relative !important;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    height: 330px !important;
+    flex-shrink: 0;
+    max-width: 95%;
+    margin-right: 10px;
+    border-radius: 3rem;
+  }
+
+  .testimonial1 p,
+  .testimonial2 p,
+  .testimonial3 p {
+    font-size: 12px;
+  }
+
+
+
+  .testimonial1 img,
+  .testimonial2 img,
+  .testimonial3 img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-top: -50px;
+  }
+
+  #services2 .row {
+    height: auto !important;
+  }
+
+  #services2 .accordion-button {
+    padding: 10px !important;
+  }
+
+  #services2 .accordion-body {
+    padding: 0 10px !important;
+  }
+
+  #services2 .accordion {
+    padding-top: 1rem;
+  }
+
+  #services2 {
+    padding: 0;
+  }
+
+  .mobile-other-services-view .slider-sector {
+    width: 100% !important;
+  }
+
+  .mobile-other-services-view .sectors-slider .swiper-pagination {
+    margin-top: 0rem;
   }
 }
 
@@ -875,6 +948,6 @@
   box-shadow: none;
 }
 
-.card-description{
+.card-description {
   font-size: 17px;
 }

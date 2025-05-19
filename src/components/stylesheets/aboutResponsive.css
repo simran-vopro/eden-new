@@ -2,12 +2,9 @@
 @media (max-width: 480px) {
   .title-breadcrump {
     text-transform: none;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
-  .hero-overlay {
-    height: 65vh;
-  }
 
   .written-img img {
     width: 100%;
@@ -44,9 +41,7 @@
 
 /* Mobile Landscape / Larger Phones */
 @media (min-width: 481px) and (max-width: 767px) {
-  .hero-overlay {
-    height: 65vh;
-  }
+
 
   .written-img img {
     width: 90%;
@@ -71,9 +66,6 @@
     height: 60vh;
   }
 
-  .hero-overlay {
-    height: 60vh;
-  }
 
   .written-img img {
     width: 100%;
@@ -115,12 +107,15 @@
   }
 
   .image-wrapper {
-    height: 102px;
+
+    width: 16vw;
+    height: 16vw;
   }
 
   .stripes {
     position: absolute;
-    top: -10px;
+    top: 0;
+    height: 15vw;
   }
 
   .stripe {
@@ -131,6 +126,7 @@
     width: 55.5%;
     height: 700px;
   }
+
   /* 
 
   #csr .content-width {

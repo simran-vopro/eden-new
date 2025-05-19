@@ -123,11 +123,11 @@ const Career = () => {
 
       <div className="header-bottom-space"></div>
 
-      <section id="why-us" className="container p-0 mt-5">
-        <div className="row hero-about-text">
-          <div className="col-md-6 px-2 d-flex flex-column justify-content-between">
+      <section id="why-us" className="container p-0 mt-3 mt-md-5">
+        <div className="row hero-about-text flex-wrap-reverse flex-md-nowrap">
+          <div className="col-md-6  px-4 px-md-2 d-flex flex-column justify-content-between">
             <div>
-              <p className="green-text fs-5">Eden isn’t just a company</p>
+              <p className="green-text fs-md-5">Eden isn’t just a company</p>
 
               <h1 className="fw-bold text-capitalize title-breadcrump">
                 Work for us...
@@ -136,13 +136,13 @@ const Career = () => {
                 Join a Team That’s Built to Make a Difference
               </p>
 
-              <p className="long-content pe-5">
+              <p className="long-content pe-md-5">
                 We don’t just hire people, we curate a team. From the beginning,
                 our founder Mark set out to bring together the most
                 knowledgeable, committed professionals in the industry.
               </p>
 
-              <p className="long-content pe-5 pb-5">
+              <p className="long-content pe-md-5 pb-md-5">
                 People who care about getting it right, who stay informed, and
                 who want their work to have real impact for clients, the
                 environment, and the wider community.
@@ -151,15 +151,15 @@ const Career = () => {
               <Btn
                 rightIcon
                 onClick={() =>
-                  (window.location.href =
-                    "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+                (window.location.href =
+                  "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
                 }
               >
                 Reach Out
               </Btn>
             </div>
           </div>
-          <div className="col-md-6 ps-0 pe-md-5">
+          <div className="col-md-6 ps-0 pb-3 pe-md-5">
             <img
               src={images.career1}
               className="img-fluid rounded"
@@ -181,7 +181,7 @@ const Career = () => {
           >
             <div className="col-md-4">
               <div id="services-header p-0">
-                <p className="green-text fs-5 mb-5 text-start">We are eden</p>
+                <p className="green-text fs-md-5 mb-5 text-start">We are eden</p>
 
                 <h3 className="text-start">
                   We’re particularly keen to hear from
@@ -296,7 +296,7 @@ const Career = () => {
               </div>
             </div>
 
-            <div className="col-md-6 ps-5">
+            <div className="col-md-6 p-3 ps-md-5">
               <p className="dark-text text-left title-big title text-lineheight text-start">
                 We’re particularly keen to hear from
               </p>
@@ -308,7 +308,7 @@ const Career = () => {
                 clients expect and deserve.
               </p>
 
-              <p className="long-content pb-5">
+              <p className="long-content pb-md-5">
                 At eden, You’ll be part of a team that shares values, not just
                 skills. We support each other, challenge assumptions, and
                 constantly evolve all while working towards a smarter, more
@@ -318,8 +318,8 @@ const Career = () => {
               <Btn
                 rightIcon
                 onClick={() =>
-                  (window.location.href =
-                    "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+                (window.location.href =
+                  "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
                 }
               >
                 Reach Out
@@ -327,12 +327,12 @@ const Career = () => {
             </div>
           </div>
         </div>
-      </section> 
+      </section>
 
-      <section id="why-us" className="container p-0 pt-5 mt-5">
+      <section id="why-us" className="container p-0 pt-5 mt-3 mt-md-5">
         <div className="row hero-about-text">
           <div className="col-md-6 px-5 d-flex flex-column justify-content-between">
-            <div className="mt-5">
+            <div className="mt-5 d-none d-md-block">
               <p className="dark-text text-left title-big title text-lineheight text-start">
                 At <div className="eden-highlight blue-text">eden</div>
               </p>
@@ -381,8 +381,8 @@ const Career = () => {
 
         <Btn
           onClick={() =>
-            (window.location.href =
-              "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+          (window.location.href =
+            "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
           }
         >
           Reach Out
@@ -390,7 +390,7 @@ const Career = () => {
       </div>
 
       <div className="latest-news">
-        <p className="dark-text text-center title-big title text-lineheight pb-5">
+        <p className="dark-text text-center title-big title text-lineheight pb-md-5">
           Latest news & updates
         </p>
 
@@ -414,13 +414,13 @@ const Career = () => {
                   className="img-fluid w-100 h-100 object-fit-cover"
                   style={{ filter: "brightness(0.4)" }}
                 />
-                <div className="position-absolute top-0 start-0 p-4">
+                <div className="position-absolute top-0 start-0 p-2 p-md-4">
                   <small className="badge text-white tag-date-style p-0">
                     {blogPosts[0].tag} <span className="dot">•</span>
                     {blogPosts[0].date}
                   </small>
                 </div>
-                <div className="position-absolute bottom-0 p-4">
+                <div className="position-absolute bottom-0 p-2 p-md-4">
                   <h4 className="blog-grid-title">{blogPosts[0].title}</h4>
                   <p>{blogPosts[0].content}</p>
                   <div
@@ -455,13 +455,13 @@ const Career = () => {
                         className="img-fluid w-100 h-100 object-fit-cover"
                         style={{ filter: "brightness(0.4)" }}
                       />
-                      <div className="position-absolute top-0 start-0 p-3">
+                      <div className="position-absolute top-0 start-0 p-2 p-md-3">
                         <small className="badge text-white tag-date-style p-0">
                           {post.tag} <span className="dot">•</span>
                           {post.date}
                         </small>
                       </div>
-                      <div className="position-absolute bottom-0 p-3">
+                      <div className="position-absolute bottom-0 p-2 p-md-3">
                         <h4 className="blog-grid-title">{post.title}</h4>
                         <div
                           onClick={() => {
@@ -498,13 +498,13 @@ const Career = () => {
                     className="img-fluid w-100 h-100 object-fit-cover"
                     style={{ filter: "brightness(0.4)" }}
                   />
-                  <div className="position-absolute top-0 start-0 p-3">
+                  <div className="position-absolute top-0 start-0 p-2 p-md-3">
                     <small className="badge text-white tag-date-style p-0">
                       {post.tag} <span className="dot">•</span>
                       {post.date}
                     </small>
                   </div>
-                  <div className="position-absolute bottom-0 p-3">
+                  <div className="position-absolute bottom-0 p-2 p-md-3">
                     <h4 className="blog-grid-title">{post.title}</h4>
                     <div
                       onClick={() => {

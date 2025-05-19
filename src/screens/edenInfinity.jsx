@@ -128,8 +128,8 @@ const EdenInfinity = () => {
           <img src={images.cloud} alt="logo" className="cloud img-fluid" />
         </div>
 
-        <div className="container d-flex flex-column  align-items-center align-items-md-center justify-content-center">
-          <p className="blue-text fs-5 mb-2">
+        <div className="container d-flex flex-column align-items-md-center justify-content-center">
+          <p className="blue-text fs-md-5 mb-2">
             Discover Eden – The Future of Utility & Infinity Solutions
           </p>
           <p className="dark-text title-big-medium text-lineheight">
@@ -148,7 +148,7 @@ const EdenInfinity = () => {
           </p>
         </div>
 
-        <div className="video-section container">
+        <div className="video-section video-section-eden container">
           <div className="video-icon-2" onClick={() => setShowVideoModal(true)}>
             <img src={images.videoIconBg} className="img-fluid"></img>
           </div>
@@ -239,7 +239,7 @@ const EdenInfinity = () => {
 
       <div className="sectors">
         <div className="container chat-section">
-          <p className="green-text fs-5 mb-2">Industries We Serve</p>
+          <p className="green-text fs-md-5 mb-2">Industries We Serve</p>
           <p className="dark-text title text-start text-normal title-big-medium mb-0">
             Tailored Solutions for<br></br>
             Diverse Sectors
@@ -469,7 +469,7 @@ const EdenInfinity = () => {
             <img src={images.about} className="img-fluid rounded" alt="civil" />
           </div>
           <div className="col-md-6 p-4 ps-md-5">
-            <p className="green-text fs-5 mb-0">About Our Client</p>
+            <p className="green-text fs-md-5 mb-0">About Our Client</p>
             <p className="dark-text title text-start title-big text-lineheight">
               From SMEs to Industry Leaders, We've Got You Covered
             </p>

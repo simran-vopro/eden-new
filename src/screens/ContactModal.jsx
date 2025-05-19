@@ -199,7 +199,7 @@ const ContactModal = ({ isOpen, onClose, service, goToStep }) => {
             </div>
 
             <FaTimes
-              className="text-dark fs-5 cursor-pointer"
+              className="text-dark fs-md-5 cursor-pointer"
               onClick={() => {
                 onClose();
                 setSelectedService("");

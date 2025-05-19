@@ -457,7 +457,7 @@ const InsightsDetails = () => {
                 <h3 className="text-uppercase fw-bold text-black mb-1">
                   {post?.title}
                 </h3>
-                <p className="long-content text-dark fs-5">{post?.content}</p>
+                <p className="long-content text-dark fs-md-5">{post?.content}</p>
               </div>
 
               {/* Optional Main Image */}

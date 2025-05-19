@@ -23,7 +23,9 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Right Side - Testimonial Card */}
-        <div className="col-md-6  col-lg-8 d-flex justify-content-center align-items-center position-relative p-0" style={{ height: 680 }}>
+        <div className="col-md-6 testimonial-card col-lg-8 d-flex justify-content-center align-items-center position-relative p-0" style={{ height: 680 }}>
+
+       
 
           <img
             src={images.infinity_logo_transparent}
@@ -31,6 +33,7 @@ export default function TestimonialsSection() {
             id="infinity-logo-transparent"
             className="infinity-logo-transparent-review"
           />
+          
 
           <div className="py-5 px-4 px-md-2 py-md-4 position-absolute testimonial1">
 
@@ -55,8 +58,6 @@ export default function TestimonialsSection() {
               Operations Manager, <br></br>Sussex Chamber of Commerce
             </small>
           </div>
-
-
 
           <div className="px-3 py-5 py-md-3 position-absolute testimonial2">
 

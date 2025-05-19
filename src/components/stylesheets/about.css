@@ -829,13 +829,15 @@
     flex-direction: column;
     align-items: center;
   }
+
   #hero-about {
     padding: 0 1rem;
   }
 
   .image-wrapper {
-    width: 125px;
-    height: 125px;
+    width: 40vw;
+    height: 40vw;
+    margin-bottom: 10px;
   }
 
   .stripes {
@@ -845,79 +847,94 @@
     left: auto;
     top: 0;
     width: 100%;
-    max-width: 80px;
-    height: 110px;
+    max-width: 25vw;
+    height: 30vw;
   }
 
   #connection-lines {
     display: none;
   }
-  .image-wrapper {
-    margin-bottom: 10px;
-  }
+
+
   #why-us {
     padding: 3rem 1rem 0;
   }
+
   #partnership {
     height: auto;
     margin-top: 0;
     padding: 1rem !important;
     background-image: none;
   }
+
   #partnership .circle,
   #csr .circle {
     width: 100%;
     height: 80vh;
     display: none;
   }
+
   #partnership .content-width {
     width: 100%;
   }
-  #csr{
+
+  #csr {
     height: auto;
+    background-image: none;
   }
+
   #csr .content-width {
     width: 100%;
     height: auto;
     margin-left: 0rem;
     margin-top: 0%;
   }
+
   .clients-title {
     width: 100%;
   }
+
   .clients-height {
     position: relative;
     bottom: auto;
     height: auto;
   }
+
   .clients {
     left: auto;
     margin: 3rem 0;
   }
+
   .why-us-bottom {
-    padding: 0 0rem 2rem !important;
+    padding: 0 1rem 2rem !important;
   }
 
   .clients .brand-logo {
     height: 50px;
   }
+
   .clients .swiper-slide {
     width: 50%;
   }
+
   .service-item {
     min-width: 100px;
     margin-right: 10px;
   }
+
   .service-img {
     height: 70px;
     width: 70px;
   }
+
   .service-img img {
     max-width: 35%;
   }
+
   .services {
     overflow-x: auto;
   }
+
   .service-item p {
     font-size: 8px;
   }

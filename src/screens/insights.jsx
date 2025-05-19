@@ -152,14 +152,14 @@ const Insights = () => {
       <div className="header-bottom-space"></div>
 
       <div className="container-fluid p-md-5 mb-5">
-        <div className="row py-5 py-sm-0">
+        <div className="row py-md-5 py-sm-0">
           {/* Left Side - Blogs */}
           <div className="col-lg-8">
             <div>
               <h1 className="fw-bold text-capitalize mb-4 title-breadcrump">
                 Insights
               </h1>
-              <p className="long-content text-dark fs-5 mb-4">
+              <p className="long-content text-dark fs-md-5 mb-4">
                 Keep up with the latest company updates, opinion pieces, and
                 news from the world of business energy.
               </p>
@@ -184,13 +184,13 @@ const Insights = () => {
                     className="img-fluid w-100 h-100 object-fit-cover"
                     style={{ filter: "brightness(0.4)" }}
                   />
-                  <div className="position-absolute top-0 start-0 p-4">
+                  <div className="position-absolute top-0 start-0 p-2 p-md-4">
                     <small className="badge text-white tag-date-style p-0">
                       {blogPosts[0].tag} <span className="dot">•</span>
                       {blogPosts[0].date}
                     </small>
                   </div>
-                  <div className="position-absolute bottom-0 p-4">
+                  <div className="position-absolute bottom-0 p-2 p-md-4">
                     <h4 className="blog-grid-title">{blogPosts[0].title}</h4>
                     <p>{blogPosts[0].content}</p>
                     <div
@@ -225,13 +225,13 @@ const Insights = () => {
                           className="img-fluid w-100 h-100 object-fit-cover"
                           style={{ filter: "brightness(0.4)" }}
                         />
-                        <div className="position-absolute top-0 start-0 p-3">
+                        <div className="position-absolute top-0 start-0 p-2 p-md-3">
                           <small className="badge text-white tag-date-style p-0">
                             {post.tag} <span className="dot">•</span>
                             {post.date}
                           </small>
                         </div>
-                        <div className="position-absolute bottom-0 p-3">
+                        <div className="position-absolute bottom-0 p-2 p-md-3">
                           <h4 className="blog-grid-title">{post.title}</h4>
                           <div
                             onClick={() => {
@@ -268,13 +268,13 @@ const Insights = () => {
                       className="img-fluid w-100 h-100 object-fit-cover"
                       style={{ filter: "brightness(0.4)" }}
                     />
-                    <div className="position-absolute top-0 start-0 p-3">
+                    <div className="position-absolute top-0 start-0 p-2 p-md-3">
                       <small className="badge text-white tag-date-style p-0">
                         {post.tag} <span className="dot">•</span>
                         {post.date}
                       </small>
                     </div>
-                    <div className="position-absolute bottom-0 p-3">
+                    <div className="position-absolute bottom-0 p-2 p-md-3">
                       <h4 className="blog-grid-title">{post.title}</h4>
                       <div
                         onClick={() => {
@@ -298,7 +298,7 @@ const Insights = () => {
                 <span
                   key={tag}
                   onClick={() => setActiveTag(tag)}
-                  className={`cursor-pointer fs-4 ${
+                  className={`cursor-pointer fs-md-4 ${
                     activeTag === tag ? "fw-bold text-black" : "text-muted"
                   }`}
                   style={{ cursor: "pointer" }}
