@@ -76,7 +76,7 @@ export const AllServices = () => {
           <div className="col-md-6 ps-0 pe-md-5">
             <img
               src={service?.img}
-              className="img-fluid rounded"
+              className="img-fluid rounded service-image"
               style={{
                 height: "100%",
                 objectFit: "cover",

@@ -14,8 +14,13 @@
     padding: 1rem !important;
   }
 
-  #fs-loader h2{
+  #fs-loader h2 {
     font-size: 5vw;
+  }
+
+  .service-image {
+    width: 100%;
+    height: auto !important;
   }
 
   .box-row {
