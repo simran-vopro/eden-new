@@ -39,7 +39,7 @@ const posts = [
   },
   {
     image: images.post4,
-    title: "Decarbonization and Net-Zero Commitments",
+    title: "Decarbonisation and Net-Zero Commitments",
     description:
       "With net-zero legally binding and interim goals rising, Eden supports businesses with tailored energy strategies, infrastructure planning, and compliance to meet evolving targets without sacrificing performance.",
     link: "#",
@@ -278,7 +278,7 @@ const About = () => {
                         />
                       </svg>
                       <p className="green-text fs-4 mb-0 ps-2">
-                        Get the best deal
+                        Get the best support
                       </p>
                     </div>
 
@@ -841,7 +841,7 @@ const About = () => {
                           {post.date}
                         </small>
                       </div>
-                <div className="position-absolute bottom-0 p-2 p-md-3">
+                      <div className="position-absolute bottom-0 p-2 p-md-3">
                         <h4 className="blog-grid-title">{post.title}</h4>
                         <div
                           onClick={() => {
@@ -884,7 +884,7 @@ const About = () => {
                       {post.date}
                     </small>
                   </div>
-                <div className="position-absolute bottom-0 p-2 p-md-3">
+                  <div className="position-absolute bottom-0 p-2 p-md-3">
                     <h4 className="blog-grid-title">{post.title}</h4>
                     <div
                       onClick={() => {

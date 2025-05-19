@@ -252,7 +252,7 @@ const LatestblogPosts = [
   {
     id: 6,
     title:
-      "Decarbonization in Action: Practical Strategies for Net-Zero Transition",
+      "Decarbonisation in Action: Practical Strategies for Net-Zero Transition",
     sub_title:
       "Meeting 2035's 81% emission reduction target without compromising operations",
     content:
@@ -366,7 +366,7 @@ const LatestblogPosts = [
 //   },
 //   {
 //     id: 4,
-//     title: "Decarbonization and Net-Zero Commitments",
+//     title: "Decarbonisation and Net-Zero Commitments",
 //     sub_title: "Navigating the path to a sustainable future with Eden.",
 //     content:
 //       "With net-zero legally binding and interim goals rising, Eden supports businesses with tailored energy strategies, infrastructure planning, and compliance to meet evolving targets without sacrificing performance.",

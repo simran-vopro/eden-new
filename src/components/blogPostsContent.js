@@ -264,7 +264,7 @@ export const blogPosts = [
   },
   {
     id: 4,
-    title: "Decarbonization and Net-Zero Commitments",
+    title: "Decarbonisation and Net-Zero Commitments",
     sub_title: "Navigating the Path to a Sustainable Future",
     content:
       "Advanced metering insights drive 18-22% efficiency gains. Learn to transform raw data into actionable strategies.",

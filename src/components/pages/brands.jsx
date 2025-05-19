@@ -86,18 +86,18 @@ const Brands = ({ btn, style, hideTitle }) => {
     }, "<"); // Sync with left border animation
 
     // ✳️ Animate borders retracting back (instead of fading)
-    // tl.to(btnLeftBorderLine.current, {
-    //   clipPath: "inset(100% 100% 100% 100%)",
-    //   duration: 0.4,
-    //   ease: "power1.in",
-    //   delay: 0.2
-    // });
+    tl.to(btnLeftBorderLine.current, {
+      clipPath: "inset(100% 100% 100% 100%)",
+      duration: 0.4,
+      ease: "power1.in",
+      delay: 0.2
+    });
 
-    // tl.to(btnRightBorderLine.current, {
-    //   clipPath: "inset(100% 100% 100% 100%)",
-    //   duration: 0.4,
-    //   ease: "power1.in"
-    // }, "<"); // Sync both at same time
+    tl.to(btnRightBorderLine.current, {
+      clipPath: "inset(100% 100% 100% 100%)",
+      duration: 0.4,
+      ease: "power1.in"
+    }, "<"); // Sync both at same time
 
     // 3. Switch transform origins to prepare for shrink
     tl.set(btnLineLeft.current, { transformOrigin: "right center" });
@@ -111,9 +111,6 @@ const Brands = ({ btn, style, hideTitle }) => {
     });
 
   }, []);
-
-
-
 
 
   const navigate = useNavigate();
