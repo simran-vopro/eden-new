@@ -11,7 +11,7 @@ import Btn from "../components/other/btn";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import {  useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useModal } from "../components/pages/ModalContext";
 
 const SideblogPostsHighlights = [
@@ -414,11 +414,14 @@ const InsightsDetails = () => {
   const { openContactModal } = useModal();
   const location = useLocation();
   const { post } = location.state || {};
+  const navigate = useNavigate();
 
   return (
     <div id="insights">
       <div id="insights-header">
-        <img src={images.logo} alt="logo" className="logo" />
+        <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+          <img src={images.logo} alt="logo" className="logo" />
+        </div>
         <Header navItemStyle={{ color: "#000" }} />
       </div>
 

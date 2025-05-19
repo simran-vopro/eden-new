@@ -10,7 +10,6 @@
 
 /* Small tablets and large phones (426px to 600px) */
 @media (max-width: 600px) {
-
   #insights-header {
     padding: 1rem !important;
   }
@@ -164,7 +163,7 @@
     align-items: center;
     background-size: cover;
     background-position: top;
-    height: 750px;
+    height: 850px;
   }
 
   #search {
@@ -176,7 +175,7 @@
   }
 
   /* Make sure your content inside hero-section is above the overlay */
-  #hero>* {
+  #hero > * {
     position: relative;
     z-index: 2;
   }
@@ -186,9 +185,9 @@
   }
 
   #contentSection {
-    width: 100%;
+    width: 90%;
     margin-bottom: 0;
-    margin-top: 15vh;
+    margin-top: 20vh;
   }
 
   .child-brand-title span {
@@ -246,6 +245,7 @@
     width: 90%;
     height: 58px;
     margin: 30px 0;
+    margin-top: -70px;
   }
 
   .ghost-text {
@@ -330,6 +330,10 @@
 
   .founder {
     width: 100%;
+    margin-bottom: 10px;
+  }
+  .posts-swiper .swiper-slide {
+    width: 45% !important;
   }
 
   #about-title {
@@ -339,6 +343,93 @@
 
   #infinity-about {
     width: 6rem;
+  }
+
+  .infinity-video-section {
+    padding: 0 1rem;
+  }
+
+  .top-hero .clouds {
+    width: 165px;
+    position: absolute;
+    left: -45px;
+    top: 36px;
+  }
+
+  .title-big-medium {
+    font-size: 5vw !important;
+  }
+
+  .slider-sector {
+    width: 60% !important;
+  }
+  .top-hero .cloud {
+    width: 125px;
+    right: 0;
+  }
+
+  .top-hero {
+    padding: 9rem 5rem 2rem;
+  }
+
+  .slider-icon {
+    display: none !important;
+  }
+  .card-top {
+    padding: 0;
+  }
+
+  .top-sectors {
+    padding: 1rem 0;
+  }
+
+  .top-card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .header-bottom-space {
+    height: 20vh;
+  }
+
+
+
+  /* .infinity-video-section .video-section {
+    height: 180px;
+    margin: 2rem;
+  } */
+
+  .section-space {
+    margin: 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-review-slider {
+    display: block;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+  }
+  .desktop-review-slider {
+    display: none;
+  }
+  .title-big {
+    font-size: 5.6vw !important;
+  }
+  .long-content-medium {
+    font-size: 3.8vw;
+  }
+
+  .contact-heading {
+    font-size: 1.2rem !important;
+    text-align: center;
+  }
+
+  #insights .container-fluid {
+    padding: 3rem 1rem !important;
+  }
+  .feature-sectors {
+    padding: 0rem 0;
   }
 
   #brands {
@@ -432,7 +523,7 @@
   }
 
   .custom-footer .logo {
-    width: 300px;
+    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -563,7 +654,6 @@
   /* #hero {
     height: 625px;
   } */
-
 
   .box-content-2 {
     width: 42%;
@@ -796,20 +886,17 @@
   }
 }
 
-
 @media (min-width: 1851px) {
   #contentSection {
     /* width: 42%; */
   }
 }
 
-
 @media (min-width: 1024) {
   /* .top-title {
     font-size: 2.2vw;
   } */
 }
-
 
 /* Large desktops (1281px to 1440px) */
 @media (min-width: 1281px) and (max-width: 1440px) {
@@ -983,7 +1070,6 @@
   /* #contentSection {
     margin-bottom: 4vw;
   } */
-
 }
 
 /* Ultra wide screens (1921px and up) */
@@ -999,13 +1085,11 @@
   }
 }
 
-
 @media screen and (min-width: 1851px) and (max-width: 2000px) and (height: 1200px) {
   #hero {
     height: 70vw;
   }
 }
-
 
 @media screen and (width: 1512px) and (height: 928px) {
   .d-letter::before {
@@ -1019,7 +1103,6 @@
   .a-letter::before {
     top: 2.5vw;
   }
-
 }
 
 @media screen and (width: 1728px) and (height: 1117px) {
@@ -1031,7 +1114,6 @@
     margin-bottom: 7rem;
   }
 }
-
 
 @media screen and (width: 768px) and (height: 1024px) {
   #contentSection {

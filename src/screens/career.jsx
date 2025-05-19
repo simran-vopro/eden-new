@@ -7,12 +7,50 @@ import Header from "../components/other/header";
 import gsap from "gsap";
 import { blogPosts } from "../components/blogPostsContent";
 import { useNavigate } from "react-router-dom";
+import { Accordion } from "react-bootstrap";
+import {
+  BiChevronLeftCircle,
+  BiChevronRightCircle,
+  BiSolidChevronRightCircle,
+} from "react-icons/bi";
 
 const Career = () => {
   const { openContactModal } = useModal();
   const cardRefs = useRef([]);
 
   const navigate = useNavigate();
+
+  const data = [
+    {
+      id: 6,
+      link: "Contact Us",
+      title: "Energy Consultants",
+      icon: images.s4,
+      img: images.post1,
+      content:
+        "Energy consultants with experience supporting large-scale energy users and complex portfolios",
+    },
+    {
+      id: 2,
+      link: "Contact Us",
+
+      img: images.post2,
+      icon: images.s2,
+      title: "Operations professionals",
+      content:
+        "Operations professionals who thrive behind the scenes, ensuring smooth service delivery",
+    },
+    {
+      id: 3,
+      link: "Contact Us",
+
+      icon: images.s6,
+      img: images.post3,
+      title: "Customer support",
+      content:
+        "Customer support experts who bring precision, empathy, and reliability to every interaction",
+    },
+  ];
 
   useEffect(() => {
     cardRefs.current.forEach((card) => {
@@ -32,7 +70,11 @@ const Career = () => {
       });
 
       card.addEventListener("mouseleave", () => {
-        gsap.to(title, { autoAlpha: 1, duration: 0.3, transform: "translateY(20px)" });
+        gsap.to(title, {
+          autoAlpha: 1,
+          duration: 0.3,
+          transform: "translateY(20px)",
+        });
         gsap.to(desc, {
           autoAlpha: 0,
           y: 20,
@@ -47,7 +89,6 @@ const Career = () => {
     backgroundImage: `url(${img})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    borderRadius: "1rem",
     minHeight: "250px",
     padding: "2rem",
     position: "relative",
@@ -55,7 +96,7 @@ const Career = () => {
     overflow: "hidden",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   });
 
   const overlayStyle = {
@@ -74,66 +115,129 @@ const Career = () => {
   return (
     <div id="insights">
       <div id="insights-header">
-        <img src={images.logo} alt="logo" className="logo" />
+        <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+          <img src={images.logo} alt="logo" className="logo" />
+        </div>{" "}
         <Header navItemStyle={{ color: "#000" }} />
       </div>
 
-
       <div className="header-bottom-space"></div>
 
-      <div className="mt-2 mt-md-5 d-flex flex-column justify-content-center align-items-center">
-        <p className="green-text fs-5 text-center">WORKS FOR US</p>
-        <h1 className="fw-bold text-center text-normal mb-4 title-breadcrump">Join a Team That’s<br></br>
-          Built to Make a<br></br> Difference</h1>
-
-        <img src={images.bottom_line} alt="bottom_line" className="img-fluid bottom-line" />
-      </div>
-
-
-      <section id="why-us" className="container p-0 pt-5 mt-5">
+      <section id="why-us" className="container p-0 mt-5">
         <div className="row hero-about-text">
-          <div className="col-md-6 px-5 d-flex flex-column justify-content-between">
+          <div className="col-md-6 px-2 d-flex flex-column justify-content-between">
             <div>
-              <p className="fw-bold text-normal mb-4 title-breadcrump mb-5">At <div className="eden-highlight green-text">eden.</div>
+              <p className="green-text fs-5">Eden isn’t just a company</p>
 
-                {/* <br></br>We Build More Than <br></br>a Team */}</p>
+              <h1 className="fw-bold text-capitalize title-breadcrump">
+                Work for us...
+              </h1>
+              <p className="dark-text text-left title-big title text-lineheight text-start">
+                Join a Team That’s Built to Make a Difference
+              </p>
 
-              <p className="long-content fs-5 pt-5 pe-5">We don’t just hire people, we curate a
-                team. From the beginning, our founder
-                Mark set out to bring together the most
-                knowledgeable, committed professionals
-                in the industry. People who care about
-                getting it right, who stay informed, and
-                who want their work to have real impact
-                for clients, the environment, and the
-                wider community.</p>
+              <p className="long-content pe-5">
+                We don’t just hire people, we curate a team. From the beginning,
+                our founder Mark set out to bring together the most
+                knowledgeable, committed professionals in the industry.
+              </p>
+
+              <p className="long-content pe-5 pb-5">
+                People who care about getting it right, who stay informed, and
+                who want their work to have real impact for clients, the
+                environment, and the wider community.
+              </p>
+
+              <Btn
+                rightIcon
+                onClick={() =>
+                  (window.location.href =
+                    "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+                }
+              >
+                Reach Out
+              </Btn>
             </div>
           </div>
           <div className="col-md-6 ps-0 pe-md-5">
-            <img src={images.career1} className="img-fluid rounded" alt="civil" />
+            <img
+              src={images.career1}
+              className="img-fluid rounded"
+              alt="civil"
+            />
           </div>
         </div>
       </section>
 
-      <div className="section-bottom container">
-        <p className="long-content fs-5 text-white text-center">
-          We're growing, and that growth is only possible with the right
-          people. As our client base expands, we’re looking for
-          specialists who can help us maintain the high standards our
-          clients <br></br>expect and deserve.
-        </p>
-      </div>
+      {/* <section
+        id="services2"
+        className="block--spc"
+        style={{ padding: "5rem 0" }}
+      >
+        <div className="container">
+          <div
+            className="row justify-content-between"
+            style={{ height: "auto" }}
+          >
+            <div className="col-md-4">
+              <div id="services-header p-0">
+                <p className="green-text fs-5 mb-5 text-start">We are eden</p>
 
+                <h3 className="text-start">
+                  We’re particularly keen to hear from
+                </h3>
 
-      <section className="career-content-section">
+                <p className="long-content">
+                  We're growing, and that growth is only possible with the right
+                  people. As our client base expands, we’re looking for
+                  specialists who can help us maintain the high standards our
+                  clients expect and deserve.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-8">
+              <Accordion defaultActiveKey="0" flush>
+                {data.map((service, index) => (
+                  <Accordion.Item eventKey={index.toString()} key={service.id}>
+                    <Accordion.Header>
+                      <h5 className="title text-start fs-4">{service.title}</h5>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      {service.content}
+
+                      <div
+                        className="mt-3 d-flex align-items-center"
+                        onClick={() =>
+                          (window.location.href =
+                            "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+                        }
+                      >
+                        <h5
+                          style={{ letterSpacing: "0.5px" }}
+                          className="text-black text-link p-0 m-0"
+                        >
+                          {service.link}
+                        </h5>
+                        <BiSolidChevronRightCircle
+                          className="blue-text"
+                          style={{ fontSize: 25, paddingLeft: 5 }}
+                        />
+                      </div>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="career-content-section pt-5">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-12">
-
-              <p className="dark-text text-center title-big title text-lineheight pb-5"> We’re particularly keen to hear from
-              </p>
-              <div className="row text-center gy-4 my-3">
-                <div className="col-12 col-md-4">
+            <div className="col-md-6">
+              <div className="row text-center gy-4 p-0">
+                <div className="col-12 col-md-6">
                   <div
                     className="career-card card-1"
                     ref={(el) => (cardRefs.current[0] = el)}
@@ -141,16 +245,18 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title fs-2">Energy<br></br>Consultants</h5>
+                      <h5 className="card-title fs-2">
+                        Energy<br></br>Consultants
+                      </h5>
                       <p className="card-description">
-                        Energy consultants with experience supporting large-scale
-                        energy users and complex portfolios
+                        Energy consultants with experience supporting
+                        large-scale energy users and complex portfolios
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-6">
                   <div
                     className="career-card card-2"
                     ref={(el) => (cardRefs.current[1] = el)}
@@ -158,7 +264,9 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title fs-2">Operations<br></br>Professionals</h5>
+                      <h5 className="card-title fs-2">
+                        Operations<br></br>Professionals
+                      </h5>
                       <p className="card-description">
                         Operations professionals who thrive behind the scenes,
                         ensuring smooth service delivery
@@ -167,7 +275,7 @@ const Career = () => {
                   </div>
                 </div>
 
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-12">
                   <div
                     className="career-card card-3"
                     ref={(el) => (cardRefs.current[2] = el)}
@@ -175,41 +283,75 @@ const Career = () => {
                   >
                     <div style={overlayStyle}></div>
                     <div style={contentStyle}>
-                      <h5 className="card-title fs-2">Customer<br></br>Support Experts</h5>
+                      <h5 className="card-title fs-2">
+                        Customer<br></br>Support Experts
+                      </h5>
                       <p className="card-description">
-                        Customer support experts who bring precision, empathy, and
-                        reliability to every interaction
+                        Customer support experts who bring precision, empathy,
+                        and reliability to every interaction
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div className="col-md-6 ps-5">
+              <p className="dark-text text-left title-big title text-lineheight text-start">
+                We’re particularly keen to hear from
+              </p>
+
+              <p className="long-content">
+                We're growing, and that growth is only possible with the right
+                people. As our client base expands, we’re looking for
+                specialists who can help us maintain the high standards our
+                clients expect and deserve.
+              </p>
+
+              <p className="long-content pb-5">
+                At eden, You’ll be part of a team that shares values, not just
+                skills. We support each other, challenge assumptions, and
+                constantly evolve all while working towards a smarter, more
+                sustainable future for utilities.
+              </p>
+
+              <Btn
+                rightIcon
+                onClick={() =>
+                  (window.location.href =
+                    "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+                }
+              >
+                Reach Out
+              </Btn>
+            </div>
           </div>
         </div>
-      </section>
-
-
+      </section> 
 
       <section id="why-us" className="container p-0 pt-5 mt-5">
         <div className="row hero-about-text">
           <div className="col-md-6 px-5 d-flex flex-column justify-content-between">
-            <div>
-              <p className="fw-bold text-normal mb-4 title-breadcrump mb-5">At <div className="eden-highlight green-blue">eden.</div></p>
-              <p className="long-content fs-5 pt-5 pe-5">
-                You’ll be part of a team that shares
-                values, not just skills. We support
-                each other, challenge assumptions,
-                and constantly evolve all while
-                working towards a smarter, more
-                sustainable future for utilities.
+            <div className="mt-5">
+              <p className="dark-text text-left title-big title text-lineheight text-start">
+                At <div className="eden-highlight blue-text">eden</div>
+              </p>
+              <p className="long-content pt-5 pe-5">
+                You’ll be part of a team that shares values, not just skills. We
+                support each other, challenge assumptions, and constantly evolve
+                all while working towards a smarter, more sustainable future for
+                utilities.
               </p>
             </div>
 
             <p className="fs-custom-xl green-text">IF THIS</p>
           </div>
           <div className="col-md-6 ps-0 pe-md-5">
-            <img src={images.career2} className="img-fluid rounded" alt="civil" />
+            <img
+              src={images.career2}
+              className="img-fluid rounded"
+              alt="civil"
+            />
           </div>
         </div>
       </section>
@@ -228,18 +370,28 @@ const Career = () => {
         <p className="fs-custom-xl text-end blue-text">LIKE YOU</p>
       </div>
 
-
-
       <div className="container py-5 chat-section">
-        <p className="dark-text title text-start text-normal title-big-medium mb-0">Don’t just send a CV</p>
-        <p className="long-content">Reach out, introduce yourself, and let’s have a chat.<br></br>
-          We’re always open to speaking with the right people</p>
+        <p className="dark-text title text-start text-normal title-big-medium mb-0">
+          Don’t just send a CV
+        </p>
+        <p className="long-content">
+          Reach out, introduce yourself, and let’s have a chat.<br></br>
+          We’re always open to speaking with the right people
+        </p>
 
-        <Btn onClick={() => window.location.href = "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,"}>Reach Out</Btn>
+        <Btn
+          onClick={() =>
+            (window.location.href =
+              "mailto:info@edenutilities.com?subject=Inquiry&body=Hi%20there,")
+          }
+        >
+          Reach Out
+        </Btn>
       </div>
 
       <div className="latest-news">
-        <p className="dark-text text-center title-big title text-lineheight pb-5">Latest news & updates
+        <p className="dark-text text-center title-big title text-lineheight pb-5">
+          Latest news & updates
         </p>
 
         <div className="news container">
@@ -248,8 +400,13 @@ const Career = () => {
             {/* First Row: One large, two small */}
             <div className="col-lg-7">
               <div
+                onClick={() => {
+                  navigate("/insight-details", {
+                    state: { post: blogPosts[0] },
+                  });
+                }}
                 className="position-relative text-white blog-grid-item-lg"
-                style={{ height: "100%" }}
+                style={{ height: "100%", cursor: "pointer" }}
               >
                 <img
                   src={blogPosts[0].image}
@@ -284,8 +441,13 @@ const Career = () => {
                 {[blogPosts[1], blogPosts[2]].map((post) => (
                   <div className="col-12" key={post.id}>
                     <div
+                      onClick={() => {
+                        navigate("/insight-details", {
+                          state: { post },
+                        });
+                      }}
                       className="position-relative text-white blog-grid-item"
-                      style={{ height: "100%" }}
+                      style={{ height: "100%", cursor: "pointer" }}
                     >
                       <img
                         src={post.image}
@@ -322,8 +484,13 @@ const Career = () => {
             {[blogPosts[3], blogPosts[4], blogPosts[5]].map((post) => (
               <div className="col-12 col-md-6 col-lg-4" key={post.id}>
                 <div
+                  onClick={() => {
+                    navigate("/insight-details", {
+                      state: { post },
+                    });
+                  }}
                   className="position-relative text-white blog-grid-item"
-                  style={{ height: "100%" }}
+                  style={{ height: "100%", cursor: "pointer" }}
                 >
                   <img
                     src={post.image}
@@ -345,7 +512,8 @@ const Career = () => {
                           state: { post },
                         });
                       }}
-                      className="text-link">
+                      className="text-link"
+                    >
                       {post.title}
                     </div>
                   </div>

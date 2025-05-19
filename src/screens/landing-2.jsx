@@ -33,7 +33,6 @@ const LandingPage = () => {
   const topTitleRef = useRef(null);
   const longContentRef = useRef(null);
 
-
   const slider = useRef();
 
   // const animateSlideUpOnScroll = (triggerElement) => {
@@ -208,9 +207,20 @@ const LandingPage = () => {
 
   const navigate = useNavigate();
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <div id="header-outer">
+    <div id="header-outer" className={scrolled ? "scrolled" : ""}>
         <Header />
       </div>
 
@@ -223,27 +233,20 @@ const LandingPage = () => {
         />
 
         <div id="contentSection" ref={contentSectionRef}>
-          <img
-            src={images.logo}
-            alt="logo"
-            className="logo"
-          />
+          <img src={images.logo} alt="logo" className="logo" />
           <h1 className="top-title" ref={topTitleRef}>
             Your sustainable <span>utility partner</span>
           </h1>
           <p className="long-content" ref={longContentRef}>
             Driving smarter, greener utility strategies through expert
-            procurement, data-led insight, and flexible support tailored to
-            your operational and sustainability goals. Turning waste into power, turning responsibility into action.
+            procurement, data-led insight, and flexible support tailored to your
+            operational and sustainability goals. Turning waste into power,
+            turning responsibility into action.
           </p>
 
-          <Btn
-            className="webBtn"
-            onClick={openContactModal}
-            rightIcon>
+          <Btn className="webBtn" onClick={openContactModal} rightIcon>
             Talk to an Expert
           </Btn>
-
         </div>
       </section>
 
@@ -293,14 +296,17 @@ const LandingPage = () => {
             <div className="person-about-business">
               <div className="slide-up">
                 <p className="long-content-medium slide-up-text">
-                  <span><img className="view" src={images.view} /></span>
+                  <span>
+                    <img className="view" src={images.view} />
+                  </span>
                   With over 30 years in the utilities industry, I believe in
                   honest, expert advice delivered with a personable approach,
-                  focused on long-term value and sustainable solutions...<span><img className="viewBottom" src={images.viewBottom} /></span>
+                  focused on long-term value and sustainable solutions...
+                  <span>
+                    <img className="viewBottom" src={images.viewBottom} />
+                  </span>
                 </p>
               </div>
-
-
             </div>
             <div className="person-info">
               <img className="founder" alt="founder" src={images.founder} />
@@ -359,7 +365,11 @@ const LandingPage = () => {
       <Brands btn />
 
       <section className="eden-service position-relative block--spc">
-        <img src={images.infinity_logo} alt="logo" className="logo eden-service-logo" />
+        <img
+          src={images.infinity_logo}
+          alt="logo"
+          className="logo eden-service-logo"
+        />
         <div className="p-md-3 video-section position-relative overflow-hidden">
           <div className="box-content-2">
             <div>
@@ -384,9 +394,14 @@ const LandingPage = () => {
             </div>
 
             <div className="box-btn-2 mb-5">
-              <Btn rightIcon onClick={() => {
-                navigate("/eden-infinity")
-              }}>Learn More</Btn>
+              <Btn
+                rightIcon
+                onClick={() => {
+                  navigate("/eden-infinity");
+                }}
+              >
+                Learn More
+              </Btn>
             </div>
           </div>
 
@@ -395,14 +410,11 @@ const LandingPage = () => {
 
           {/* Special video icon overlay for index === 0 */}
 
-          <div
-            className="video-icon-2"
-            onClick={() => setShowVideoModal(true)}>
+          <div className="video-icon-2" onClick={() => setShowVideoModal(true)}>
             <img src={images.videoIconBg} className="img-fluid"></img>
           </div>
         </div>
       </section>
-
 
       <section id="services" ref={slider} className="section-with-animations">
         <div id="services-header">
@@ -493,7 +505,7 @@ const LandingPage = () => {
               <div className="modal-header border-0">
                 <button
                   type="button"
-                  className="btn-close btn-close-white bg-light ms-auto me-5"
+                  className="btn-close btn-close-white bg-light ms-auto me-0 me-md-5"
                   onClick={() => setShowVideoModal(false)}
                   aria-label="Close"
                 ></button>

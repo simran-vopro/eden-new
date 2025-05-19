@@ -16,7 +16,6 @@ import { useNavigate } from "react-router-dom";
 import { useModal } from "../components/pages/ModalContext";
 import { blogPosts } from "../components/blogPostsContent";
 
-
 const SideblogPosts = [
   {
     id: 1,
@@ -144,22 +143,25 @@ const Insights = () => {
   return (
     <div id="insights">
       <div id="insights-header">
-        <img src={images.logo} alt="logo" className="logo" />
+        <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+          <img src={images.logo} alt="logo" className="logo" />
+        </div>
         <Header navItemStyle={{ color: "#000" }} />
       </div>
-      
+
       <div className="header-bottom-space"></div>
 
       <div className="container-fluid p-md-5 mb-5">
         <div className="row py-5 py-sm-0">
           {/* Left Side - Blogs */}
           <div className="col-lg-8">
-
             <div>
-              <h1 className="fw-bold text-capitalize mb-4 title-breadcrump">Insights</h1>
+              <h1 className="fw-bold text-capitalize mb-4 title-breadcrump">
+                Insights
+              </h1>
               <p className="long-content text-dark fs-5 mb-4">
-                Keep up with the latest company updates, opinion pieces, and news from
-                the world of business energy.
+                Keep up with the latest company updates, opinion pieces, and
+                news from the world of business energy.
               </p>
             </div>
 
@@ -168,8 +170,13 @@ const Insights = () => {
               {/* First Row: One large, two small */}
               <div className="col-lg-7">
                 <div
+                  onClick={() => {
+                    navigate("/insight-details", {
+                      state: { post: blogPosts[0] },
+                    });
+                  }}
                   className="position-relative text-white blog-grid-item-lg"
-                  style={{ height: "100%" }}
+                  style={{ height: "100%", cursor: "pointer" }}
                 >
                   <img
                     src={blogPosts[0].image}
@@ -204,8 +211,13 @@ const Insights = () => {
                   {[blogPosts[1], blogPosts[2]].map((post) => (
                     <div className="col-12" key={post.id}>
                       <div
+                        onClick={() => {
+                          navigate("/insight-details", {
+                            state: { post },
+                          });
+                        }}
                         className="position-relative text-white blog-grid-item"
-                        style={{ height: "100%" }}
+                        style={{ height: "100%", cursor: "pointer" }}
                       >
                         <img
                           src={post.image}
@@ -242,8 +254,13 @@ const Insights = () => {
               {[blogPosts[3], blogPosts[4], blogPosts[5]].map((post) => (
                 <div className="col-12 col-md-6 col-lg-4" key={post.id}>
                   <div
+                    onClick={() => {
+                      navigate("/insight-details", {
+                        state: { post },
+                      });
+                    }}
                     className="position-relative text-white blog-grid-item"
-                    style={{ height: "100%" }}
+                    style={{ height: "100%", cursor:"pointer" }}
                   >
                     <img
                       src={post.image}
@@ -281,8 +298,9 @@ const Insights = () => {
                 <span
                   key={tag}
                   onClick={() => setActiveTag(tag)}
-                  className={`cursor-pointer fs-4 ${activeTag === tag ? "fw-bold text-black" : "text-muted"
-                    }`}
+                  className={`cursor-pointer fs-4 ${
+                    activeTag === tag ? "fw-bold text-black" : "text-muted"
+                  }`}
                   style={{ cursor: "pointer" }}
                 >
                   {tag}

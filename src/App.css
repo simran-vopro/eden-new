@@ -167,12 +167,16 @@ a {
 
 /* header */
 
+/* Default header (before scroll) */
 #header-outer {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   padding: 1rem;
   position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
 }
 
 #header {
@@ -187,6 +191,29 @@ a {
   margin-right: 4rem;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* When scrolled */
+#header-outer.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  backdrop-filter: blur(20px);
+}
+
+#header-outer.scrolled #header {
+  width: 100%;
+  margin-right: 0;
+  border-radius: 0;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+#header-outer.scrolled #header .navItem {
+    color: #383838;
 }
 
 #header .navItems {
@@ -209,9 +236,11 @@ a {
 }
 
 #header .desktop-only .active {
-  background: linear-gradient(86.2deg,
-      var(--primary) 8.59%,
-      var(--primary2) 89.8%);
+  background: linear-gradient(
+    86.2deg,
+    var(--primary) 8.59%,
+    var(--primary2) 89.8%
+  );
   border-radius: 3rem;
   /* padding: 0.5vw; */
   color: var(--white) !important;
@@ -400,8 +429,6 @@ a {
   justify-content: flex-start;
 }
 
-
-
 .bouncing-dots {
   position: absolute;
   top: 50%;
@@ -449,7 +476,6 @@ a {
   font-size: 1vw;
   text-transform: capitalize;
 }
-
 
 .ghost-text {
   position: absolute;
@@ -607,7 +633,6 @@ a {
   position: relative;
   display: inline-block;
 }
-
 
 /* .d-letter::before {
   content: "";
@@ -791,14 +816,12 @@ a {
   margin-left: 3px;
 }
 
-
 #infinity-logo-transparent-about {
   position: absolute;
   bottom: -9vw;
   left: 5vw;
   opacity: 28%;
   width: 16vw;
-
 }
 
 #about-bottom-tabs {
@@ -1056,7 +1079,6 @@ a {
   box-shadow: none;
 }
 
-
 /* Icon span on the right */
 .box-content .box-btn .webBtn .btn-icon {
   height: 30px;
@@ -1263,10 +1285,12 @@ img.dotted {
 }
 
 .footer-links a {
-  background-image: linear-gradient(to right,
-      var(--primary) 50%,
-      var(--primary2) 50%,
-      #fff 50%);
+  background-image: linear-gradient(
+    to right,
+    var(--primary) 50%,
+    var(--primary2) 50%,
+    #fff 50%
+  );
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -1488,7 +1512,6 @@ img.dotted {
   letter-spacing: 2px;
 }
 
-
 .index-badge-service {
   color: #000;
   width: 45px;
@@ -1511,9 +1534,6 @@ img.dotted {
 .header-bottom-space {
   height: 10vh;
 }
-
-
-
 
 /*  ================================================================================================ */
 /* edene infinity */
@@ -1541,7 +1561,6 @@ img.dotted {
   top: 20%;
 }
 
-
 .top-card-icon {
   width: 70px;
   height: 70px;
@@ -1553,7 +1572,6 @@ img.dotted {
   justify-content: center;
   box-shadow: 0px 0px 10px #e1e1e1b3;
 }
-
 
 .top-card-icon:hover {
   border: 2px solid var(--primary);
@@ -1622,7 +1640,6 @@ img.dotted {
   padding: 5rem 0;
 }
 
-
 .flower-features {
   height: 215px;
   width: 220px;
@@ -1670,7 +1687,6 @@ img.dotted {
   border-top-left-radius: 50px;
 }
 
-
 .top-right-radius {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 45px;
@@ -1709,7 +1725,6 @@ img.dotted {
   box-sizing: border-box;
 }
 
-
 .slider-sector-item {
   background-color: #4b6984;
   color: #fff;
@@ -1726,7 +1741,6 @@ img.dotted {
 .slider-sector-item p {
   font-size: 12px;
 }
-
 
 .slider-sector-item .infinity-center {
   width: 50px;
@@ -1762,9 +1776,8 @@ img.dotted {
 
 .slider-icon:after,
 .swiper-button-next:after {
-  content: "" !important
+  content: "" !important;
 }
-
 
 .eden-brands #brands {
   padding: 0;
@@ -1813,8 +1826,7 @@ img.dotted {
   background-color: white;
   display: flex;
   justify-content: center;
-  box-shadow:
-    inset 0 0 15px rgba(255, 255, 255, 0.9),
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.9),
     0 4px 20px rgba(0, 0, 0, 0.08);
   align-items: center;
 }
@@ -1865,8 +1877,6 @@ img.dotted {
   border-radius: 35px;
   background-color: #f3f9fc;
   height: 350px;
-
-
 }
 
 .slider-review-item p {
@@ -1885,8 +1895,6 @@ img.dotted {
   border-radius: 30px !important;
   box-shadow: 0 0 4px rgb(183 183 183 / 82%) !important;
 }
-
-
 
 .half-bg-hover {
   position: relative;
@@ -1961,25 +1969,22 @@ img.dotted {
   transition: color 0.3s ease;
 }
 
-
 .service-card:hover .btn-bottom p {
   color: white !important;
 }
-
 
 .service-card:hover .btn-bottom .blue-text {
   color: white;
 }
 
-.half-bg-hover>div {
+.half-bg-hover > div {
   position: relative;
   z-index: 1;
 }
 
-.half-bg-hover:hover>div {
+.half-bg-hover:hover > div {
   color: white;
 }
-
 
 .infinity-logo-transparent-review {
   position: relative !important;
@@ -2000,7 +2005,6 @@ img.dotted {
   height: 550px !important;
 }
 
-
 .accordion-button::after {
   content: "";
   background-image: url("./assets/landing/icons/plus.png") !important;
@@ -2019,8 +2023,11 @@ img.dotted {
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #cfe2ff00 !important;
-    box-shadow:none !important;
+  background-color: #cfe2ff00 !important;
+  box-shadow: none !important;
 }
 
 
+.mobile-review-slider{
+  display: none;
+}

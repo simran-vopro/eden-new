@@ -1,6 +1,5 @@
 /* Small Mobile (up to iPhone SE) */
 @media (max-width: 480px) {
-
   .title-breadcrump {
     text-transform: none;
     font-size: 3rem;
@@ -37,16 +36,14 @@
     height: auto;
   }
 
-  #about-page-content .person-info .name,
+  /* #about-page-content .person-info .name,
   .person-info-round .name {
     font-size: 5vw;
-  }
+  } */
 }
 
 /* Mobile Landscape / Larger Phones */
 @media (min-width: 481px) and (max-width: 767px) {
-
-
   .hero-overlay {
     height: 65vh;
   }
@@ -70,8 +67,6 @@
 
 /* Small Tablets / Large Phones (Portrait) */
 @media (min-width: 768px) and (max-width: 991px) {
-
-
   .lines-img img {
     height: 60vh;
   }
@@ -88,7 +83,7 @@
 /* Large Tablets (Landscape) */
 @media (min-width: 992px) and (max-width: 1200px) {
   /* new about css */
-/* 
+  /* 
   #hero-about {
     padding: 0 0 0 0rem;
   } */
@@ -120,8 +115,7 @@
   }
 
   .image-wrapper {
-    width: 150px;
-    height: 190px;
+    height: 102px;
   }
 
   .stripes {
@@ -137,13 +131,12 @@
     width: 55.5%;
     height: 700px;
   }
-/* 
+  /* 
 
   #csr .content-width {
     width: 47%;
     margin-left: 1vw;
   } */
-
 
   .services {
     gap: 10px;
@@ -166,7 +159,7 @@
     bottom: -12vw;
   }
 
-/* 
+  /* 
   #why-us {
     padding: 5rem 0rem 5rem;
   } */
@@ -208,12 +201,11 @@
 
   .image-wrapper {
     width: 150px;
-    height: 190px;
+    height: 150px;
   }
 
   .stripes {
-    position: absolute;
-    top: -10px;
+    height: 102px;
   }
 
   .stripe {
@@ -224,7 +216,6 @@
     width: 59.5%;
     height: 770px;
   }
-
 
   /* #csr .content-width {
     width: 47%;
@@ -248,7 +239,6 @@
     width: 80px;
   }
 
-
   /* #why-us {
     padding: 5rem 0rem 5rem;
   } */
@@ -256,7 +246,6 @@
 
 /* Standard Desktop */
 @media (min-width: 1441px) and (max-width: 1600px) {
-
   /* #hero-about {
     padding: 0 0 0 0rem;
   } */
@@ -289,12 +278,11 @@
 
   .image-wrapper {
     width: 150px;
-    height: 190px;
+    height: 150px;
   }
 
   .stripes {
-    position: absolute;
-    top: -10px;
+    height: 102px;
   }
 
   .stripe {
@@ -305,7 +293,6 @@
     width: 59.5%;
     height: 800px;
   }
-
 
   /* #csr .content-width {
     width: 47%;
@@ -326,7 +313,6 @@
     height: 80px;
     width: 80px;
   }
-
 
   /* #why-us {
     padding: 5rem 0rem 5rem;

@@ -1,7 +1,5 @@
-import React from "react";
 import images from "../theme/imagesPath";
 import Btn from "../other/btn";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";

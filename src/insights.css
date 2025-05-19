@@ -874,3 +874,7 @@
   background-color: #fff !important;
   box-shadow: none;
 }
+
+.card-description{
+  font-size: 17px;
+}
