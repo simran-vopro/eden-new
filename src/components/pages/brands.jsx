@@ -51,59 +51,52 @@ const Brands = ({ btn, style, hideTitle }) => {
     // Initial state
     gsap.set(btnLineLeft.current, { transformOrigin: "left center", scaleX: 0 });
     gsap.set(btnLineRight.current, { transformOrigin: "right center", scaleX: 0 });
-    gsap.set(btnRightBorderLine.current, { clipPath: "inset(100% 100% 100% 100%)", opacity: 1 });
-    gsap.set(btnLeftBorderLine.current, { clipPath: "inset(100% 100% 100% 100%)", opacity: 1 });
+
+    gsap.set(btnLeftBorderLine.current, {
+      clipPath: "inset(100% 0% 0% 100%)",
+      opacity: 1
+    });
+
+    gsap.set(btnRightBorderLine.current, {
+      clipPath: "inset(0% 100% 100% 0%)",
+      opacity: 1
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#btn-highlighted-section",
-        start: "top 80%",
+        start: "top 40%",
         toggleActions: "play none none none",
+        markers: false,
+        scrub: true
       }
     });
 
-    // 1. Lines expand outward
+    // Step 1: Animate lines inward toward center
     tl.to([btnLineLeft.current, btnLineRight.current], {
       scaleX: 1,
       duration: 1,
       ease: "power2.out"
     });
 
-    // 2. Borders animate in after lines complete
-
-    // Left border (left to top)
+    // Step 2: Animate left border AFTER lines complete
     tl.to(btnLeftBorderLine.current, {
-      clipPath: "inset(0% 10% 60% 0%)", // left + top visible
-      duration: 0.6,
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 1,
       ease: "power2.out"
-    }, ">"); // Start after previous ends
-
-    // Right border (right to bottom)
-    tl.to(btnRightBorderLine.current, {
-      clipPath: "inset(60% 0% 0% 10%)", // right + bottom visible
-      duration: 0.6,
-      ease: "power2.out"
-    }, "<"); // Sync with left border animation
-
-    // ✳️ Animate borders retracting back (instead of fading)
-    tl.to(btnLeftBorderLine.current, {
-      clipPath: "inset(100% 100% 100% 100%)",
-      duration: 0.4,
-      ease: "power1.in",
-      delay: 0.2
     });
 
+    // Step 3: Animate right border simultaneously with left border
     tl.to(btnRightBorderLine.current, {
-      clipPath: "inset(100% 100% 100% 100%)",
-      duration: 0.4,
-      ease: "power1.in"
-    }, "<"); // Sync both at same time
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 1,
+      ease: "power2.out"
+    }, "<"); // still same time as left border
 
-    // 3. Switch transform origins to prepare for shrink
+
+    // 4. Switch transform origins to prepare for shrink
     tl.set(btnLineLeft.current, { transformOrigin: "right center" });
     tl.set(btnLineRight.current, { transformOrigin: "left center" });
-
-    // 4. Lines shrink inward
     tl.to([btnLineLeft.current, btnLineRight.current], {
       scaleX: 0,
       duration: 1,
@@ -111,6 +104,7 @@ const Brands = ({ btn, style, hideTitle }) => {
     });
 
   }, []);
+
 
 
   const navigate = useNavigate();
@@ -208,7 +202,7 @@ const Brands = ({ btn, style, hideTitle }) => {
             <div
               ref={btnRightBorderLine}
               style={{
-                border: "3px solid rgb(24, 98, 138)", // right-bottom border color
+                border: "3px solid rgb(117, 207, 255)", // right-bottom border color
                 borderRadius: "3rem",
                 clipPath: "inset(100% 100% 100% 100%)",
                 position: "absolute",
